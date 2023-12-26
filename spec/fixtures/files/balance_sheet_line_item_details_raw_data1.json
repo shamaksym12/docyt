@@ -1,0 +1,1378 @@
+{
+  "Header": {
+    "Time": "2022-11-03T20:43:11-07:00",
+    "ReportName": "BalanceSheet",
+    "ReportBasis": "Accrual",
+    "StartPeriod": "2022-01-01",
+    "EndPeriod": "2022-01-31",
+    "SummarizeColumnsBy": "Total",
+    "Currency": "USD",
+    "Option": [
+      {
+        "Name": "AccountingStandard",
+        "Value": "GAAP"
+      },
+      {
+        "Name": "NoReportData",
+        "Value": "false"
+      }
+    ]
+  },
+  "Columns": {
+    "Column": [
+      {
+        "ColTitle": "",
+        "ColType": "Account",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "account"
+          }
+        ]
+      },
+      {
+        "ColTitle": "Total",
+        "ColType": "Money",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "total"
+          }
+        ]
+      }
+    ]
+  },
+  "Rows": {
+    "Row": [
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "ASSETS"
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "Header": {
+                "ColData": [
+                  {
+                    "value": "Current Assets"
+                  },
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              "Rows": {
+                "Row": [
+                  {
+                    "Header": {
+                      "ColData": [
+                        {
+                          "value": "Bank Accounts"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    },
+                    "Rows": {
+                      "Row": [
+                        {
+                          "ColData": [
+                            {
+                              "value": "01713 OPERATING ACCOUNT",
+                              "id": "389"
+                            },
+                            {
+                              "value": "50000.00"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "10125 CASH-PETTY CASH",
+                              "id": "152"
+                            },
+                            {
+                              "value": "500.00"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "10126 DRAWER CASH",
+                              "id": "153"
+                            },
+                            {
+                              "value": "300.00"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "10127 CHANGE CASH",
+                              "id": "154"
+                            },
+                            {
+                              "value": "200.00"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "Truist Checking -6231",
+                              "id": "147"
+                            },
+                            {
+                              "value": "648917.51"
+                            }
+                          ],
+                          "type": "Data"
+                        }
+                      ]
+                    },
+                    "Summary": {
+                      "ColData": [
+                        {
+                          "value": "Total Bank Accounts"
+                        },
+                        {
+                          "value": "699917.51"
+                        }
+                      ]
+                    },
+                    "type": "Section",
+                    "group": "BankAccounts"
+                  },
+                  {
+                    "Header": {
+                      "ColData": [
+                        {
+                          "value": "Other Current Assets"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    },
+                    "Rows": {
+                      "Row": [
+                        {
+                          "ColData": [
+                            {
+                              "value": "11010 CITY LEDGER",
+                              "id": "155"
+                            },
+                            {
+                              "value": "19910.14"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "11040 GUEST LEDGER",
+                              "id": "362"
+                            },
+                            {
+                              "value": "47239.90"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "12000 OFFSET PREPAID",
+                              "id": "156"
+                            },
+                            {
+                              "value": "-404.64"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "19001 DUE FROM SHAMIN INC. 001",
+                              "id": "184"
+                            },
+                            {
+                              "value": "1604027.25"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "19153 DUE FROM SMITHFIELD HOTEL - HAM - 153",
+                              "id": "186"
+                            },
+                            {
+                              "value": "125000.00"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "19154 DUE FROM 425 WATER - REN MARRIOTT - 154",
+                              "id": "187"
+                            },
+                            {
+                              "value": "275000.00"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "Chargebacks - Docyt",
+                              "id": "138"
+                            },
+                            {
+                              "value": "639.16"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "Prepaid Expense - Docyt",
+                              "id": "146"
+                            },
+                            {
+                              "value": "28839.08"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "Revenue Receivables - American Express",
+                              "id": "366"
+                            },
+                            {
+                              "value": "5890.86"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "Revenue Receivables - Cash/checks",
+                              "id": "367"
+                            },
+                            {
+                              "value": "125.36"
+                            }
+                          ],
+                          "type": "Data"
+                        },
+                        {
+                          "ColData": [
+                            {
+                              "value": "Revenue Receivables - Truist Merchant Services",
+                              "id": "368"
+                            },
+                            {
+                              "value": "34364.54"
+                            }
+                          ],
+                          "type": "Data"
+                        }
+                      ]
+                    },
+                    "Summary": {
+                      "ColData": [
+                        {
+                          "value": "Total Other Current Assets"
+                        },
+                        {
+                          "value": "2140631.65"
+                        }
+                      ]
+                    },
+                    "type": "Section",
+                    "group": "OtherCurrentAssets"
+                  }
+                ]
+              },
+              "Summary": {
+                "ColData": [
+                  {
+                    "value": "Total Current Assets"
+                  },
+                  {
+                    "value": "2840549.16"
+                  }
+                ]
+              },
+              "type": "Section",
+              "group": "CurrentAssets"
+            },
+            {
+              "Header": {
+                "ColData": [
+                  {
+                    "value": "Fixed Assets"
+                  },
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              "Rows": {
+                "Row": [
+                  {
+                    "ColData": [
+                      {
+                        "value": "16005 LAND \\u0026 LEASEHOLDS",
+                        "id": "167"
+                      },
+                      {
+                        "value": "1166563.86"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16006 LAND IMPROVEMENTS",
+                        "id": "168"
+                      },
+                      {
+                        "value": "104102.10"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16010 BUILDING \\u0026 IMPROVEMENTS",
+                        "id": "169"
+                      },
+                      {
+                        "value": "8261739.73"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16020 FURNITURE AND FIXTURES",
+                        "id": "170"
+                      },
+                      {
+                        "value": "487706.07"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16030 CAPITALIZED ASSETS",
+                        "id": "172"
+                      },
+                      {
+                        "value": "82139.06"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16035 COMPUTER",
+                        "id": "173"
+                      },
+                      {
+                        "value": "54824.26"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16045 SIGNAGE",
+                        "id": "174"
+                      },
+                      {
+                        "value": "13455.91"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16106 ACCUM DEPREC LAND IMPROV",
+                        "id": "175"
+                      },
+                      {
+                        "value": "-99047.17"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16110 ACCUML DEPREC BUILDINGS",
+                        "id": "176"
+                      },
+                      {
+                        "value": "-2888357.56"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16120 ACCUM DEPREC FURN \\u0026 FIX",
+                        "id": "177"
+                      },
+                      {
+                        "value": "-486766.33"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16125 ACCUM DEPREC EQUIPMENT",
+                        "id": "178"
+                      },
+                      {
+                        "value": "-203304.19"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16130 ACCUMULATED DEPRECIATION",
+                        "id": "179"
+                      },
+                      {
+                        "value": "-82139.06"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16135 ACCUM DEPREC-COMPUTERS",
+                        "id": "180"
+                      },
+                      {
+                        "value": "-54806.21"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16145 ACCUM DEPREC SIGNAGE",
+                        "id": "392"
+                      },
+                      {
+                        "value": "-13455.91"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16207 ACCUM AMORT LOAN COST",
+                        "id": "391"
+                      },
+                      {
+                        "value": "-49905.25"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16217 ACCUM AMORT FRANCHISE FEE",
+                        "id": "183"
+                      },
+                      {
+                        "value": "-53333.33"
+                      }
+                    ],
+                    "type": "Data"
+                  }
+                ]
+              },
+              "Summary": {
+                "ColData": [
+                  {
+                    "value": "Total Fixed Assets"
+                  },
+                  {
+                    "value": "6239415.98"
+                  }
+                ]
+              },
+              "type": "Section",
+              "group": "FixedAssets"
+            },
+            {
+              "Header": {
+                "ColData": [
+                  {
+                    "value": "Other Assets"
+                  },
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              "Rows": {
+                "Row": [
+                  {
+                    "ColData": [
+                      {
+                        "value": "16205 LOAN COSTS",
+                        "id": "181"
+                      },
+                      {
+                        "value": "254347.16"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "16215 FRANCHISE FEES",
+                        "id": "182"
+                      },
+                      {
+                        "value": "60000.00"
+                      }
+                    ],
+                    "type": "Data"
+                  }
+                ]
+              },
+              "Summary": {
+                "ColData": [
+                  {
+                    "value": "Total Other Assets"
+                  },
+                  {
+                    "value": "314347.16"
+                  }
+                ]
+              },
+              "type": "Section",
+              "group": "OtherAssets"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "TOTAL ASSETS"
+            },
+            {
+              "value": "9394312.30"
+            }
+          ]
+        },
+        "type": "Section",
+        "group": "TotalAssets"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "LIABILITIES AND EQUITY"
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "Header": {
+                "ColData": [
+                  {
+                    "value": "Liabilities"
+                  },
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              "Rows": {
+                "Row": [
+                  {
+                    "Header": {
+                      "ColData": [
+                        {
+                          "value": "Current Liabilities"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    },
+                    "Rows": {
+                      "Row": [
+                        {
+                          "Header": {
+                            "ColData": [
+                              {
+                                "value": "Accounts Payable"
+                              },
+                              {
+                                "value": ""
+                              }
+                            ]
+                          },
+                          "Rows": {
+                            "Row": [
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "Accounts Payable - Docyt",
+                                    "id": "136"
+                                  },
+                                  {
+                                    "value": "138144.67"
+                                  }
+                                ],
+                                "type": "Data"
+                              }
+                            ]
+                          },
+                          "Summary": {
+                            "ColData": [
+                              {
+                                "value": "Total Accounts Payable"
+                              },
+                              {
+                                "value": "138144.67"
+                              }
+                            ]
+                          },
+                          "type": "Section",
+                          "group": "AP"
+                        },
+                        {
+                          "Header": {
+                            "ColData": [
+                              {
+                                "value": "Credit Cards"
+                              },
+                              {
+                                "value": ""
+                              }
+                            ]
+                          },
+                          "Rows": {
+                            "Row": [
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "Capital One Visa -0311",
+                                    "id": "369"
+                                  },
+                                  {
+                                    "value": "2587.27"
+                                  }
+                                ],
+                                "type": "Data"
+                              }
+                            ]
+                          },
+                          "Summary": {
+                            "ColData": [
+                              {
+                                "value": "Total Credit Cards"
+                              },
+                              {
+                                "value": "2587.27"
+                              }
+                            ]
+                          },
+                          "type": "Section",
+                          "group": "CreditCards"
+                        },
+                        {
+                          "Header": {
+                            "ColData": [
+                              {
+                                "value": "Other Current Liabilities"
+                              },
+                              {
+                                "value": ""
+                              }
+                            ]
+                          },
+                          "Rows": {
+                            "Row": [
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "12115 FRANCHISOR REWARDS REIMB RECEIVABLE",
+                                    "id": "157"
+                                  },
+                                  {
+                                    "value": "-2417.91"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "20100 ADVANCED GUEST DEPOSIT",
+                                    "id": "190"
+                                  },
+                                  {
+                                    "value": "51119.45"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "Header": {
+                                  "ColData": [
+                                    {
+                                      "value": "23010 SALES \\u0026 USE",
+                                      "id": "191"
+                                    },
+                                    {
+                                      "value": "-21049.60"
+                                    }
+                                  ]
+                                },
+                                "Rows": {
+                                  "Row": [
+                                    {
+                                      "ColData": [
+                                        {
+                                          "value": "23012 RM SALES TAX",
+                                          "id": "371"
+                                        },
+                                        {
+                                          "value": "75.06"
+                                        }
+                                      ],
+                                      "type": "Data"
+                                    }
+                                  ]
+                                },
+                                "Summary": {
+                                  "ColData": [
+                                    {
+                                      "value": "Total 23010 SALES \\u0026 USE"
+                                    },
+                                    {
+                                      "value": "-20974.54"
+                                    }
+                                  ]
+                                },
+                                "type": "Section"
+                              },
+                              {
+                                "Header": {
+                                  "ColData": [
+                                    {
+                                      "value": "23015 LODGING TAX %",
+                                      "id": "192"
+                                    },
+                                    {
+                                      "value": "107485.12"
+                                    }
+                                  ]
+                                },
+                                "Rows": {
+                                  "Row": [
+                                    {
+                                      "ColData": [
+                                        {
+                                          "value": "23018 CITY TAX - HAMPTON",
+                                          "id": "372"
+                                        },
+                                        {
+                                          "value": "14583.86"
+                                        }
+                                      ],
+                                      "type": "Data"
+                                    },
+                                    {
+                                      "ColData": [
+                                        {
+                                          "value": "23019 HOTEL LODGING FEE",
+                                          "id": "373"
+                                        },
+                                        {
+                                          "value": "3142.00"
+                                        }
+                                      ],
+                                      "type": "Data"
+                                    }
+                                  ]
+                                },
+                                "Summary": {
+                                  "ColData": [
+                                    {
+                                      "value": "Total 23015 LODGING TAX %"
+                                    },
+                                    {
+                                      "value": "125210.98"
+                                    }
+                                  ]
+                                },
+                                "type": "Section"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "23016 USE TAX - LIABILITY",
+                                    "id": "193"
+                                  },
+                                  {
+                                    "value": "118.81"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "23017 LODGING TAX - FIXED",
+                                    "id": "194"
+                                  },
+                                  {
+                                    "value": "-86810.21"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "23020 FEDERALS W/HOLD",
+                                    "id": "195"
+                                  },
+                                  {
+                                    "value": "-332.65"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "23025 STATE W/HOLD",
+                                    "id": "196"
+                                  },
+                                  {
+                                    "value": "-10.07"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "23030 FICA/MEDICARE W/HELD",
+                                    "id": "375"
+                                  },
+                                  {
+                                    "value": "0.00"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "23035 SUTA TAXES - PAYABLE",
+                                    "id": "377"
+                                  },
+                                  {
+                                    "value": "0.00"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "23036 FUTA TAXES - PAYABLE",
+                                    "id": "376"
+                                  },
+                                  {
+                                    "value": "0.00"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "27021 401K - ROTH",
+                                    "id": "378"
+                                  },
+                                  {
+                                    "value": "138.25"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "27022 401K BENEFITS",
+                                    "id": "379"
+                                  },
+                                  {
+                                    "value": "30.62"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "27033 SHORT TERM DISABILITY",
+                                    "id": "198"
+                                  },
+                                  {
+                                    "value": "68.27"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "27034 LIFE INSURANCE",
+                                    "id": "199"
+                                  },
+                                  {
+                                    "value": "14.79"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "27042 EYEMED",
+                                    "id": "201"
+                                  },
+                                  {
+                                    "value": "434.59"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "27043 EE INS WITHHOLDING_MED/DENT/ACC/CRITICAL",
+                                    "id": "202"
+                                  },
+                                  {
+                                    "value": "2656.38"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "27044 DEARBORN INSURANCE",
+                                    "id": "203"
+                                  },
+                                  {
+                                    "value": "-295.31"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "27102 CHILD SUPPORT",
+                                    "id": "204"
+                                  },
+                                  {
+                                    "value": "2329.15"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "27104 GARNISHMENT",
+                                    "id": "205"
+                                  },
+                                  {
+                                    "value": "385.08"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "28005 ACCRUED SALARIES \\u0026 WAGES",
+                                    "id": "206"
+                                  },
+                                  {
+                                    "value": "1233.19"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "28020 MORTGAGE PAYABLE",
+                                    "id": "207"
+                                  },
+                                  {
+                                    "value": "6996700.37"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "28037 ACCRUED MORTGAGE INTEREST",
+                                    "id": "208"
+                                  },
+                                  {
+                                    "value": "83329.27"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "28090 Accrued Insurance",
+                                    "id": "383"
+                                  },
+                                  {
+                                    "value": "54978.55"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "28091 Accrued Workers Comp. Insurance",
+                                    "id": "384"
+                                  },
+                                  {
+                                    "value": "10380.72"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "Accrued Liability - Docyt",
+                                    "id": "145"
+                                  },
+                                  {
+                                    "value": "12359.74"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "Employee Reimbursements - Docyt",
+                                    "id": "141"
+                                  },
+                                  {
+                                    "value": "-50.00"
+                                  }
+                                ],
+                                "type": "Data"
+                              }
+                            ]
+                          },
+                          "Summary": {
+                            "ColData": [
+                              {
+                                "value": "Total Other Current Liabilities"
+                              },
+                              {
+                                "value": "7230597.52"
+                              }
+                            ]
+                          },
+                          "type": "Section",
+                          "group": "OtherCurrentLiabilities"
+                        }
+                      ]
+                    },
+                    "Summary": {
+                      "ColData": [
+                        {
+                          "value": "Total Current Liabilities"
+                        },
+                        {
+                          "value": "7371329.46"
+                        }
+                      ]
+                    },
+                    "type": "Section",
+                    "group": "CurrentLiabilities"
+                  }
+                ]
+              },
+              "Summary": {
+                "ColData": [
+                  {
+                    "value": "Total Liabilities"
+                  },
+                  {
+                    "value": "7371329.46"
+                  }
+                ]
+              },
+              "type": "Section",
+              "group": "Liabilities"
+            },
+            {
+              "Header": {
+                "ColData": [
+                  {
+                    "value": "Equity"
+                  },
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              "Rows": {
+                "Row": [
+                  {
+                    "ColData": [
+                      {
+                        "value": "25600 CURRENT YEAR INCOME/LOSS (NET INCOME)",
+                        "id": "393"
+                      },
+                      {
+                        "value": "1086791.96"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "30803 NEIL AMIN - DISTRIBUTIONS",
+                        "id": "212"
+                      },
+                      {
+                        "value": "-1813000.00"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "30804 JAY/ALKESH, LLC - DISTRIBUTIONS",
+                        "id": "213"
+                      },
+                      {
+                        "value": "-1813000.00"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "30819 ROHIT PATEL - DISTRIBUTIONS",
+                        "id": "214"
+                      },
+                      {
+                        "value": "-799500.00"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "30820 NARESH PATEL - DISTRIBUTIONS",
+                        "id": "215"
+                      },
+                      {
+                        "value": "-799500.00"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "31803 NEIL AMIN - MEMBER'S EQUITY",
+                        "id": "216"
+                      },
+                      {
+                        "value": "350000.00"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "31804 JAY/ALKESH, LLC - MEMBER'S EQUITY",
+                        "id": "217"
+                      },
+                      {
+                        "value": "350000.00"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "31819 ROHIT PATEL - MEMBER'S EQUITY",
+                        "id": "218"
+                      },
+                      {
+                        "value": "140000.00"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "31820 NARESH PATEL - MEMBER'S EQUITY",
+                        "id": "219"
+                      },
+                      {
+                        "value": "140000.00"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "31900 Retained Earnings",
+                        "id": "5"
+                      },
+                      {
+                        "value": "5169087.03"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "Opening balance equity",
+                        "id": "54"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "Net Income"
+                      },
+                      {
+                        "value": "-944.08"
+                      }
+                    ],
+                    "type": "Data",
+                    "group": "NetIncome"
+                  }
+                ]
+              },
+              "Summary": {
+                "ColData": [
+                  {
+                    "value": "Total Equity"
+                  },
+                  {
+                    "value": "2022982.84"
+                  }
+                ]
+              },
+              "type": "Section",
+              "group": "Equity"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "TOTAL LIABILITIES AND EQUITY"
+            },
+            {
+              "value": "9394312.30"
+            }
+          ]
+        },
+        "type": "Section",
+        "group": "TotalLiabilitiesAndEquity"
+      }
+    ]
+  }
+}

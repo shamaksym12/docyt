@@ -1,0 +1,100 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "saas_rd_engineering",
+  "name": "R&D Engineering",
+  "category": "department",
+  "rank": 41,
+  "standard_category_ids": [11],
+  "draft": false,
+  "missing_transactions_calculation_disabled": false,
+  "enabled_budget_compare": false,
+  "enabled_blank_value_for_metric": true,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+
+  "multi_entity_columns": [{ "type": "actual", "name": "$" }],
+
+  "items": [
+    {
+      "id": "operating_expenses",
+      "name": "Operating Expenses"
+    },
+    {
+      "id": "salaries_wages",
+      "name": "Salaries & Wages",
+      "parent_id": "operating_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "payroll_taxes",
+      "name": "Payroll Taxes",
+      "parent_id": "operating_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "employee_benefits",
+      "name": "Employee Benefits",
+      "parent_id": "operating_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "general_administrative_expenses",
+      "name": "General & Administrative Expenses",
+      "parent_id": "operating_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "travel_entertainment_expenses",
+      "name": "Travel & Entertainment Expenses",
+      "parent_id": "operating_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "legal_professional_fees",
+      "name": "Legal & Professional Fees",
+      "parent_id": "operating_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "other_expense",
+      "name": "Other Expense",
+      "parent_id": "operating_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "total_operating_expenses",
+      "name": "Total Operating Expenses",
+      "parent_id": "operating_expenses",
+      "totals": true
+    }
+  ]
+}

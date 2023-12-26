@@ -1,0 +1,924 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "expense_labor_report",
+  "name": "Labor Report",
+  "category": "expense",
+  "depends_on": [
+    "owners_operating_statement"
+  ],
+  "rank": 7,
+  "standard_category_ids": [9],
+  "draft": false,
+  "edit_mapping_disabled": true,
+  "export_parameters": {
+    "main_column_position": "left"
+  },
+  "enabled_budget_compare": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "current", "name": "POR $"},
+    {"type": "actual", "range": "current_period", "year": "previous_period", "name": "PP $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "previous_period", "name": "PP POR $"},
+    {"type": "variance", "range": "current_period", "year": "previous_period", "name": "PTD Var"}
+  ],
+  "multi_entity_columns": [{ "type": "actual", "name": "$" }],
+  "missing_transactions_calculation_disabled": false,
+  "items": [
+    {
+      "id": "kpi",
+      "name": "KPI:"
+    },
+    {
+      "id": "occupancy_percent",
+      "name": "Occupancy",
+      "parent_id": "kpi",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/occupancy_percent"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rooms_sold"
+              },
+              "arg2": {
+                "item_id": "rooms_available"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rooms_available",
+      "name": "Rooms Available to sell",
+      "parent_id": "kpi",
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "rooms_available"
+        }
+      }
+    },
+    {
+      "id": "rooms_sold",
+      "name": "Rooms Sold",
+      "parent_id": "kpi",
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "rooms_sold"
+        }
+      }
+    },
+    {
+      "id": "total_revenue",
+      "name": "Total Revenue",
+      "data_type": "currency",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/total_operating_revenue"
+      }
+    },
+    {
+      "id": "total_of_total_wages",
+      "name": "Total wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "rw_total_wages" }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "percent_of_revenue",
+      "name": "% of revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_of_total_wages"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_wages",
+      "name": "Total Wages"
+    },
+    {
+      "id": "tw_front_desk",
+      "name": "Front Desk",
+      "parent_id": "total_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rw_front_desk"
+              },
+              "arg2": {
+                "item_id": "ow_front_desk"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tw_maintenance",
+      "name": "Maintenance",
+      "parent_id": "total_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rw_maintenance"
+              },
+              "arg2": {
+                "item_id": "ow_maintenance"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tw_houseperson",
+      "name": "Houseperson",
+      "parent_id": "total_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rw_houseperson"
+              },
+              "arg2": {
+                "item_id": "ow_houseperson"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tw_breakfast_dining",
+      "name": "Breakfast Dining",
+      "parent_id": "total_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rw_breakfast_dining"
+              },
+              "arg2": {
+                "item_id": "ow_breakfast_dining"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tw_house_laundry",
+      "name": "House Laundry",
+      "parent_id": "total_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rw_house_laundry"
+              },
+              "arg2": {
+                "item_id": "ow_house_laundry"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tw_housekeeping",
+      "name": "Housekeeping",
+      "parent_id": "total_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rw_housekeeping"
+              },
+              "arg2": {
+                "item_id": "ow_housekeeping"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tw_total_wages",
+      "name": "Total Wages",
+      "parent_id": "total_wages",
+      "totals": true
+    },
+    {
+      "id": "regular_wages",
+      "name": "Regular Wages"
+    },
+    {
+      "id": "rw_front_desk",
+      "name": "Front Desk",
+      "parent_id": "regular_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "rh_front_desk"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_regular_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rw_maintenance",
+      "name": "Maintenance",
+      "parent_id": "regular_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "rh_maintenance"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_regular_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rw_houseperson",
+      "name": "Houseperson",
+      "parent_id": "regular_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "rh_houseperson"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_regular_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rw_breakfast_dining",
+      "name": "Breakfast Dining",
+      "parent_id": "regular_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "rh_breakfast_dining"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_regular_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rw_house_laundry",
+      "name": "House Laundry",
+      "parent_id": "regular_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "rh_house_laundry"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_regular_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rw_housekeeping",
+      "name": "Housekeeping",
+      "parent_id": "regular_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "rh_housekeeping"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_regular_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rw_total_wages",
+      "name": "Total Wages",
+      "parent_id": "regular_wages",
+      "totals": true
+    },
+    {
+      "id": "overtime_wages",
+      "name": "Overtime Wages"
+    },
+    {
+      "id": "ow_front_desk",
+      "name": "Front Desk",
+      "parent_id": "overtime_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "oh_front_desk"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_ot_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ow_maintenance",
+      "name": "Maintenance",
+      "parent_id": "overtime_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "oh_maintenance"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_ot_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ow_houseperson",
+      "name": "Houseperson",
+      "parent_id": "overtime_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "oh_houseperson"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_ot_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ow_breakfast_dining",
+      "name": "Breakfast Dining",
+      "parent_id": "overtime_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "oh_breakfast_dining"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_ot_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ow_house_laundry",
+      "name": "House Laundry",
+      "parent_id": "overtime_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "oh_house_laundry"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_ot_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ow_housekeeping",
+      "name": "Housekeeping",
+      "parent_id": "overtime_wages",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "oh_housekeeping"
+              },
+              "arg2": {
+                "item_id": "estimated_hourly_ot_wage"
+              }
+            }
+          }
+        }
+      }
+    },
+
+    {
+      "id": "ow_total_overtime",
+      "name": "Total Overtime",
+      "parent_id": "overtime_wages",
+      "totals": true
+    },
+    {
+      "id": "total_hours",
+      "name": "Total Hours"
+    },
+    {
+      "id": "th_front_desk",
+      "name": "Front Desk",
+      "parent_id": "total_hours",
+      "data_type": "integer",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rh_front_desk"
+              },
+              "arg2": {
+                "item_id": "oh_front_desk"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "th_maintenance",
+      "name": "Maintenance",
+      "parent_id": "total_hours",
+      "data_type": "integer",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rh_maintenance"
+              },
+              "arg2": {
+                "item_id": "oh_maintenance"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "th_houseperson",
+      "name": "Houseperson",
+      "parent_id": "total_hours",
+      "data_type": "integer",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rh_houseperson"
+              },
+              "arg2": {
+                "item_id": "oh_houseperson"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "th_breakfast_dining",
+      "name": "Breakfast Dining",
+      "parent_id": "total_hours",
+      "data_type": "integer",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rh_breakfast_dining"
+              },
+              "arg2": {
+                "item_id": "oh_breakfast_dining"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "th_house_laundry",
+      "name": "House Laundry",
+      "parent_id": "total_hours",
+      "data_type": "integer",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rh_house_laundry"
+              },
+              "arg2": {
+                "item_id": "oh_house_laundry"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "th_housekeeping",
+      "name": "Housekeeping",
+      "parent_id": "total_hours",
+      "data_type": "integer",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "rh_housekeeping"
+              },
+              "arg2": {
+                "item_id": "oh_housekeeping"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "th_total_hours",
+      "name": "Total Hours",
+      "parent_id": "total_hours",
+      "data_type": "integer",
+      "totals": true
+    },
+    {
+      "id": "regular_hours",
+      "name": "Regular Hours"
+    },
+    {
+      "id": "rh_front_desk",
+      "name": "Front Desk",
+      "parent_id": "regular_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "front_desk_regular_hours"
+        }
+      }
+    },
+    {
+      "id": "rh_maintenance",
+      "name": "Maintenance",
+      "parent_id": "regular_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "maintenance_regular_hours"
+        }
+      }
+    },
+    {
+      "id": "rh_houseperson",
+      "name": "Houseperson",
+      "parent_id": "regular_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "houseperson_regular_hours"
+        }
+      }
+    },
+    {
+      "id": "rh_breakfast_dining",
+      "name": "Breakfast Dining",
+      "parent_id": "regular_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "breakfast_dining_regular_hours"
+        }
+      }
+    },
+    {
+      "id": "rh_house_laundry",
+      "name": "House Laundry",
+      "parent_id": "regular_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "house_laundry_regular_hours"
+        }
+      }
+    },
+    {
+      "id": "rh_housekeeping",
+      "name": "Housekeeping",
+      "parent_id": "regular_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "housekeeping_regular_hours"
+        }
+      }
+    },
+    {
+      "id": "total_regular",
+      "name": "Total Regular",
+      "parent_id": "regular_hours",
+      "data_type": "integer",
+      "totals": true
+    },
+    {
+      "id": "overtime_hours",
+      "name": "Overtime Hours"
+    },
+    {
+      "id": "oh_front_desk",
+      "name": "Front Desk",
+      "parent_id": "overtime_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "front_desk_ot_hours"
+        }
+      }
+    },
+    {
+      "id": "oh_maintenance",
+      "name": "Maintenance",
+      "parent_id": "overtime_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "maintenance_ot_hours"
+        }
+      }
+    },
+    {
+      "id": "oh_houseperson",
+      "name": "Houseperson",
+      "parent_id": "overtime_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "houseperson_ot_hours"
+        }
+      }
+    },
+    {
+      "id": "oh_breakfast_dining",
+      "name": "Breakfast Dining",
+      "parent_id": "overtime_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "breakfast_dining_ot_hours"
+        }
+      }
+    },
+    {
+      "id": "oh_house_laundry",
+      "name": "House Laundry",
+      "parent_id": "overtime_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "house_laundry_ot_hours"
+        }
+      }
+    },
+    {
+      "id": "oh_housekeeping",
+      "name": "Housekeeping",
+      "parent_id": "overtime_hours",
+      "per_metric_calculation_enabled": true,
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "housekeeping_ot_hours"
+        }
+      }
+    },
+    {
+      "id": "oh_total_overtime",
+      "name": "Total Overtime",
+      "parent_id": "overtime_hours",
+      "data_type": "integer",
+      "totals": true
+    },
+    {
+      "id": "average_wage_per_hour",
+      "name": "Average Wage per hour"
+    },
+    {
+      "id": "estimated_hourly_regular_wage",
+      "name": "Estimated hourly regular wage",
+      "parent_id": "average_wage_per_hour",
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "estimated_hourly_regular_wage"
+        }
+      }
+    },
+    {
+      "id": "estimated_hourly_ot_wage",
+      "name": "Estimated Hourly Overtime Wage",
+      "parent_id": "average_wage_per_hour",
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "estimated_hourly_ot_wage"
+        }
+      }
+    }
+  ]
+}

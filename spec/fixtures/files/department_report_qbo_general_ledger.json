@@ -1,0 +1,3836 @@
+{
+  "_id": {
+    "$oid": "62b25bdf194a3a000191f996"
+  },
+  "end_date": "2021-07-31",
+  "expenses_qbo_general_ledger_item_values": [
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9a5"
+      },
+      "accounting_class_id": "5000000000000173574",
+      "amount": 0.0,
+      "chart_of_account_id": "179"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9a6"
+      },
+      "accounting_class_id": null,
+      "amount": 58.49,
+      "chart_of_account_id": "182"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9a7"
+      },
+      "accounting_class_id": null,
+      "amount": 7.4,
+      "chart_of_account_id": "188"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9a8"
+      },
+      "accounting_class_id": "5000000000000145595",
+      "amount": 1000.0,
+      "chart_of_account_id": "209"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9a9"
+      },
+      "accounting_class_id": null,
+      "amount": 15.12,
+      "chart_of_account_id": "226"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9aa"
+      },
+      "accounting_class_id": null,
+      "amount": 24.0,
+      "chart_of_account_id": "148"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9ab"
+      },
+      "accounting_class_id": null,
+      "amount": 91.94000000000003,
+      "chart_of_account_id": "132"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9ac"
+      },
+      "accounting_class_id": "5000000000000145595",
+      "amount": 14000.0,
+      "chart_of_account_id": "132"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9ad"
+      },
+      "accounting_class_id": "5000000000000145594",
+      "amount": 1.0,
+      "chart_of_account_id": "132"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9ae"
+      },
+      "accounting_class_id": null,
+      "amount": 1.97,
+      "chart_of_account_id": "237"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9af"
+      },
+      "accounting_class_id": null,
+      "amount": 4.2,
+      "chart_of_account_id": "143"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9b0"
+      },
+      "accounting_class_id": null,
+      "amount": 1.0,
+      "chart_of_account_id": "56"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9b1"
+      },
+      "accounting_class_id": null,
+      "amount": 15.25,
+      "chart_of_account_id": "315"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9b2"
+      },
+      "accounting_class_id": null,
+      "amount": 3.0,
+      "chart_of_account_id": "62"
+    }
+  ],
+  "expenses_raw_data": {
+    "Header": {
+      "Time": "2022-06-21T17:01:35-07:00",
+      "ReportName": "GeneralLedger",
+      "ReportBasis": "Accrual",
+      "StartPeriod": "2021-07-01",
+      "EndPeriod": "2021-07-31",
+      "Currency": "USD",
+      "Option": [
+        {
+          "Name": "NoReportData",
+          "Value": "false"
+        }
+      ]
+    },
+    "Columns": {
+      "Column": [
+        {
+          "ColTitle": "Class",
+          "ColType": "String",
+          "MetaData": [
+            {
+              "Name": "ColKey",
+              "Value": "klass_name"
+            }
+          ]
+        },
+        {
+          "ColTitle": "Account",
+          "ColType": "String",
+          "MetaData": [
+            {
+              "Name": "ColKey",
+              "Value": "account_name"
+            }
+          ]
+        },
+        {
+          "ColTitle": "Amount",
+          "ColType": "Money",
+          "MetaData": [
+            {
+              "Name": "ColKey",
+              "Value": "subt_nat_amount"
+            }
+          ]
+        }
+      ]
+    },
+    "Rows": {
+      "Row": [
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "5010 Mailbox Service Cost",
+                "id": "179"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "Testing",
+                    "id": "5000000000000173574"
+                  },
+                  {
+                    "value": "5010 Mailbox Service Cost",
+                    "id": "179"
+                  },
+                  {
+                    "value": ".00"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 5010 Mailbox Service Cost"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ".00"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "5030 Color Copy Cost",
+                "id": "182"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "5030 Color Copy Cost",
+                    "id": "182"
+                  },
+                  {
+                    "value": "58.49"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 5030 Color Copy Cost"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "58.49"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "5040 Laminating/Binding Cost"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "Header": {
+                  "ColData": [
+                    {
+                      "value": "456 BINDING!",
+                      "id": "311"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "Rows": {
+                  "Row": [
+                    {
+                      "ColData": [
+                        {
+                          "value": "Beginning Balance"
+                        },
+                        {
+                          "value": ""
+                        },
+                        {
+                          "value": ""
+                        }
+                      ],
+                      "type": "Data"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for 456 BINDING!"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "type": "Section"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 5040 Laminating/Binding Cost"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "5080 Shipping Charges (UPS) Cost",
+                "id": "188"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "5080 Shipping Charges (UPS) Cost",
+                    "id": "188"
+                  },
+                  {
+                    "value": "1.20"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "5080 Shipping Charges (UPS) Cost",
+                    "id": "188"
+                  },
+                  {
+                    "value": "1.20"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "5080 Shipping Charges (UPS) Cost",
+                    "id": "188"
+                  },
+                  {
+                    "value": "2.00"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "5080 Shipping Charges (UPS) Cost",
+                    "id": "188"
+                  },
+                  {
+                    "value": "3.00"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 5080 Shipping Charges (UPS) Cost"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "7.40"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "5130 Office Supplies Cost",
+                "id": "206"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 5130 Office Supplies Cost"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "5150 Greeting Cards Cost",
+                "id": "208"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 5150 Greeting Cards Cost"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "5160 Printing Cost",
+                "id": "209"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Another class",
+                    "id": "5000000000000145595"
+                  },
+                  {
+                    "value": "5160 Printing Cost",
+                    "id": "209"
+                  },
+                  {
+                    "value": "1000.00"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 5160 Printing Cost"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "1000.00"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "5180 Computer Timeshare Cost",
+                "id": "211"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 5180 Computer Timeshare Cost"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "5240 Passport Photo Cost",
+                "id": "217"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 5240 Passport Photo Cost"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "5500 Cost of Goods Sold-Inventory",
+                "id": "226"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "5500 Cost of Goods Sold-Inventory",
+                    "id": "226"
+                  },
+                  {
+                    "value": "15.12"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 5500 Cost of Goods Sold-Inventory"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "15.12"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "570 Food Supplies",
+                "id": "148"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "570 Food Supplies",
+                    "id": "148"
+                  },
+                  {
+                    "value": "12.00"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "570 Food Supplies",
+                    "id": "148"
+                  },
+                  {
+                    "value": "12.00"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 570 Food Supplies"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "24.00"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "6210 Automobile Exp",
+                "id": "232"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 6210 Automobile Exp"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "660 Administrative Expenses"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "Header": {
+                  "ColData": [
+                    {
+                      "value": "665 Professional Fees",
+                      "id": "127"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "Rows": {
+                  "Row": [
+                    {
+                      "ColData": [
+                        {
+                          "value": "Beginning Balance"
+                        },
+                        {
+                          "value": ""
+                        },
+                        {
+                          "value": ""
+                        }
+                      ],
+                      "type": "Data"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for 665 Professional Fees"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "type": "Section"
+              },
+              {
+                "Header": {
+                  "ColData": [
+                    {
+                      "value": "668 Office Supplies",
+                      "id": "130"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "Rows": {
+                  "Row": [
+                    {
+                      "ColData": [
+                        {
+                          "value": "Beginning Balance"
+                        },
+                        {
+                          "value": ""
+                        },
+                        {
+                          "value": ""
+                        }
+                      ],
+                      "type": "Data"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for 668 Office Supplies"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "type": "Section"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 660 Administrative Expenses"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "670 Marketing Expenses",
+                "id": "132"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "1.00"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "-4.22"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "-4.22"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "-4.22"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "-4.22"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "-4.22"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "-4.22"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "-4.22"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "-2.22"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "-4.22"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "Another class",
+                    "id": "5000000000000145595"
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "14000.00"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "122.00"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "1.20"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "My test class",
+                    "id": "5000000000000145594"
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "1.00"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "1.20"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": "1.00"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": ".50"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": ".51"
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "670 Marketing Expenses",
+                    "id": "132"
+                  },
+                  {
+                    "value": ".51"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 670 Marketing Expenses"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "14092.94"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "680 Property Operation Expenses",
+                "id": "135"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 680 Property Operation Expenses"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "6800 Freight",
+                "id": "237"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "6800 Freight",
+                    "id": "237"
+                  },
+                  {
+                    "value": "1.97"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 6800 Freight"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "1.97"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "690 Utility Costs"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "Header": {
+                  "ColData": [
+                    {
+                      "value": "692 Fuel Cost",
+                      "id": "143"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "Rows": {
+                  "Row": [
+                    {
+                      "ColData": [
+                        {
+                          "value": "Beginning Balance"
+                        },
+                        {
+                          "value": ""
+                        },
+                        {
+                          "value": ""
+                        }
+                      ],
+                      "type": "Data"
+                    },
+                    {
+                      "ColData": [
+                        {
+                          "value": "",
+                          "id": ""
+                        },
+                        {
+                          "value": "692 Utility Costs:Fuel Cost",
+                          "id": "143"
+                        },
+                        {
+                          "value": ".60"
+                        }
+                      ],
+                      "type": "Data"
+                    },
+                    {
+                      "ColData": [
+                        {
+                          "value": "",
+                          "id": ""
+                        },
+                        {
+                          "value": "692 Utility Costs:Fuel Cost",
+                          "id": "143"
+                        },
+                        {
+                          "value": "2.00"
+                        }
+                      ],
+                      "type": "Data"
+                    },
+                    {
+                      "ColData": [
+                        {
+                          "value": "",
+                          "id": ""
+                        },
+                        {
+                          "value": "692 Utility Costs:Fuel Cost",
+                          "id": "143"
+                        },
+                        {
+                          "value": ".60"
+                        }
+                      ],
+                      "type": "Data"
+                    },
+                    {
+                      "ColData": [
+                        {
+                          "value": "",
+                          "id": ""
+                        },
+                        {
+                          "value": "692 Utility Costs:Fuel Cost",
+                          "id": "143"
+                        },
+                        {
+                          "value": "1.00"
+                        }
+                      ],
+                      "type": "Data"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for 692 Fuel Cost"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": "4.20"
+                    }
+                  ]
+                },
+                "type": "Section"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 690 Utility Costs"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "4.20"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "7310 Outside Services-Legal",
+                "id": "256"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 7310 Outside Services-Legal"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "7900 Repairs u0026 Maintenance",
+                "id": "246"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 7900 Repairs u0026 Maintenance"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "Advertising/Promotional Expenses Too Long Test Category",
+                "id": "375"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for Advertising/Promotional Expenses Too Long Test Category"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "Automobile",
+                "id": "55"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "Rows": {
+                  "Row": [
+                    {
+                      "ColData": [
+                        {
+                          "value": "Beginning Balance"
+                        },
+                        {
+                          "value": ""
+                        },
+                        {
+                          "value": ""
+                        }
+                      ],
+                      "type": "Data"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for Automobile"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "type": "Section"
+              },
+              {
+                "Header": {
+                  "ColData": [
+                    {
+                      "value": "Fuel",
+                      "id": "56"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "Rows": {
+                  "Row": [
+                    {
+                      "Rows": {
+                        "Row": [
+                          {
+                            "ColData": [
+                              {
+                                "value": "Beginning Balance"
+                              },
+                              {
+                                "value": ""
+                              },
+                              {
+                                "value": ""
+                              }
+                            ],
+                            "type": "Data"
+                          },
+                          {
+                            "ColData": [
+                              {
+                                "value": "",
+                                "id": ""
+                              },
+                              {
+                                "value": "Automobile:Fuel",
+                                "id": "56"
+                              },
+                              {
+                                "value": "1.00"
+                              }
+                            ],
+                            "type": "Data"
+                          }
+                        ]
+                      },
+                      "Summary": {
+                        "ColData": [
+                          {
+                            "value": "Total for Fuel"
+                          },
+                          {
+                            "value": ""
+                          },
+                          {
+                            "value": "1.00"
+                          }
+                        ]
+                      },
+                      "type": "Section"
+                    },
+                    {
+                      "Header": {
+                        "ColData": [
+                          {
+                            "value": "New Account Name",
+                            "id": "315"
+                          },
+                          {
+                            "value": ""
+                          },
+                          {
+                            "value": ""
+                          }
+                        ]
+                      },
+                      "Rows": {
+                        "Row": [
+                          {
+                            "ColData": [
+                              {
+                                "value": "Beginning Balance"
+                              },
+                              {
+                                "value": ""
+                              },
+                              {
+                                "value": ""
+                              }
+                            ],
+                            "type": "Data"
+                          },
+                          {
+                            "ColData": [
+                              {
+                                "value": "",
+                                "id": ""
+                              },
+                              {
+                                "value": "Automobile:Fuel:New Account Name",
+                                "id": "315"
+                              },
+                              {
+                                "value": "15.25"
+                              }
+                            ],
+                            "type": "Data"
+                          }
+                        ]
+                      },
+                      "Summary": {
+                        "ColData": [
+                          {
+                            "value": "Total for New Account Name"
+                          },
+                          {
+                            "value": ""
+                          },
+                          {
+                            "value": "15.25"
+                          }
+                        ]
+                      },
+                      "type": "Section"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for Fuel with subs"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": "16.25"
+                    }
+                  ]
+                },
+                "type": "Section"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for Automobile with subs"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "16.25"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "Insurance"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "Header": {
+                  "ColData": [
+                    {
+                      "value": "Workers Compensation",
+                      "id": "57"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "Rows": {
+                  "Row": [
+                    {
+                      "ColData": [
+                        {
+                          "value": "Beginning Balance"
+                        },
+                        {
+                          "value": ""
+                        },
+                        {
+                          "value": ""
+                        }
+                      ],
+                      "type": "Data"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for Workers Compensation"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "type": "Section"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for Insurance"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "Job Expenses"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "Header": {
+                  "ColData": [
+                    {
+                      "value": "Equipment Rental",
+                      "id": "62"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "Rows": {
+                  "Row": [
+                    {
+                      "ColData": [
+                        {
+                          "value": "",
+                          "id": ""
+                        },
+                        {
+                          "value": "Job Expenses:Equipment Rental",
+                          "id": "62"
+                        },
+                        {
+                          "value": "3.00"
+                        }
+                      ],
+                      "type": "Data"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for Equipment Rental"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": "3.00"
+                    }
+                  ]
+                },
+                "type": "Section"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for Job Expenses"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "3.00"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "Legal u0026 Professional Fees"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "Header": {
+                  "ColData": [
+                    {
+                      "value": "Accounting",
+                      "id": "69"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "Rows": {
+                  "Row": [
+                    {
+                      "ColData": [
+                        {
+                          "value": "Beginning Balance"
+                        },
+                        {
+                          "value": ""
+                        },
+                        {
+                          "value": ""
+                        }
+                      ],
+                      "type": "Data"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for Accounting"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "type": "Section"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for Legal u0026 Professional Fees"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "Maintenance and Repair"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "Header": {
+                  "ColData": [
+                    {
+                      "value": "Building Repairs (deleted)",
+                      "id": "73"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "Rows": {
+                  "Row": [
+                    {
+                      "ColData": [
+                        {
+                          "value": "Beginning Balance"
+                        },
+                        {
+                          "value": ""
+                        },
+                        {
+                          "value": ""
+                        }
+                      ],
+                      "type": "Data"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for Building Repairs (deleted)"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "type": "Section"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for Maintenance and Repair"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "Test Sub Type"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "Header": {
+                  "ColData": [
+                    {
+                      "value": "SubSub",
+                      "id": "371"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "Rows": {
+                  "Row": [
+                    {
+                      "ColData": [
+                        {
+                          "value": "Beginning Balance"
+                        },
+                        {
+                          "value": ""
+                        },
+                        {
+                          "value": ""
+                        }
+                      ],
+                      "type": "Data"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for SubSub"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "type": "Section"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for Test Sub Type"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "8000 Taxes-Income",
+                "id": "266"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 8000 Taxes-Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        }
+      ]
+    }
+  },
+  "report_data_id": {
+    "$oid": "6246c68485cf0000018893d3"
+  },
+  "report_service_id": 846,
+  "revenue_qbo_general_ledger_item_values": [
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f997"
+      },
+      "accounting_class_id": "5000000000000145595",
+      "amount": -192.96,
+      "chart_of_account_id": "310"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f998"
+      },
+      "accounting_class_id": null,
+      "amount": 3690.0,
+      "chart_of_account_id": "272"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f999"
+      },
+      "accounting_class_id": null,
+      "amount": 437.99,
+      "chart_of_account_id": "273"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f99a"
+      },
+      "accounting_class_id": null,
+      "amount": 524.23,
+      "chart_of_account_id": "274"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f99b"
+      },
+      "accounting_class_id": null,
+      "amount": 486.08,
+      "chart_of_account_id": "275"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f99c"
+      },
+      "accounting_class_id": null,
+      "amount": 298.7,
+      "chart_of_account_id": "276"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f99d"
+      },
+      "accounting_class_id": null,
+      "amount": 634.5,
+      "chart_of_account_id": "277"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f99e"
+      },
+      "accounting_class_id": null,
+      "amount": 2352.81,
+      "chart_of_account_id": "278"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f99f"
+      },
+      "accounting_class_id": null,
+      "amount": 22260.59,
+      "chart_of_account_id": "279"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9a0"
+      },
+      "accounting_class_id": null,
+      "amount": 0.0,
+      "chart_of_account_id": "280"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9a1"
+      },
+      "accounting_class_id": null,
+      "amount": 2360.65,
+      "chart_of_account_id": "281"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9a2"
+      },
+      "accounting_class_id": null,
+      "amount": 1053.08,
+      "chart_of_account_id": "282"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9a3"
+      },
+      "accounting_class_id": null,
+      "amount": 1099.3,
+      "chart_of_account_id": "283"
+    },
+    {
+      "_id": {
+        "$oid": "62b25bdf194a3a000191f9a4"
+      },
+      "accounting_class_id": null,
+      "amount": 0.0,
+      "chart_of_account_id": "285"
+    }
+  ],
+  "revenue_raw_data": {
+    "Header": {
+      "Time": "2022-06-21T17:01:34-07:00",
+      "ReportName": "GeneralLedger",
+      "ReportBasis": "Accrual",
+      "StartPeriod": "2021-07-01",
+      "EndPeriod": "2021-07-31",
+      "Currency": "USD",
+      "Option": [
+        {
+          "Name": "NoReportData",
+          "Value": "false"
+        }
+      ]
+    },
+    "Columns": {
+      "Column": [
+        {
+          "ColTitle": "Class",
+          "ColType": "String",
+          "MetaData": [
+            {
+              "Name": "ColKey",
+              "Value": "klass_name"
+            }
+          ]
+        },
+        {
+          "ColTitle": "Account",
+          "ColType": "String",
+          "MetaData": [
+            {
+              "Name": "ColKey",
+              "Value": "account_name"
+            }
+          ]
+        },
+        {
+          "ColTitle": "Amount",
+          "ColType": "Money",
+          "MetaData": [
+            {
+              "Name": "ColKey",
+              "Value": "subt_nat_amount"
+            }
+          ]
+        }
+      ]
+    },
+    "Rows": {
+      "Row": [
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "12345 New Income Category",
+                "id": "310"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Another class",
+                    "id": "5000000000000145595"
+                  },
+                  {
+                    "value": "12345 New Income Category",
+                    "id": "310"
+                  },
+                  {
+                    "value": "-192.96"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 12345 New Income Category"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "-192.96"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4010 Mailbox Service Income",
+                "id": "272"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4010 Mailbox Service Income",
+                    "id": "272"
+                  },
+                  {
+                    "value": "3690.00"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4010 Mailbox Service Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "3690.00"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4020 Copies Income",
+                "id": "273"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4020 Copies Income",
+                    "id": "273"
+                  },
+                  {
+                    "value": "437.99"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4020 Copies Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "437.99"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4030 Color Copies Income",
+                "id": "274"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4030 Color Copies Income",
+                    "id": "274"
+                  },
+                  {
+                    "value": "524.23"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4030 Color Copies Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "524.23"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4040 Laminating/Binding Income",
+                "id": "275"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4040 Laminating/Binding Income",
+                    "id": "275"
+                  },
+                  {
+                    "value": "486.08"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4040 Laminating/Binding Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "486.08"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4050 Facsimilie Income",
+                "id": "276"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4050 Facsimilie Income",
+                    "id": "276"
+                  },
+                  {
+                    "value": "298.70"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4050 Facsimilie Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "298.70"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4060 Stamp Sales Income",
+                "id": "277"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4060 Stamp Sales Income",
+                    "id": "277"
+                  },
+                  {
+                    "value": "634.50"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4060 Stamp Sales Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "634.50"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4070 Metered Mail Income",
+                "id": "278"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4070 Metered Mail Income",
+                    "id": "278"
+                  },
+                  {
+                    "value": "2352.81"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4070 Metered Mail Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "2352.81"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4080 Shipping Charges (UPS) Income",
+                "id": "279"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4080 Shipping Charges (UPS) Income",
+                    "id": "279"
+                  },
+                  {
+                    "value": "22260.59"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4080 Shipping Charges (UPS) Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "22260.59"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4090 Total Shipping Income",
+                "id": "280"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4090 Total Shipping Income",
+                    "id": "280"
+                  },
+                  {
+                    "value": ".00"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4090 Total Shipping Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ".00"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4100 Retail Shipping Supplies Income",
+                "id": "281"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4100 Retail Shipping Supplies Income",
+                    "id": "281"
+                  },
+                  {
+                    "value": "2360.65"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4100 Retail Shipping Supplies Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "2360.65"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4110 Packaging Materials Income",
+                "id": "282"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4110 Packaging Materials Income",
+                    "id": "282"
+                  },
+                  {
+                    "value": "1053.08"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4110 Packaging Materials Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "1053.08"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4120 Packaging Service Fee Income",
+                "id": "283"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              },
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4120 Packaging Service Fee Income",
+                    "id": "283"
+                  },
+                  {
+                    "value": "1099.30"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4120 Packaging Service Fee Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": "1099.30"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "4140 Rubber Stamps Income",
+                "id": "285"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "",
+                    "id": ""
+                  },
+                  {
+                    "value": "4140 Rubber Stamps Income",
+                    "id": "285"
+                  },
+                  {
+                    "value": ".00"
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 4140 Rubber Stamps Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ".00"
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "Billable Expense Income",
+                "id": "85"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for Billable Expense Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "Design income",
+                "id": "82"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for Design income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "Landscaping Services",
+                "id": "45"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "Rows": {
+                  "Row": [
+                    {
+                      "ColData": [
+                        {
+                          "value": "Beginning Balance"
+                        },
+                        {
+                          "value": ""
+                        },
+                        {
+                          "value": ""
+                        }
+                      ],
+                      "type": "Data"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for Landscaping Services"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "type": "Section"
+              },
+              {
+                "Header": {
+                  "ColData": [
+                    {
+                      "value": "Job Materials"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "Rows": {
+                  "Row": [
+                    {
+                      "Header": {
+                        "ColData": [
+                          {
+                            "value": "Decks and Patios",
+                            "id": "47"
+                          },
+                          {
+                            "value": ""
+                          },
+                          {
+                            "value": ""
+                          }
+                        ]
+                      },
+                      "Rows": {
+                        "Row": [
+                          {
+                            "ColData": [
+                              {
+                                "value": "Beginning Balance"
+                              },
+                              {
+                                "value": ""
+                              },
+                              {
+                                "value": ""
+                              }
+                            ],
+                            "type": "Data"
+                          }
+                        ]
+                      },
+                      "Summary": {
+                        "ColData": [
+                          {
+                            "value": "Total for Decks and Patios"
+                          },
+                          {
+                            "value": ""
+                          },
+                          {
+                            "value": ""
+                          }
+                        ]
+                      },
+                      "type": "Section"
+                    }
+                  ]
+                },
+                "Summary": {
+                  "ColData": [
+                    {
+                      "value": "Total for Job Materials"
+                    },
+                    {
+                      "value": ""
+                    },
+                    {
+                      "value": ""
+                    }
+                  ]
+                },
+                "type": "Section"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for Landscaping Services with subs"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "Other Income",
+                "id": "83"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for Other Income"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        },
+        {
+          "Header": {
+            "ColData": [
+              {
+                "value": "430 Miscellaneous Revenue",
+                "id": "99"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "Rows": {
+            "Row": [
+              {
+                "ColData": [
+                  {
+                    "value": "Beginning Balance"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ],
+                "type": "Data"
+              }
+            ]
+          },
+          "Summary": {
+            "ColData": [
+              {
+                "value": "Total for 430 Miscellaneous Revenue"
+              },
+              {
+                "value": ""
+              },
+              {
+                "value": ""
+              }
+            ]
+          },
+          "type": "Section"
+        }
+      ]
+    }
+  },
+  "start_date": "2021-07-01"
+}

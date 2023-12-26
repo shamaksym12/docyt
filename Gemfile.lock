@@ -1,0 +1,577 @@
+GIT
+  remote: git@bitbucket.org:kmnss/billing-service-client.git
+  revision: 82355da615508b0eba486e4f3cbdb41c908cabd4
+  specs:
+    billing-service-client (1.0.0)
+      addressable (~> 2.3, >= 2.3.0)
+      json (~> 2.1, >= 2.1.0)
+      typhoeus (~> 1.0, >= 1.0.1)
+
+GIT
+  remote: git@bitbucket.org:kmnss/docyt-server-client.git
+  revision: 9e2c1ce9f16a17dbb159b97c0febd38476babded
+  specs:
+    docyt-server-client (1.0.0)
+      addressable (~> 2.3, >= 2.3.0)
+      json (~> 2.1, >= 2.1.0)
+      typhoeus (~> 1.0, >= 1.0.1)
+
+GIT
+  remote: git@bitbucket.org:kmnss/docyt_lib.git
+  revision: 6f8c07c33d0d4876a7726f7926e2c1620fd3b8b1
+  submodules: true
+  specs:
+    docyt_lib (0.0.1)
+      attr_encrypted (~> 3.1.0)
+      aws-sdk-s3 (~> 1)
+      bunny (~> 2.14.2)
+      elastic-apm (~> 3.10.0)
+      json-schema (~> 2.8.1)
+      jwt (~> 1.5.6)
+      kubeclient (~> 4.5.0)
+      launchdarkly-server-sdk (~> 6.0.0)
+      prometheus-client (~> 0.9.0)
+      rack
+      rack-timeout
+      rake
+      redis (~> 4.1.2)
+      redlock (~> 1.3.2)
+      rollbar (~> 3.3.1)
+      stackprof (~> 0.2.22)
+
+GIT
+  remote: git@bitbucket.org:kmnss/metrics-service-client.git
+  revision: c83036bcfa393324a4d4561141b1329909fc6892
+  specs:
+    metrics-service-client (1.0.0)
+      addressable (~> 2.3, >= 2.3.0)
+      json (~> 2.1, >= 2.1.0)
+      typhoeus (~> 1.0, >= 1.0.1)
+
+GIT
+  remote: git@bitbucket.org:kmnss/storage-service-client.git
+  revision: b540596330d8d65a387e68c68c6a8d35f31ad02c
+  specs:
+    storage-service-client (1.0.0)
+      addressable (~> 2.3, >= 2.3.0)
+      json (~> 2.1, >= 2.1.0)
+      typhoeus (~> 1.0, >= 1.0.1)
+
+GIT
+  remote: https://github.com/andreychernih/kubeclient.git
+  revision: 3b130d8ccaf2509eb56e0a4295e78e31a2c80d3b
+  branch: patch-status
+  specs:
+    kubeclient (4.5.0)
+      http (>= 3.0, < 5.0)
+      recursive-open-struct (~> 1.0, >= 1.0.4)
+      rest-client (~> 2.0)
+
+GIT
+  remote: https://github.com/randym/axlsx.git
+  revision: c8ac844572b25fda358cc01d2104720c4c42f450
+  ref: c8ac844
+  specs:
+    axlsx (2.1.0.pre)
+      htmlentities (~> 4.3.4)
+      mimemagic (~> 0.3)
+      nokogiri (>= 1.6.6)
+      rubyzip (>= 1.2.1)
+
+GIT
+  remote: https://github.com/stympy/faker.git
+  revision: 664cbafe9d15bddb97843dcbe107204e6e7291cb
+  specs:
+    faker (2.15.1)
+      i18n (>= 1.6, < 2)
+
+GEM
+  remote: https://rubygems.org/
+  specs:
+    actioncable (6.0.3.4)
+      actionpack (= 6.0.3.4)
+      nio4r (~> 2.0)
+      websocket-driver (>= 0.6.1)
+    actionmailbox (6.0.3.4)
+      actionpack (= 6.0.3.4)
+      activejob (= 6.0.3.4)
+      activerecord (= 6.0.3.4)
+      activestorage (= 6.0.3.4)
+      activesupport (= 6.0.3.4)
+      mail (>= 2.7.1)
+    actionmailer (6.0.3.4)
+      actionpack (= 6.0.3.4)
+      actionview (= 6.0.3.4)
+      activejob (= 6.0.3.4)
+      mail (~> 2.5, >= 2.5.4)
+      rails-dom-testing (~> 2.0)
+    actionpack (6.0.3.4)
+      actionview (= 6.0.3.4)
+      activesupport (= 6.0.3.4)
+      rack (~> 2.0, >= 2.0.8)
+      rack-test (>= 0.6.3)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.0, >= 1.2.0)
+    actiontext (6.0.3.4)
+      actionpack (= 6.0.3.4)
+      activerecord (= 6.0.3.4)
+      activestorage (= 6.0.3.4)
+      activesupport (= 6.0.3.4)
+      nokogiri (>= 1.8.5)
+    actionview (6.0.3.4)
+      activesupport (= 6.0.3.4)
+      builder (~> 3.1)
+      erubi (~> 1.4)
+      rails-dom-testing (~> 2.0)
+      rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_model-shaz (0.0.1)
+    active_model_serializers (0.9.3)
+      activemodel (>= 3.2)
+    activejob (6.0.3.4)
+      activesupport (= 6.0.3.4)
+      globalid (>= 0.3.6)
+    activemodel (6.0.3.4)
+      activesupport (= 6.0.3.4)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
+    activerecord (6.0.3.4)
+      activemodel (= 6.0.3.4)
+      activesupport (= 6.0.3.4)
+    activestorage (6.0.3.4)
+      actionpack (= 6.0.3.4)
+      activejob (= 6.0.3.4)
+      activerecord (= 6.0.3.4)
+      marcel (~> 0.3.1)
+    activesupport (6.0.3.4)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
+      minitest (~> 5.1)
+      tzinfo (~> 1.1)
+      zeitwerk (~> 2.2, >= 2.2.2)
+    addressable (2.8.5)
+      public_suffix (>= 2.0.2, < 6.0)
+    amq-protocol (2.3.2)
+    ast (2.4.2)
+    attr_encrypted (3.1.0)
+      encryptor (~> 3.0.0)
+    aws-eventstream (1.2.0)
+    aws-partitions (1.801.0)
+    aws-sdk-core (3.180.3)
+      aws-eventstream (~> 1, >= 1.0.2)
+      aws-partitions (~> 1, >= 1.651.0)
+      aws-sigv4 (~> 1.5)
+      jmespath (~> 1, >= 1.6.1)
+    aws-sdk-kms (1.71.0)
+      aws-sdk-core (~> 3, >= 3.177.0)
+      aws-sigv4 (~> 1.1)
+    aws-sdk-s3 (1.132.1)
+      aws-sdk-core (~> 3, >= 3.179.0)
+      aws-sdk-kms (~> 1)
+      aws-sigv4 (~> 1.6)
+    aws-sigv4 (1.6.0)
+      aws-eventstream (~> 1, >= 1.0.2)
+    axlsx_rails (0.6.1)
+      actionpack (>= 3.1)
+      caxlsx (>= 3.0)
+    bootsnap (1.7.0)
+      msgpack (~> 1.0)
+    bson (4.15.0)
+    builder (3.2.4)
+    bunny (2.14.4)
+      amq-protocol (~> 2.3, >= 2.3.0)
+    bunny-mock (1.7.0)
+      bunny (>= 1.7)
+    byebug (11.1.3)
+    caxlsx (3.0.4)
+      htmlentities (~> 4.3, >= 4.3.4)
+      mimemagic (~> 0.3)
+      nokogiri (~> 1.10, >= 1.10.4)
+      rubyzip (>= 1.3.0, < 3)
+    coderay (1.1.3)
+    concurrent-ruby (1.2.2)
+    crack (0.4.5)
+      rexml
+    crass (1.0.6)
+    database_cleaner-core (2.0.1)
+    database_cleaner-mongoid (2.0.1)
+      database_cleaner-core (~> 2.0.0)
+      mongoid
+    diff-lcs (1.4.4)
+    docile (1.3.5)
+    domain_name (0.5.20190701)
+      unf (>= 0.0.5, < 1.0.0)
+    draper (4.0.2)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
+      activemodel-serializers-xml (>= 1.0)
+      activesupport (>= 5.0)
+      request_store (>= 1.0)
+      ruby2_keywords
+    elastic-apm (3.10.1)
+      concurrent-ruby (~> 1.0)
+      http (>= 3.0)
+    encryptor (3.0.0)
+    erubi (1.10.0)
+    ethon (0.16.0)
+      ffi (>= 1.15.0)
+    factory_bot (6.1.0)
+      activesupport (>= 5.0.0)
+    factory_bot_rails (6.1.0)
+      factory_bot (~> 6.1.0)
+      railties (>= 5.0.0)
+    faraday (1.3.0)
+      faraday-net_http (~> 1.0)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords
+    faraday-net_http (1.0.1)
+    faraday_middleware (1.2.0)
+      faraday (~> 1.0)
+    ffi (1.15.5)
+    ffi-compiler (1.0.1)
+      ffi (>= 1.0.0)
+      rake
+    gli (2.21.0)
+    globalid (0.4.2)
+      activesupport (>= 4.2.0)
+    hashdiff (1.0.1)
+    hashie (5.0.0)
+    htmlentities (4.3.4)
+    http (4.4.1)
+      addressable (~> 2.3)
+      http-cookie (~> 1.0)
+      http-form_data (~> 2.2)
+      http-parser (~> 1.2.0)
+    http-accept (1.7.0)
+    http-cookie (1.0.5)
+      domain_name (~> 0.5)
+    http-form_data (2.3.0)
+    http-parser (1.2.3)
+      ffi-compiler (>= 1.0, < 2.0)
+    i18n (1.8.8)
+      concurrent-ruby (~> 1.0)
+    jbuilder (2.11.2)
+      activesupport (>= 5.0.0)
+    jmespath (1.6.2)
+    json (2.3.1)
+    json-schema (2.8.1)
+      addressable (>= 2.4)
+    jwt (1.5.6)
+    kaminari (1.2.1)
+      activesupport (>= 4.1.0)
+      kaminari-actionview (= 1.2.1)
+      kaminari-activerecord (= 1.2.1)
+      kaminari-core (= 1.2.1)
+    kaminari-actionview (1.2.1)
+      actionview
+      kaminari-core (= 1.2.1)
+    kaminari-activerecord (1.2.1)
+      activerecord
+      kaminari-core (= 1.2.1)
+    kaminari-core (1.2.1)
+    kaminari-mongoid (1.0.1)
+      kaminari-core (~> 1.0)
+      mongoid
+    launchdarkly-server-sdk (6.0.0)
+      concurrent-ruby (~> 1.1)
+      http (~> 4.4.1)
+      json (~> 2.3.1)
+      ld-eventsource (~> 2.0)
+      semantic (~> 1.6)
+    ld-eventsource (2.2.2)
+      concurrent-ruby (~> 1.0)
+      http (>= 4.4.1, < 6.0.0)
+    listen (3.4.1)
+      rb-fsevent (~> 0.10, >= 0.10.3)
+      rb-inotify (~> 0.9, >= 0.9.10)
+    loofah (2.9.0)
+      crass (~> 1.0.2)
+      nokogiri (>= 1.5.9)
+    mail (2.7.1)
+      mini_mime (>= 0.1.1)
+    marcel (0.3.3)
+      mimemagic (~> 0.3.2)
+    method_source (1.0.0)
+    mime-types (3.5.0)
+      mime-types-data (~> 3.2015)
+    mime-types-data (3.2023.0808)
+    mimemagic (0.3.9)
+      nokogiri (~> 1)
+      rake
+    mini_mime (1.0.2)
+    mini_portile2 (2.5.0)
+    minitest (5.14.3)
+    mongo (2.18.2)
+      bson (>= 4.14.1, < 5.0.0)
+    mongoid (7.5.2)
+      activemodel (>= 5.1, < 7.1, != 7.0.0)
+      mongo (>= 2.10.5, < 3.0.0)
+      ruby2_keywords (~> 0.0.5)
+    mongoid-compatibility (0.5.1)
+      activesupport
+      mongoid (>= 2.0)
+    mongoid-pagination (0.2.0)
+      activesupport
+      mongoid
+    mongoid-rspec (4.1.0)
+      activesupport (>= 3.0.0)
+      mongoid (>= 3.1)
+      mongoid-compatibility (>= 0.5.1)
+      rspec-core (~> 3.3)
+      rspec-expectations (~> 3.3)
+      rspec-mocks (~> 3.3)
+    mongoid-serializer (0.0.5)
+      active_model-shaz
+      mongoid (>= 3.0)
+    msgpack (1.4.2)
+    multi_json (1.15.0)
+    multi_xml (0.6.0)
+    multipart-post (2.1.1)
+    netrc (0.11.0)
+    nio4r (2.5.4)
+    nokogiri (1.11.1)
+      mini_portile2 (~> 2.5.0)
+      racc (~> 1.4)
+    nokogiri (1.11.1-x86_64-linux)
+      racc (~> 1.4)
+    oauth (0.4.7)
+    oauth-plugin (0.5.1)
+      multi_json
+      oauth (~> 0.4.4)
+      oauth2 (>= 0.5.0)
+      rack
+    oauth2 (1.4.7)
+      faraday (>= 0.8, < 2.0)
+      jwt (>= 1.0, < 3.0)
+      multi_json (~> 1.3)
+      multi_xml (~> 0.5)
+      rack (>= 1.2, < 3)
+    parallel (1.20.1)
+    parser (3.0.0.0)
+      ast (~> 2.4.1)
+    prometheus-client (0.9.0)
+      quantile (~> 0.2.1)
+    pry (0.13.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
+    pry-byebug (3.9.0)
+      byebug (~> 11.0)
+      pry (~> 0.13.0)
+    public_suffix (5.0.3)
+    puma (5.5.2)
+      nio4r (~> 2.0)
+    quantile (0.2.1)
+    racc (1.5.2)
+    rack (2.2.8)
+    rack-test (1.1.0)
+      rack (>= 1.0, < 3)
+    rack-timeout (0.6.3)
+    rails (6.0.3.4)
+      actioncable (= 6.0.3.4)
+      actionmailbox (= 6.0.3.4)
+      actionmailer (= 6.0.3.4)
+      actionpack (= 6.0.3.4)
+      actiontext (= 6.0.3.4)
+      actionview (= 6.0.3.4)
+      activejob (= 6.0.3.4)
+      activemodel (= 6.0.3.4)
+      activerecord (= 6.0.3.4)
+      activestorage (= 6.0.3.4)
+      activesupport (= 6.0.3.4)
+      bundler (>= 1.3.0)
+      railties (= 6.0.3.4)
+      sprockets-rails (>= 2.0.0)
+    rails-dom-testing (2.0.3)
+      activesupport (>= 4.2.0)
+      nokogiri (>= 1.6)
+    rails-html-sanitizer (1.3.0)
+      loofah (~> 2.3)
+    railties (6.0.3.4)
+      actionpack (= 6.0.3.4)
+      activesupport (= 6.0.3.4)
+      method_source
+      rake (>= 0.8.7)
+      thor (>= 0.20.3, < 2.0)
+    rainbow (3.0.0)
+    rake (13.0.6)
+    rb-fsevent (0.10.4)
+    rb-inotify (0.10.1)
+      ffi (~> 1.0)
+    recursive-open-struct (1.1.3)
+    redis (4.1.4)
+    redlock (1.3.2)
+      redis (>= 3.0.0, < 6.0)
+    regexp_parser (2.0.3)
+    request_store (1.5.1)
+      rack (>= 1.4)
+    rest-client (2.1.0)
+      http-accept (>= 1.7.0, < 2.0)
+      http-cookie (>= 1.0.2, < 2.0)
+      mime-types (>= 1.16, < 4.0)
+      netrc (~> 0.8)
+    rexml (3.2.4)
+    rollbar (3.3.3)
+    roo (2.8.3)
+      nokogiri (~> 1)
+      rubyzip (>= 1.3.0, < 3.0.0)
+    rspec-core (3.9.3)
+      rspec-support (~> 3.9.3)
+    rspec-expectations (3.9.4)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-mocks (3.9.1)
+      diff-lcs (>= 1.2.0, < 2.0)
+      rspec-support (~> 3.9.0)
+    rspec-rails (3.9.1)
+      actionpack (>= 3.0)
+      activesupport (>= 3.0)
+      railties (>= 3.0)
+      rspec-core (~> 3.9.0)
+      rspec-expectations (~> 3.9.0)
+      rspec-mocks (~> 3.9.0)
+      rspec-support (~> 3.9.0)
+    rspec-support (3.9.4)
+    rspec_junit_formatter (0.4.1)
+      rspec-core (>= 2, < 4, != 2.12.0)
+    rswag-api (2.4.0)
+      railties (>= 3.1, < 7.0)
+    rswag-specs (2.4.0)
+      activesupport (>= 3.1, < 7.0)
+      json-schema (~> 2.2)
+      railties (>= 3.1, < 7.0)
+    rswag-ui (2.4.0)
+      actionpack (>= 3.1, < 7.0)
+      railties (>= 3.1, < 7.0)
+    rubocop (0.93.1)
+      parallel (~> 1.10)
+      parser (>= 2.7.1.5)
+      rainbow (>= 2.2.2, < 4.0)
+      regexp_parser (>= 1.8)
+      rexml
+      rubocop-ast (>= 0.6.0)
+      ruby-progressbar (~> 1.7)
+      unicode-display_width (>= 1.4.0, < 2.0)
+    rubocop-ast (1.4.1)
+      parser (>= 2.7.1.5)
+    rubocop-rails (2.9.1)
+      activesupport (>= 4.2.0)
+      rack (>= 1.1)
+      rubocop (>= 0.90.0, < 2.0)
+    rubocop-rspec (1.44.1)
+      rubocop (~> 0.87)
+      rubocop-ast (>= 0.7.1)
+    ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.5)
+    rubyzip (2.3.0)
+    semantic (1.6.1)
+    shoulda-matchers (4.5.1)
+      activesupport (>= 4.2.0)
+    signet (0.15.0)
+      addressable (~> 2.3)
+      faraday (>= 0.17.3, < 2.0)
+      jwt (>= 1.5, < 3.0)
+      multi_json (~> 1.10)
+    simplecov (0.21.2)
+      docile (~> 1.1)
+      simplecov-html (~> 0.11)
+      simplecov_json_formatter (~> 0.1)
+    simplecov-cobertura (2.1.0)
+      rexml
+      simplecov (~> 0.19)
+    simplecov-html (0.12.3)
+    simplecov_json_formatter (0.1.2)
+    slack-notifier (2.4.0)
+    slack-ruby-client (1.0.0)
+      faraday (>= 1.0)
+      faraday_middleware
+      gli
+      hashie
+      websocket-driver
+    spring (2.1.1)
+    sprockets (4.0.2)
+      concurrent-ruby (~> 1.0)
+      rack (> 1, < 3)
+    sprockets-rails (3.2.2)
+      actionpack (>= 4.0)
+      activesupport (>= 4.0)
+      sprockets (>= 3.0.0)
+    stackprof (0.2.25)
+    thor (1.1.0)
+    thread_safe (0.3.6)
+    typhoeus (1.4.0)
+      ethon (>= 0.9.0)
+    tzinfo (1.2.9)
+      thread_safe (~> 0.1)
+    unf (0.1.4)
+      unf_ext
+    unf_ext (0.0.8.2)
+    unicode-display_width (1.7.0)
+    webmock (3.11.2)
+      addressable (>= 2.3.6)
+      crack (>= 0.3.2)
+      hashdiff (>= 0.4.0, < 2.0.0)
+    websocket-driver (0.7.3)
+      websocket-extensions (>= 0.1.0)
+    websocket-extensions (0.1.5)
+    zeitwerk (2.4.2)
+
+PLATFORMS
+  ruby
+  x86_64-linux
+
+DEPENDENCIES
+  active_model_serializers (= 0.9.3)
+  axlsx!
+  axlsx_rails
+  billing-service-client!
+  bootsnap (>= 1.4.4)
+  bunny-mock
+  byebug
+  database_cleaner-mongoid
+  docyt-server-client!
+  docyt_lib!
+  draper
+  factory_bot_rails
+  faker!
+  jbuilder (~> 2.7)
+  json-schema
+  kaminari
+  kaminari-mongoid
+  kubeclient!
+  listen (~> 3.3)
+  metrics-service-client!
+  mongoid (~> 7.5.2)
+  mongoid-pagination
+  mongoid-rspec
+  mongoid-serializer
+  oauth-plugin
+  oauth2
+  pry-byebug
+  puma (~> 5.5.0)
+  rails (~> 6.0)
+  roo (~> 2.8)
+  rspec-rails (~> 3.8)
+  rspec_junit_formatter
+  rswag-api
+  rswag-specs
+  rswag-ui
+  rubocop (~> 0.80)
+  rubocop-rails (~> 2.4)
+  rubocop-rspec (~> 1.38)
+  shoulda-matchers
+  signet
+  simplecov
+  simplecov-cobertura
+  slack-notifier
+  slack-ruby-client
+  spring
+  storage-service-client!
+  tzinfo-data
+  webmock
+
+RUBY VERSION
+   ruby 2.6.3p62
+
+BUNDLED WITH
+   2.4.8

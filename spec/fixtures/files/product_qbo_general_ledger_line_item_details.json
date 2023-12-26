@@ -1,0 +1,4671 @@
+[
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6b9"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 171.51,
+        "category": "Guaranteed No Show",
+        "chart_of_account_qbo_id": "241",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUARANTEED NO SHOW",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1895",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-18",
+        "transaction_number": "966",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6ba"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 5869.59,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1755",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-01",
+        "transaction_number": "911",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6bb"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1878.12,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1755",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-01",
+        "transaction_number": "911",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6bc"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1755",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-01",
+        "transaction_number": "911",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6bd"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2653.43,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1720",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-02",
+        "transaction_number": "897",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6be"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 5026.04,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1720",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-02",
+        "transaction_number": "897",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6bf"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1720",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-02",
+        "transaction_number": "897",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6c0"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2726.24,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1721",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-03",
+        "transaction_number": "898",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6c1"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2632.48,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1721",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-03",
+        "transaction_number": "898",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6c2"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1721",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-03",
+        "transaction_number": "898",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6c3"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 4182.54,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1719",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-04",
+        "transaction_number": "896",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6c4"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 4646.34,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1719",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-04",
+        "transaction_number": "896",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6c5"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1719",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-04",
+        "transaction_number": "896",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6c6"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1881.2,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1743",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-05",
+        "transaction_number": "908",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6c7"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2163.37,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1743",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-05",
+        "transaction_number": "908",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6c8"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1743",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-05",
+        "transaction_number": "908",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6c9"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3610.13,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1793",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-06",
+        "transaction_number": "920",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6ca"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1265.67,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1793",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-06",
+        "transaction_number": "920",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6cb"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1793",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-06",
+        "transaction_number": "920",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6cc"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3674.41,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1806",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-07",
+        "transaction_number": "924",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6cd"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1235.67,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1806",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-07",
+        "transaction_number": "924",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6ce"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1806",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-07",
+        "transaction_number": "924",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6cf"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3936.47,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1815",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-08",
+        "transaction_number": "927",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6d0"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1270.24,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1815",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-08",
+        "transaction_number": "927",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6d1"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1815",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-08",
+        "transaction_number": "927",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6d2"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 4050.27,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1835",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-09",
+        "transaction_number": "937",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6d3"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1750.73,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1835",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-09",
+        "transaction_number": "937",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6d4"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1835",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-09",
+        "transaction_number": "937",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6d5"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 5274.38,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1836",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-10",
+        "transaction_number": "938",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6d6"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 4205.77,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1836",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-10",
+        "transaction_number": "938",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6d7"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1836",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-10",
+        "transaction_number": "938",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6d8"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3339.91,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1834",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-11",
+        "transaction_number": "936",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6d9"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1834",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-11",
+        "transaction_number": "936",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6da"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 5813.48,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1834",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-11",
+        "transaction_number": "936",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6db"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2208.96,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1843",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-12",
+        "transaction_number": "939",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6dc"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2448.65,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1843",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-12",
+        "transaction_number": "939",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6dd"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1843",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-12",
+        "transaction_number": "939",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6de"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 5089.93,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1857",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-13",
+        "transaction_number": "948",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6df"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2899.82,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1857",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-13",
+        "transaction_number": "948",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6e0"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1857",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-13",
+        "transaction_number": "948",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6e1"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3258.16,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1872",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-14",
+        "transaction_number": "951",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6e2"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2260.09,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1872",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-14",
+        "transaction_number": "951",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6e3"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 4258.37,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1884",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-15",
+        "transaction_number": "960",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6e4"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1325.91,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1884",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-15",
+        "transaction_number": "960",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6e5"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 4130.41,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1898",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-16",
+        "transaction_number": "968",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6e6"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1256.21,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1898",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-16",
+        "transaction_number": "968",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6e7"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 96.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1898",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-16",
+        "transaction_number": "968",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6e8"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 5615.93,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1900",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-17",
+        "transaction_number": "970",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6e9"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3028.21,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1900",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-17",
+        "transaction_number": "970",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6ea"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2003.09,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1895",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-18",
+        "transaction_number": "966",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6eb"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2961.39,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1895",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-18",
+        "transaction_number": "966",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6ec"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2702.94,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1901",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-19",
+        "transaction_number": "971",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6ed"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1305.6,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1901",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-19",
+        "transaction_number": "971",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6ee"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 4840.43,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1924",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-20",
+        "transaction_number": "979",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6ef"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 770.57,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1924",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-20",
+        "transaction_number": "979",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6f0"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 5131.33,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1967",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-21",
+        "transaction_number": "992",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6f1"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 335.1,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1967",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-21",
+        "transaction_number": "992",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6f2"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 791.05,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1967",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-21",
+        "transaction_number": "992",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6f3"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 5216.87,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1997",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-22",
+        "transaction_number": "1003",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6f4"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 591.79,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1997",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-22",
+        "transaction_number": "1003",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6f5"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 239.1,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1997",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-22",
+        "transaction_number": "1003",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6f6"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 5277.74,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2015",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-23",
+        "transaction_number": "1013",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6f7"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1735.4,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2015",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-23",
+        "transaction_number": "1013",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6f8"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1493.94,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2016",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-24",
+        "transaction_number": "1014",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6f9"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3624.74,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2016",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-24",
+        "transaction_number": "1014",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6fa"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 4195.6,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2016",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-24",
+        "transaction_number": "1014",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6fb"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 4393.04,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2017",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-25",
+        "transaction_number": "1015",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6fc"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3868.48,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2017",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-25",
+        "transaction_number": "1015",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6fd"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 538.99,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2017",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-25",
+        "transaction_number": "1015",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6fe"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3049.8,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2019",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-26",
+        "transaction_number": "1016",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f6ff"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1263.41,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2019",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-26",
+        "transaction_number": "1016",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f700"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 525.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2019",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-26",
+        "transaction_number": "1016",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f701"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 250.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2032",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-27",
+        "transaction_number": "1025",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f702"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1360.03,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2032",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-27",
+        "transaction_number": "1025",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f703"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1019.62,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2032",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-27",
+        "transaction_number": "1025",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f704"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 5066.06,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2032",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-27",
+        "transaction_number": "1025",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f705"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 181.93,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "DAY USE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2531",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-28",
+        "transaction_number": "1346",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f706"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 250.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2531",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-28",
+        "transaction_number": "1346",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f707"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3759.5,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2531",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-28",
+        "transaction_number": "1346",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f708"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 736.8,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2531",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-28",
+        "transaction_number": "1346",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f709"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3177.12,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2531",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-28",
+        "transaction_number": "1346",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f70a"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 4906.29,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2532",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-29",
+        "transaction_number": "1347",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f70b"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 598.91,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2532",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-29",
+        "transaction_number": "1347",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f70c"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1736.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2532",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-29",
+        "transaction_number": "1347",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f70d"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 254.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2532",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-29",
+        "transaction_number": "1347",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f70e"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 8866.2,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2813",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1471",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f70f"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 2021.64,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2813",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1471",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f710"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": -3679.13,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM SINGLE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2813",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1471",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f711"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 245.0,
+        "category": "Transient Room Revenue",
+        "chart_of_account_qbo_id": "282",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GUEST ROOM MULTI EXEMPT",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2813",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1471",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f712"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 474.1,
+        "category": "Accounting Charges",
+        "chart_of_account_qbo_id": "301",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "874",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "533",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f713"
+        },
+        "accounting_class": "Non-Operating Income \u0026 Expense",
+        "accounting_class_qbo_id": "2800000000001228211",
+        "amount": 2270.88,
+        "category": "Building Insurance",
+        "chart_of_account_qbo_id": "218",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "966",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "582",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f714"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 162.21,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1786",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-04",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f715"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 156.75,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2748",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-09",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f716"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 14.69,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2435",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Inter-Company Settlement Bank - Docyt",
+        "transaction_date": "2022-06-11",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f717"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 72.0,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1865",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-13",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f718"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 117.63,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "WALMART.COM AA",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2570",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-16",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f719"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 77.8,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "WALMART.COM AA",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1903",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-20",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f71a"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 141.34,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1976",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-22",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f71b"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 69.89,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1977",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-22",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f71c"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 41.24,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2244",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-23",
+        "transaction_number": "106288821",
+        "transaction_type": "Bill",
+        "vendor": "Royal Cup Coffee"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f71d"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1350.94,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "ACH Payment Sysco Corporatio Payment USBL006776849SB 210",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2004",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-24",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "Sysco"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f71e"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 64.88,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "WALMART.COM AA",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2012",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-24",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f71f"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 71.33,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "WALMART.COM AA",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2011",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-24",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f720"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 29.88,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2574",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-28",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f721"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 93.16,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "WALMART.COM AA",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2034",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-28",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f722"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 45.28,
+        "category": "Complimentary F \u0026 B",
+        "chart_of_account_qbo_id": "223",
+        "included_in_report": true,
+        "link": null,
+        "memo": "WM SUPERCENTER #963",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2728",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f723"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 56.01,
+        "category": "Complimentary Service \u0026 Gifts",
+        "chart_of_account_qbo_id": "224",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MARCOS PIZZA - 5240",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1808",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-08",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Marco's Pizza"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f724"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 58.4,
+        "category": "Complimentary Service \u0026 Gifts",
+        "chart_of_account_qbo_id": "224",
+        "included_in_report": true,
+        "link": null,
+        "memo": "Donuts for staff",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1800",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-08",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Donut Supreme"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f725"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 154.0,
+        "category": "Contract Labor",
+        "chart_of_account_qbo_id": "225",
+        "included_in_report": true,
+        "link": null,
+        "memo": "Check",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2299",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-15",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "Alex Qasem"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f726"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 4331.2,
+        "category": "Credit Card Commissions",
+        "chart_of_account_qbo_id": "226",
+        "included_in_report": true,
+        "link": null,
+        "memo": "ACH Payment MERCHANT SERVICE MERCH FEE 8013308088 420000",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1699",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-02",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "BankCard USA Merchant Services"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f727"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 0.09,
+        "category": "Credit Card Commissions",
+        "chart_of_account_qbo_id": "226",
+        "included_in_report": true,
+        "link": null,
+        "memo": "ACH Payment MERCHANT SERVICE MERCH FEE 8039686871 420000",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1698",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-02",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "BankCard USA Merchant Services"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f728"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 25.47,
+        "category": "Credit Card Commissions",
+        "chart_of_account_qbo_id": "226",
+        "included_in_report": true,
+        "link": null,
+        "memo": "ACH Payment MERCHANT SERVICE MERCH FEE 8085300476 420000",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1697",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-02",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "BankCard USA Merchant Services"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f729"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 88.31,
+        "category": "Credit Card Commissions",
+        "chart_of_account_qbo_id": "226",
+        "included_in_report": true,
+        "link": null,
+        "memo": "ACH Payment DISCOVER NETWORK SETTLEMENT 601101350887350",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1705",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-03",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "Discover"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f72a"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 1347.39,
+        "category": "Credit Card Commissions",
+        "chart_of_account_qbo_id": "226",
+        "included_in_report": true,
+        "link": null,
+        "memo": "ACH Payment AMERICAN EXPRESS AXP DISCNT HAM-HOTEL 910000",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1771",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-06",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "American Express"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f72b"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 76.0,
+        "category": "Dues \u0026 Subscriptions",
+        "chart_of_account_qbo_id": "228",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1711",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-02",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Whistle Messaging, Inc."
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f72c"
+        },
+        "accounting_class": "Utilities",
+        "accounting_class_qbo_id": "2800000000001228216",
+        "amount": 3283.81,
+        "category": "Electricity",
+        "chart_of_account_qbo_id": "229",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2846",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "10008714",
+        "transaction_type": "Bill",
+        "vendor": "City of Weatherford"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f72d"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": 352.54,
+        "category": "Elevators",
+        "chart_of_account_qbo_id": "322",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "981",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "591",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f72e"
+        },
+        "accounting_class": "Sales \u0026 Marketing",
+        "accounting_class_qbo_id": "2800000000001228215",
+        "amount": 20058.5,
+        "category": "Franchise Fee",
+        "chart_of_account_qbo_id": "235",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2863",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1490",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f72f"
+        },
+        "accounting_class": "Utilities",
+        "accounting_class_qbo_id": "2800000000001228216",
+        "amount": 2.98,
+        "category": "Gas \u0026 Oil",
+        "chart_of_account_qbo_id": "238",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2406",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-11",
+        "transaction_number": "1271",
+        "transaction_type": "Journal Entry",
+        "vendor": "Texas Gas Service"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f730"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": 390.0,
+        "category": "Grounds Maintenance \u0026 Landscaping",
+        "chart_of_account_qbo_id": "239",
+        "included_in_report": true,
+        "link": null,
+        "memo": "Check",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1939",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-10",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "Marquez Landscaping"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f731"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": -4.14,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1742",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-01",
+        "transaction_number": "907",
+        "transaction_type": "Journal Entry",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f732"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 194.74,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2861",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-06",
+        "transaction_number": "",
+        "transaction_type": "Bill",
+        "vendor": "Panchal Investments Inc."
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f733"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 194.74,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1783",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-06",
+        "transaction_number": "9203500649",
+        "transaction_type": "Bill",
+        "vendor": "HD Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f734"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 307.73,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2711",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-06",
+        "transaction_number": "14280210",
+        "transaction_type": "Bill",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f735"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1574.79,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2429",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-07",
+        "transaction_number": "14287277",
+        "transaction_type": "Bill",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f736"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 388.14,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2431",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-07",
+        "transaction_number": "14287980",
+        "transaction_type": "Bill",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f737"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1398.38,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2427",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-07",
+        "transaction_number": "14290426",
+        "transaction_type": "Bill",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f738"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 1068.89,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2566",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-07",
+        "transaction_number": "14287752",
+        "transaction_type": "Bill",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f739"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 451.65,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2433",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-07",
+        "transaction_number": "14289184",
+        "transaction_type": "Bill",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f73a"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 185.9,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1816",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-08",
+        "transaction_number": "14295446",
+        "transaction_type": "Bill",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f73b"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 35.7,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "AMZN Mktp US*8C0MO3A33",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1825",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-09",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Amazon"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f73c"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3000.0,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "Withdrawal",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1818",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-09",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "Room Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f73d"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 25.96,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "AMZN Mktp US*OS4DR6MJ3",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1826",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-09",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Amazon"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f73e"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 29.2,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "AMZN Mktp US*TZ6RO42Z3",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1839",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-11",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Amazon"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f73f"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": -18.47,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "WALMART.COM AA",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2569",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-13",
+        "transaction_number": "1367",
+        "transaction_type": "Journal Entry",
+        "vendor": "Walmart"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f740"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": -54.19,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1966",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-14",
+        "transaction_number": "991",
+        "transaction_type": "Journal Entry",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f741"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 62.15,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1878",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-15",
+        "transaction_number": "14336288",
+        "transaction_type": "Bill",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f742"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": -1068.89,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2571",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-16",
+        "transaction_number": "14347377",
+        "transaction_type": "Vendor Credit",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f743"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": -1159.76,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1905",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-16",
+        "transaction_number": "14347376",
+        "transaction_type": "Vendor Credit",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f744"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": -69.05,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1959",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-17",
+        "transaction_number": "990",
+        "transaction_type": "Journal Entry",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f745"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": -1.56,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2693",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-21",
+        "transaction_number": "1444",
+        "transaction_type": "Journal Entry",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f746"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": -6.12,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2708",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-22",
+        "transaction_number": "1445",
+        "transaction_type": "Journal Entry",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f747"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 3000.0,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "Withdrawal",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1978",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-22",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "Room Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f748"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 114.24,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2246",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-23",
+        "transaction_number": "14378776",
+        "transaction_type": "Bill",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f749"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 54.09,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "Amazon.com*DU9VM12I3",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2275",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-25",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Amazon"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f74a"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 35.71,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "AMZN Mktp US*SI8G82DQ3",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2026",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-27",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Amazon"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f74b"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": -2.62,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2723",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-28",
+        "transaction_number": "1446",
+        "transaction_type": "Journal Entry",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f74c"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": -11.89,
+        "category": "Guest Supplies",
+        "chart_of_account_qbo_id": "244",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2391",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-28",
+        "transaction_number": "1269",
+        "transaction_type": "Journal Entry",
+        "vendor": "Guest Supply"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f74d"
+        },
+        "accounting_class": "Information \u0026 Telecom Services",
+        "accounting_class_qbo_id": "2800000000001228207",
+        "amount": 21.31,
+        "category": "Information Operating Systems",
+        "chart_of_account_qbo_id": "247",
+        "included_in_report": true,
+        "link": null,
+        "memo": "GOOGLE *Google Storage",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1909",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-18",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Google"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f74e"
+        },
+        "accounting_class": "Information \u0026 Telecom Services",
+        "accounting_class_qbo_id": "2800000000001228207",
+        "amount": 2032.68,
+        "category": "Information Operating Systems",
+        "chart_of_account_qbo_id": "247",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2863",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1490",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f74f"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 628.79,
+        "category": "Insurance",
+        "chart_of_account_qbo_id": "248",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1586",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "852",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f750"
+        },
+        "accounting_class": "Depreciation, Tax \u0026 Amortization",
+        "accounting_class_qbo_id": "2800000000001228206",
+        "amount": 12250.0,
+        "category": "Interest Expense",
+        "chart_of_account_qbo_id": "330",
+        "included_in_report": true,
+        "link": null,
+        "memo": "ACH Payment SBA LOAN PAYMENT 0000 41036045144099 ACH TRA",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1968",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-14",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "Small Business Administration"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f751"
+        },
+        "accounting_class": "Utilities",
+        "accounting_class_qbo_id": "2800000000001228216",
+        "amount": 196.25,
+        "category": "Internet Expense",
+        "chart_of_account_qbo_id": "250",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1764",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-01",
+        "transaction_number": "US100317085",
+        "transaction_type": "Bill",
+        "vendor": "GuestTek"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f752"
+        },
+        "accounting_class": "Utilities",
+        "accounting_class_qbo_id": "2800000000001228216",
+        "amount": 1414.49,
+        "category": "Internet Expense",
+        "chart_of_account_qbo_id": "250",
+        "included_in_report": true,
+        "link": null,
+        "memo": "SPECTRUM",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1862",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-13",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Spectrum Business"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f753"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": 20.0,
+        "category": "Licenses \u0026 Permits",
+        "chart_of_account_qbo_id": "253",
+        "included_in_report": true,
+        "link": null,
+        "memo": "Check",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1941",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Prosperity Bank 0713",
+        "transaction_date": "2022-06-09",
+        "transaction_number": "",
+        "transaction_type": "Check",
+        "vendor": "Texas Department of Licensing and Regulation"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f754"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 8.22,
+        "category": "Licenses \u0026 Permits",
+        "chart_of_account_qbo_id": "253",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "706",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "432",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f755"
+        },
+        "accounting_class": "Sales \u0026 Marketing",
+        "accounting_class_qbo_id": "2800000000001228215",
+        "amount": -6513.69,
+        "category": "Loyalty Programs \u0026 Affiliation Fee",
+        "chart_of_account_qbo_id": "255",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2863",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1490",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f756"
+        },
+        "accounting_class": "Management",
+        "accounting_class_qbo_id": "2800000000001228208",
+        "amount": 12152.45,
+        "category": "Management Fees",
+        "chart_of_account_qbo_id": "257",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2776",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1452",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f757"
+        },
+        "accounting_class": "Depreciation, Tax \u0026 Amortization",
+        "accounting_class_qbo_id": "2800000000001228206",
+        "amount": 3535.0,
+        "category": "Mortgage Interest",
+        "chart_of_account_qbo_id": "262",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1753",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-01",
+        "transaction_number": "",
+        "transaction_type": "Bill",
+        "vendor": "Panchal Investments Inc."
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f758"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": -29.2,
+        "category": "Office Supplies",
+        "chart_of_account_qbo_id": "263",
+        "included_in_report": true,
+        "link": null,
+        "memo": "AMZN Mktp US",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2573",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-16",
+        "transaction_number": "1368",
+        "transaction_type": "Journal Entry",
+        "vendor": "Amazon"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f759"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 216.99,
+        "category": "Office Supplies",
+        "chart_of_account_qbo_id": "263",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2726",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-25",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Office Depot"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f75a"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": -33.93,
+        "category": "Operating Supplies",
+        "chart_of_account_qbo_id": "264",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2264",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-24",
+        "transaction_number": "",
+        "transaction_type": "Vendor Credit",
+        "vendor": "Panchal Investments Inc."
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f75b"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": -3.83,
+        "category": "Operating Supplies",
+        "chart_of_account_qbo_id": "264",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2265",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-25",
+        "transaction_number": "",
+        "transaction_type": "Vendor Credit",
+        "vendor": "Panchal Investments Inc."
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f75c"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 2457.3,
+        "category": "Payroll Taxes",
+        "chart_of_account_qbo_id": "269",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2680",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1443",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f75d"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 108.25,
+        "category": "Pest Control",
+        "chart_of_account_qbo_id": "270",
+        "included_in_report": true,
+        "link": null,
+        "memo": "PY *Wise Chem Safe Pest",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1908",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-18",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Wise Chem Pest Control"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f75e"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 8.5,
+        "category": "Printing \u0026 Stationary",
+        "chart_of_account_qbo_id": "325",
+        "included_in_report": true,
+        "link": null,
+        "memo": "DOCYT CHECK STATIONERY",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1838",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-11",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Docyt Inc"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f75f"
+        },
+        "accounting_class": "Non-Operating Income \u0026 Expense",
+        "accounting_class_qbo_id": "2800000000001228211",
+        "amount": 5840.98,
+        "category": "Property Taxes",
+        "chart_of_account_qbo_id": "272",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "920",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "544",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f760"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": 43.15,
+        "category": "Repairs",
+        "chart_of_account_qbo_id": "274",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1871",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-15",
+        "transaction_number": "",
+        "transaction_type": "Bill",
+        "vendor": "Panchal Investments Inc."
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f761"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": 97.35,
+        "category": "Repairs",
+        "chart_of_account_qbo_id": "274",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1982",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-22",
+        "transaction_number": "",
+        "transaction_type": "Bill",
+        "vendor": "Panchal Investments Inc."
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f762"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": 33.93,
+        "category": "Repairs",
+        "chart_of_account_qbo_id": "274",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1987",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-23",
+        "transaction_number": "",
+        "transaction_type": "Bill",
+        "vendor": "Panchal Investments Inc."
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f763"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": 5.12,
+        "category": "Repairs",
+        "chart_of_account_qbo_id": "274",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2291",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-24",
+        "transaction_number": "",
+        "transaction_type": "Bill",
+        "vendor": "Panchal Investments Inc."
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f764"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": 3.83,
+        "category": "Repairs",
+        "chart_of_account_qbo_id": "274",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2828",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-24",
+        "transaction_number": "",
+        "transaction_type": "Bill",
+        "vendor": "Panchal Investments Inc."
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f765"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": 384.29,
+        "category": "Repairs",
+        "chart_of_account_qbo_id": "274",
+        "included_in_report": true,
+        "link": null,
+        "memo": "Office HVAC repair",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2245",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-24",
+        "transaction_number": "27408",
+        "transaction_type": "Bill",
+        "vendor": "Stallons AC"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f766"
+        },
+        "accounting_class": "Administrative \u0026 General",
+        "accounting_class_qbo_id": "2800000000001228205",
+        "amount": 31391.21,
+        "category": "Salary and Wages",
+        "chart_of_account_qbo_id": "292",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2680",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1443",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f767"
+        },
+        "accounting_class": "Information \u0026 Telecom Services",
+        "accounting_class_qbo_id": "2800000000001228207",
+        "amount": 1225.0,
+        "category": "Sales \u0026 Marketing Operating Systems",
+        "chart_of_account_qbo_id": "277",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2863",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1490",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f768"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 391.51,
+        "category": "T/A Commissions",
+        "chart_of_account_qbo_id": "281",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1759",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-01",
+        "transaction_number": "",
+        "transaction_type": "Bill",
+        "vendor": "Onyx CenterSource"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f769"
+        },
+        "accounting_class": "Rooms",
+        "accounting_class_qbo_id": "2800000000001228213",
+        "amount": 4120.04,
+        "category": "T/A Commissions",
+        "chart_of_account_qbo_id": "281",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2863",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "1490",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f76a"
+        },
+        "accounting_class": "Property Operations \u0026 Maintenance",
+        "accounting_class_qbo_id": "2800000000001228212",
+        "amount": 378.2,
+        "category": "Waste Removal",
+        "chart_of_account_qbo_id": "284",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1710",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Capital One Visa -1343",
+        "transaction_date": "2022-06-03",
+        "transaction_number": "",
+        "transaction_type": "Expense",
+        "vendor": "Waste Connections of Texas LLC"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f76b"
+        },
+        "accounting_class": "Utilities",
+        "accounting_class_qbo_id": "2800000000001228216",
+        "amount": 361.82,
+        "category": "Water \u0026 Sewer",
+        "chart_of_account_qbo_id": "285",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2848",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "10008868",
+        "transaction_type": "Bill",
+        "vendor": "City of Weatherford"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f76c"
+        },
+        "accounting_class": "Utilities",
+        "accounting_class_qbo_id": "2800000000001228216",
+        "amount": 2414.97,
+        "category": "Water \u0026 Sewer",
+        "chart_of_account_qbo_id": "285",
+        "included_in_report": true,
+        "link": null,
+        "memo": "",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2846",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "Accounts Payable - Docyt",
+        "transaction_date": "2022-06-30",
+        "transaction_number": "10008714",
+        "transaction_type": "Bill",
+        "vendor": "City of Weatherford"
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f76d"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 149.95,
+        "category": "Cancellation Fee",
+        "chart_of_account_qbo_id": "219",
+        "included_in_report": true,
+        "link": null,
+        "memo": "CANCELLATION CHARGE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1836",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-10",
+        "transaction_number": "938",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f76e"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 136.0,
+        "category": "Cancellation Fee",
+        "chart_of_account_qbo_id": "219",
+        "included_in_report": true,
+        "link": null,
+        "memo": "CANCELLATION CHARGE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1884",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-15",
+        "transaction_number": "960",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f76f"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 155.0,
+        "category": "Cancellation Fee",
+        "chart_of_account_qbo_id": "219",
+        "included_in_report": true,
+        "link": null,
+        "memo": "CANCELLATION CHARGE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1895",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-18",
+        "transaction_number": "966",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f770"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 155.99,
+        "category": "Cancellation Fee",
+        "chart_of_account_qbo_id": "219",
+        "included_in_report": true,
+        "link": null,
+        "memo": "CANCELLATION CHARGE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1967",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-21",
+        "transaction_number": "992",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f771"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 300.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1755",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-01",
+        "transaction_number": "911",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f772"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 50.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1720",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-02",
+        "transaction_number": "897",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f773"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 100.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1721",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-03",
+        "transaction_number": "898",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f774"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 50.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1719",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-04",
+        "transaction_number": "896",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f775"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 300.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1743",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-05",
+        "transaction_number": "908",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f776"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": -44.05,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1793",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-06",
+        "transaction_number": "920",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f777"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 50.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1815",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-08",
+        "transaction_number": "927",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f778"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 50.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1836",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-10",
+        "transaction_number": "938",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f779"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 50.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1834",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-11",
+        "transaction_number": "936",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f77a"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 50.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1857",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-13",
+        "transaction_number": "948",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f77b"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 200.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1898",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-16",
+        "transaction_number": "968",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f77c"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 100.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1900",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-17",
+        "transaction_number": "970",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f77d"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 50.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1895",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-18",
+        "transaction_number": "966",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f77e"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 300.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1901",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-19",
+        "transaction_number": "971",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f77f"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 50.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1967",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-21",
+        "transaction_number": "992",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f780"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 50.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "1997",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-22",
+        "transaction_number": "1003",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f781"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 150.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2017",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-25",
+        "transaction_number": "1015",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f782"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 50.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2019",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-26",
+        "transaction_number": "1016",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    },
+    {
+        "_id": {
+            "$oid": "62d8d753b57da30001a0f783"
+        },
+        "accounting_class": "Miscellaneous Income",
+        "accounting_class_qbo_id": "2800000000001228210",
+        "amount": 50.0,
+        "category": "Other Revenue",
+        "chart_of_account_qbo_id": "261",
+        "included_in_report": true,
+        "link": null,
+        "memo": "MISC REVENUE",
+        "qbo_general_ledger_id": {
+            "$oid": "62d8d753b57da30001a0f6b8"
+        },
+        "qbo_id": "2532",
+        "report_data_id": "6296b40625a94c000147e8b9",
+        "split": "-Split-",
+        "transaction_date": "2022-06-29",
+        "transaction_number": "1347",
+        "transaction_type": "Journal Entry",
+        "vendor": ""
+    }
+]

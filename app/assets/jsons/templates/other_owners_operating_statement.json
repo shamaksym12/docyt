@@ -1,0 +1,2179 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "other_owners_operating_statement",
+  "name": "Owner's Operating Statement",
+  "category": "management",
+  "rank": 2,
+  "standard_category_ids": [7],
+  "draft": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+  "multi_entity_columns": [
+    { "type": "actual", "name": "$" }
+  ],
+  "missing_transactions_calculation_disabled": false,
+  "enabled_budget_compare": false,
+
+  "items": [
+    {
+      "id": "income",
+      "name": "Income"
+    },
+    {
+      "id": "sales_of_product_income",
+      "name": "Sales of Product Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Sales of Product Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "sales_of_product_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "service_fee_income",
+      "name": "Service/Fee Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Service/Fee Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "service_fee_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_profit_income",
+      "name": "Non-Profit Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Non-Profit Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "non_profit_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_primary_income",
+      "name": "Other Primary Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Other Primary Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_primary_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "unapplied_cash_payment_income",
+      "name": "Unapplied Cash Payment Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Unapplied Cash Payment Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "unapplied_cash_payment_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "discounts_refunds_given",
+      "name": "Discounts/Refunds Given",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Discounts/Refunds Given" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "discounts_refunds_given"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_income",
+      "name": "Total Income",
+      "parent_id": "income",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold",
+      "name": "Cost of Goods Sold"
+    },
+    {
+      "id": "cost_of_labor_cos",
+      "name": "Cost of labor - COS",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Cost of labor - COS" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_labor_cos"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "equipment_rental_cos",
+      "name": "Equipment Rental - COS",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Equipment Rental - COS" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "equipment_rental_cos"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_costs_of_services_cos",
+      "name": "Other Costs of Services - COS",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Other Costs of Services - COS" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_costs_of_services_cos"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "shipping_freight_delivery_cos",
+      "name": "Shipping, Freight & Delivery - COS",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Shipping, Freight & Delivery - COS" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "shipping_freight_delivery_cos"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "supplies_materials_cogs",
+      "name": "Supplies & Materials - COGS",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Supplies & Materials - COGS" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "supplies_materials_cogs"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_cost_of_goods_sold",
+      "name": "Total Cost of Goods Sold",
+      "parent_id": "cost_of_goods_sold",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_cost_of_goods_sold"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gross_profit",
+      "name": "Gross profit",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "total_income"
+              },
+              "arg2": {
+                "item_id": "total_cost_of_goods_sold"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "gross_profit"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "expenses",
+      "name": "Expenses"
+    },
+    {
+      "id": "advertising_promotional",
+      "name": "Advertising/Promotional",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Advertising/Promotional" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "advertising_promotional"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "auto",
+      "name": "Auto",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Auto" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "auto"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "bad_debts",
+      "name": "Bad Debts",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Bad Debts" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "bad_debts"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "bank_charges",
+      "name": "Bank Charges",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Bank Charges" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "bank_charges"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "charitable_contributions",
+      "name": "Charitable Contributions",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Charitable Contributions" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "charitable_contributions"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "communication",
+      "name": "Communication",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Communication" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "communication"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_labor",
+      "name": "Cost of Labor",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Cost of Labor" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_labor"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "dues_subscriptions",
+      "name": "Dues & subscriptions",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Dues & subscriptions" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "dues_subscriptions"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "entertainment",
+      "name": "Entertainment",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Entertainment" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "entertainment"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "entertainment_meals",
+      "name": "Entertainment Meals",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Entertainment Meals" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "entertainment_meals"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "equipment_rental",
+      "name": "Equipment Rental",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Equipment Rental" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "equipment_rental"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "finance_costs",
+      "name": "Finance costs",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Finance costs" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "finance_costs"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "insurance",
+      "name": "Insurance",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Insurance" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "insurance"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "interest_paid",
+      "name": "Interest Paid",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Interest Paid" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "interest_paid"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "legal_professional_fees",
+      "name": "Legal & Professional Fees",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Legal & Professional Fees" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "legal_professional_fees"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "office_general_administrative_expenses",
+      "name": "Office/General Administrative Expenses",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Office/General Administrative Expenses" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "office_general_administrative_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_business_expenses",
+      "name": "Other Business Expenses",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Other Business Expenses" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_business_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_miscellaneous_service_cost",
+      "name": "Other Miscellaneous Service Cost",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Other Miscellaneous Service Cost" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_miscellaneous_service_cost"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_expenses",
+      "name": "Payroll Expenses",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Payroll Expenses" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_tax_expenses",
+      "name": "Payroll Tax Expenses",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Payroll Tax Expenses" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_tax_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_wage_expenses",
+      "name": "Payroll Wage Expenses",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Payroll Wage Expenses" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_wage_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "promotional_meals",
+      "name": "Promotional Meals",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Promotional Meals" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "promotional_meals"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rent_or_lease_of_buildings",
+      "name": "Rent or Lease of Buildings",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Rent or Lease of Buildings" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rent_or_lease_of_buildings"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "repair_maintenance",
+      "name": "Repair & Maintenance",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Repair & Maintenance" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "repair_maintenance"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "shipping_freight_delivery",
+      "name": "Shipping, Freight & Delivery",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Shipping, Freight & Delivery" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "shipping_freight_delivery"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "supplies_materials",
+      "name": "Supplies & Materials",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Supplies & Materials" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "supplies_materials"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "taxes_paid",
+      "name": "Taxes Paid",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Taxes Paid" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "taxes_paid"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "travel",
+      "name": "Travel",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Travel" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "travel"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "travel_meals",
+      "name": "Travel Meals",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Travel Meals" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "travel_meals"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "unapplied_cash_bill_payment_expense",
+      "name": "Unapplied Cash Bill Payment Expense",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Unapplied Cash Bill Payment Expense" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "unapplied_cash_bill_payment_expense"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "utilities",
+      "name": "Utilities",
+      "parent_id": "expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Utilities" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "utilities"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_expenses",
+      "name": "Total Expenses",
+      "parent_id": "expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "operating_profit",
+      "name": "Operating Profit (Loss)",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "gross_profit"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "operating_profit"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_income",
+      "name": "Other Income"
+    },
+    {
+      "id": "dividend_income",
+      "name": "Dividend Income",
+      "parent_id": "other_income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Income", "account_detail_type": "Dividend Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "dividend_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "interest_earned",
+      "name": "Interest Earned",
+      "parent_id": "other_income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Income", "account_detail_type": "Interest Earned" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "interest_earned"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_investment_income",
+      "name": "Other Investment Income",
+      "parent_id": "other_income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Income", "account_detail_type": "Other Investment Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_investment_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_miscellaneous_income",
+      "name": "Other Miscellaneous Income",
+      "parent_id": "other_income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Income", "account_detail_type": "Other Miscellaneous Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_miscellaneous_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tax_exempt_interest",
+      "name": "Tax-Exempt Interest",
+      "parent_id": "other_income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Income", "account_detail_type": "Tax-Exempt Interest" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "tax_exempt_interest"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_income",
+      "name": "Total Other Income",
+      "parent_id": "other_income",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_expenses",
+      "name": "Other Expenses"
+    },
+    {
+      "id": "amortization",
+      "name": "Amortization",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Amortization" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "amortization"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "depreciation",
+      "name": "Depreciation",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Depreciation" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "depreciation"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "exchange_gain_or_loss",
+      "name": "Exchange Gain or Loss",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Exchange Gain or Loss" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "exchange_gain_or_loss"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gas_and_fuel",
+      "name": "Gas And Fuel",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Gas And Fuel" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "gas_and_fuel"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "home_office",
+      "name": "Home Office",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Home Office" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "home_office"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "homeowner_rental_insurance",
+      "name": "Homeowner Rental Insurance",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Homeowner Rental Insurance" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "homeowner_rental_insurance"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "mortgage_interest_home_office",
+      "name": "Mortgage Interest Home Office",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Mortgage Interest Home Office" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "mortgage_interest_home_office"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_home_office_expenses",
+      "name": "Other Home Office Expenses",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Other Home Office Expenses" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_home_office_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_miscellaneous_expense",
+      "name": "Other Miscellaneous Expense",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Other Miscellaneous Expense" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_miscellaneous_expense"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_vehicle_expenses",
+      "name": "Other Vehicle Expenses",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Other Vehicle Expenses" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_vehicle_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "parking_and_tolls",
+      "name": "Parking and Tolls",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Parking and Tolls" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "parking_and_tolls"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "penalties_settlements",
+      "name": "Penalties & Settlements",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Penalties & Settlements" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "penalties_settlements"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "property_tax_home_office",
+      "name": "Property Tax Home Office",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Property Tax Home Office" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "property_tax_home_office"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rent_and_lease_home_office",
+      "name": "Rent and Lease Home Office",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Rent and Lease Home Office" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rent_and_lease_home_office"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "repairs_and_maintenance_home_office",
+      "name": "Repairs and Maintenance Home Office",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Repairs and Maintenance Home Office" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "repairs_and_maintenance_home_office"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "utilities_home_office",
+      "name": "Utilities Home Office",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Utilities Home Office" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "utilities_home_office"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "vehicle",
+      "name": "Vehicle",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "vehicle"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "vehicle_insurance",
+      "name": "Vehicle Insurance",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Insurance" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "vehicle_insurance"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "vehicle_lease",
+      "name": "Vehicle Lease",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Lease" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "vehicle_lease"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "vehicle_loan",
+      "name": "Vehicle Loan",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Loan" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "vehicle_loan"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "vehicle_loan_interest",
+      "name": "Vehicle Loan Interest",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Loan Interest" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "vehicle_loan_interest"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "vehicle_registration",
+      "name": "Vehicle Registration",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Registration" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "vehicle_registration"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "vehicle_repairs",
+      "name": "Vehicle Repairs",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Repairs" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "vehicle_repairs"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "wash_and_road_services",
+      "name": "Wash and Road Services",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Wash and Road Services" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "wash_and_road_services"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_expenses",
+      "name": "Total Other Expenses",
+      "parent_id": "other_expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "net_income",
+      "name": "Net Income (Loss)",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "operating_profit", "negative": false },
+                  { "id": "total_other_income", "negative": false },
+                  { "id": "total_other_expenses", "negative": true }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "net_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

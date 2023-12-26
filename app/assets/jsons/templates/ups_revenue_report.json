@@ -1,0 +1,517 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "ups_revenue_report",
+  "name": "Daily Revenue Report",
+  "rank": 5,
+  "category": "revenue",
+  "standard_category_ids": [8],
+  "draft": false,
+  "period_type": "daily",
+  "enabled_budget_compare": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "mtd", "year": "current", "name": "MTD"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+  "multi_entity_columns": [{ "type": "actual", "name": "$" }],
+  "missing_transactions_calculation_disabled": false,
+  "items": [
+    {
+      "id": "metrics",
+      "name": "Metrics"
+    },
+    {
+      "id": "customer_count",
+      "name": "Customer Count",
+      "parent_id": "metrics",
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "customer_count"
+        }
+      }
+    },
+    {
+      "id": "avg_customer_transaction",
+      "name": "ACT (Avg Customer Transaction)",
+      "parent_id": "metrics",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "/",
+              "arg1": {
+                "item_id": "total_revenue"
+              },
+              "arg2": {
+                "item_id": "customer_count"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "revenue_services",
+      "name": "Revenue by services"
+    },
+    {
+      "id": "mailbox_service",
+      "name": "Mailbox Service",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "copies",
+      "name": "Copies",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "color_copies",
+      "name": "Color Copies",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "laminating_binding",
+      "name": "Laminating/Binding",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "facsimile",
+      "name": "Facsimile",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "stamp_sales",
+      "name": "Stamp Sales",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "metered_mail",
+      "name": "Metered Mail",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "shipping_charges",
+      "name": "Shipping Charges (UPS)",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "no_limit_freight",
+      "name": "No Limit Freight",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "retail_shipping_supplies",
+      "name": "Retail Shipping Supplies",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "packaging_materials",
+      "name": "Packaging Materials",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "packaging_service_fee",
+      "name": "Packaging Service Fee",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "office_supplies_income",
+      "name": "Office Supplies Income",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "rubber_stamps",
+      "name": "Rubber Stamps",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "greeting_cards",
+      "name": "Greeting Cards",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "printing_income",
+      "name": "Printing Income",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "word_processing_income",
+      "name": "Word Processing Income",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "computer_timeshare",
+      "name": "Computer Timeshare",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "message_service",
+      "name": "Message Service",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "pagers",
+      "name": "Pagers",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "money_transfer",
+      "name": "Money Transfer",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "money_orders",
+      "name": "Money Orders",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "notary",
+      "name": "Notary",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "passport_photos",
+      "name": "Passport Photos",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "public_service_payments",
+      "name": "Public Service Payments",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "rapid_air",
+      "name": "Rapid Air",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "misc_taxable",
+      "name": "Misc. Taxable",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "misc_non_taxable",
+      "name": "Misc. Non-Taxable",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "deposits_owed",
+      "name": "Deposits Owed",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "money_transfer_commission",
+      "name": "Money Transfer Commission",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "other_commissions1",
+      "name": "Other Commissions (1)",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "other_commissions2",
+      "name": "Other Commissions (2)",
+      "parent_id": "revenue_services",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    },
+    {
+      "id": "total_revenue",
+      "name": "Total Revenue",
+      "parent_id": "revenue_services",
+      "totals": true
+    },
+    {
+      "id": "sales_tax",
+      "name": "Sales Tax",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank", "Accounts Payable"]
+        }
+      }
+    },
+    {
+      "id": "total_revenue_and_tax",
+      "name": "Total Revenue and Tax",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "sales_tax", "negative": false },
+                  { "id": "total_revenue", "negative": false }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "house_accounts_and_corporate_accounts",
+      "name": "House Accounts and Corporate Accounts"
+    },
+    {
+      "id": "begin_balance",
+      "name": "Beginning Balance",
+      "parent_id": "house_accounts_and_corporate_accounts",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "charges",
+      "name": "Charges",
+      "parent_id": "house_accounts_and_corporate_accounts",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "amount_type": "debit"
+        },
+        "use_mapping": {
+          "item_id": "begin_balance"
+        }
+      }
+    },
+    {
+      "id": "payments",
+      "name": "Payments",
+      "parent_id": "house_accounts_and_corporate_accounts",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "amount_type": "credit"
+        },
+        "use_mapping": {
+          "item_id": "begin_balance"
+        }
+      }
+    },
+    {
+      "id": "end_balance",
+      "name": "Ending Balance",
+      "parent_id": "house_accounts_and_corporate_accounts",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "use_mapping": {
+          "item_id": "begin_balance"
+        }
+      }
+    },
+    {
+      "id": "payment_processor",
+      "name": "Payment Processor Settlements"
+    },
+    {
+      "id": "credit_card",
+      "name": "Credit Card",
+      "parent_id": "payment_processor",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank"]
+        }
+      }
+    },
+    {
+      "id": "cash_check",
+      "name": "Cash/ Check",
+      "parent_id": "payment_processor",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank"]
+        }
+      }
+    },
+    {
+      "id": "eft",
+      "name": "EFT",
+      "parent_id": "payment_processor",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank"]
+        }
+      }
+    },
+    {
+      "id": "total_payment_processor",
+      "name": "Total Payment Processor Settlements",
+      "parent_id": "payment_processor",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "credit_card", "negative": false },
+                  { "id": "cash_check", "negative": false },
+                  { "id": "eft", "negative": false }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

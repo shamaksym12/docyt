@@ -1,0 +1,406 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "ups_revenue_accounting_report",
+  "name": "UPS Revenue Accounting Report",
+  "rank": 105,
+  "standard_category_ids": [8],
+  "draft": false,
+  "category": "revenue",
+  "enabled_budget_compare": false,
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "variance", "range": "current_period", "name": "Variance"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "variance", "range": "ytd", "name": "Variance"}
+  ],
+  "multi_entity_columns": [{ "type": "actual", "name": "$" }],
+  "missing_transactions_calculation_disabled": false,
+  "items": [
+    {
+      "id": "beginning_balance_for_outstanding_revenue",
+      "name": "Beginning Balance for Outstanding Revenue"
+    },
+    {
+      "id": "beginning_house_accounts_and_corporate_accounts",
+      "name": "House Accounts and Corporate Accounts",
+      "parent_id": "beginning_balance_for_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "beginning_cash_check",
+      "name": "Cash/ Check",
+      "parent_id": "beginning_balance_for_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "beginning_eft",
+      "name": "EFT",
+      "parent_id": "beginning_balance_for_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "beginning_credit_cards",
+      "name": "Credit cards",
+      "parent_id": "beginning_balance_for_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "beginning_other",
+      "name": "Other",
+      "parent_id": "beginning_balance_for_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "total_beginning_balance_for_outstanding_revenue",
+      "name": "Total Beginning Balance for Outstanding Revenue",
+      "parent_id": "beginning_balance_for_outstanding_revenue",
+      "totals": true
+    },
+    {
+      "id": "activity_throughout_the_period",
+      "name": "Activity throughout the period"
+    },
+    {
+      "id": "activity_house_accounts_and_corporate_accounts",
+      "name": "House Accounts and Corporate Accounts",
+      "parent_id": "activity_throughout_the_period",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_house_accounts_and_corporate_accounts"
+        }
+      }
+    },
+    {
+      "id": "activity_cash_check",
+      "name": "Cash/ Check",
+      "parent_id": "activity_throughout_the_period",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_cash_check"
+        }
+      }
+    },
+    {
+      "id": "activity_cash_check_collected_revenue",
+      "name": "Earned Revenue",
+      "parent_id": "activity_throughout_the_period",
+      "depth_diff": 1,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank", "Accounts Payable"]
+        },
+        "use_mapping": {
+          "item_id": "beginning_cash_check"
+        }
+      }
+    },
+    {
+      "id": "activity_cash_check_deposited_revenue",
+      "name": "Deposited Revenue",
+      "parent_id": "activity_throughout_the_period",
+      "negative": true,
+      "depth_diff": 1,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_cash_check"
+        },
+        "general_ledger_options": {
+          "include_subledger_account_types": ["Bank", "Accounts Payable"]
+        }
+      }
+    },
+    {
+      "id": "activity_eft",
+      "name": "EFT",
+      "parent_id": "activity_throughout_the_period",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_eft"
+        }
+      }
+    },
+    {
+      "id": "activity_eft_collected_revenue",
+      "name": "Earned Revenue",
+      "parent_id": "activity_throughout_the_period",
+      "depth_diff": 1,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank", "Accounts Payable"]
+        },
+        "use_mapping": {
+          "item_id": "beginning_eft"
+        }
+      }
+    },
+    {
+      "id": "activity_eft_deposited_revenue",
+      "name": "Deposited Revenue",
+      "parent_id": "activity_throughout_the_period",
+      "negative": true,
+      "depth_diff": 1,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_eft"
+        },
+        "general_ledger_options": {
+          "include_subledger_account_types": ["Bank", "Accounts Payable"]
+        }
+      }
+    },
+    {
+      "id": "activity_credit_cards",
+      "name": "Credit cards",
+      "parent_id": "activity_throughout_the_period",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_credit_cards"
+        }
+      }
+    },
+    {
+      "id": "activity_credit_cards_collected_revenue",
+      "name": "Earned Revenue",
+      "parent_id": "activity_throughout_the_period",
+      "depth_diff": 1,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank", "Accounts Payable"]
+        },
+        "use_mapping": {
+          "item_id": "beginning_credit_cards"
+        }
+      }
+    },
+    {
+      "id": "activity_credit_cards_deposited_revenue",
+      "name": "Deposited Revenue",
+      "parent_id": "activity_throughout_the_period",
+      "negative": true,
+      "depth_diff": 1,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_credit_cards"
+        },
+        "general_ledger_options": {
+          "include_subledger_account_types": ["Bank", "Accounts Payable"]
+        }
+      }
+    },
+    {
+      "id": "activity_other",
+      "name": "Other",
+      "parent_id": "activity_throughout_the_period",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_other"
+        }
+      }
+    },
+    {
+      "id": "total_activity_throughout_the_world",
+      "name": "Total Activity throughout the period",
+      "depth_diff": 1,
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "activity_house_accounts_and_corporate_accounts", "negative": false },
+                  { "id": "activity_cash_check", "negative": false },
+                  { "id": "activity_eft", "negative": false },
+                  { "id": "activity_credit_cards", "negative": false }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ending_balance_for_outstanding_revenue",
+      "name": "Ending balance for Outstanding revenue"
+    },
+    {
+      "id": "ending_house_accounts_and_corporate_accounts",
+      "name": "House Accounts and Corporate Accounts",
+      "parent_id": "ending_balance_for_outstanding_revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "beginning_house_accounts_and_corporate_accounts"
+              },
+              "arg2": {
+                "item_id": "activity_house_accounts_and_corporate_accounts"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ending_cash_check",
+      "name": "Cash/ Check",
+      "parent_id": "ending_balance_for_outstanding_revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "beginning_cash_check"
+              },
+              "arg2": {
+                "item_id": "activity_cash_check"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ending_eft",
+      "name": "EFT",
+      "parent_id": "ending_balance_for_outstanding_revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "beginning_eft"
+              },
+              "arg2": {
+                "item_id": "activity_eft"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ending_credit_cards",
+      "name": "Credit cards",
+      "parent_id": "ending_balance_for_outstanding_revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "beginning_credit_cards"
+              },
+              "arg2": {
+                "item_id": "activity_credit_cards"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ending_other",
+      "name": "Other",
+      "parent_id": "ending_balance_for_outstanding_revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "beginning_other"
+              },
+              "arg2": {
+                "item_id": "activity_other"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_ending_balance_for_outstanding_revenue",
+      "name": "Total Ending balance for Outstanding revenue",
+      "parent_id": "ending_balance_for_outstanding_revenue",
+      "totals": true
+    }
+  ]
+}

@@ -1,0 +1,1045 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "title": "Docyt Industry Report",
+  "description": "Schema document that defines the fields, columns and configuration options of a standard industry report. Refer to [this Confluence page](https://docytinc.atlassian.net/wiki/spaces/ENG/pages/2506555610/Report+Template+documentation) for more details.",
+  "properties": {
+    "$schema": {
+      "type": "string",
+      "description": "Mandatory URL to the JSON schema document",
+      "const": "../../schemas/report-schema.json"
+    },
+    "id": {
+      "type": "string",
+      "description": "Unique textual ID of the template. Only use lowercase alphabetic characters and underscores. Must not overlap with other reports that are already defined.",
+      "examples": [
+        "adminstrative_general",
+        "revenue_accounting"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "description": "Name of the report. This name will be visible in the product.",
+      "examples": [
+        "Schedule 5 - Administrative and General",
+        "Schedule 4 - Miscellaneous Income"
+      ]
+    },
+    "category": {
+      "type": "string",
+      "description": "Section id where this template will be shown",
+      "examples": [
+        "revenue",
+        "expense"
+      ]
+    },
+    "columns": {
+      "type": "array",
+      "description": "List of columns that will be shown in this report. Note that many of the properties defined in this section are relative to the date that is currently selected by the user in date filter.",
+      "examples": [
+        [
+          {
+            "type": "actual",
+            "range": "current_period",
+            "year": "current",
+            "name": "PTD $"
+          },
+          {
+            "type": "actual_per_metric",
+            "per_metric": "rooms_available",
+            "range": "current_period",
+            "year": "current",
+            "name": "PTD $"
+          },
+          {
+            "type": "percentage",
+            "range": "current_period",
+            "year": "current",
+            "name": "PTD %"
+          },
+          {
+            "type": "budget_actual",
+            "range": "current_period",
+            "year": "current",
+            "name": "Budget $"
+          },
+          {
+            "type": "budget_percentage",
+            "range": "current_period",
+            "year": "current",
+            "name": "Budget %"
+          },
+          {
+            "type": "budget_variance",
+            "range": "current_period",
+            "name": "Budget Var"
+          },
+          {
+            "type": "actual",
+            "range": "current_period",
+            "year": "prior",
+            "name": "PTD LY $"
+          },
+          {
+            "type": "percentage",
+            "range": "current_period",
+            "year": "prior",
+            "name": "PTD LY %"
+          },
+          {
+            "type": "actual",
+            "range": "ytd",
+            "year": "current",
+            "name": "YTD $"
+          },
+          {
+            "type": "percentage",
+            "range": "ytd",
+            "year": "current",
+            "name": "YTD %"
+          },
+          {
+            "type": "budget_actual",
+            "range": "ytd",
+            "year": "current",
+            "name": "Budget $"
+          },
+          {
+            "type": "budget_percentage",
+            "range": "ytd",
+            "year": "current",
+            "name": "Budget %"
+          },
+          {
+            "type": "budget_variance",
+            "range": "ytd",
+            "name": "Budget Var"
+          },
+          {
+            "type": "actual",
+            "range": "ytd",
+            "year": "prior",
+            "name": "YTD LY $"
+          },
+          {
+            "type": "percentage",
+            "range": "ytd",
+            "year": "prior",
+            "name": "YTD LY %"
+          }
+        ]
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Column name as it will be visible in the report",
+            "examples": [
+              "PTD $"
+            ]
+          },
+          "type": {
+            "type": "string",
+            "description": "The type of data that will be calculated and shown to the user in this column.",
+            "anyOf": [
+              {
+                "title": "actual",
+                "const": "actual",
+                "description": "The actual value as it is coming from the ledger or from Metrics Service."
+              },
+              {
+                "title": "actual_per_metric",
+                "const": "actual_per_metric",
+                "description": "The amount for Per Any Metric"
+              },
+              {
+                "title": "percentage",
+                "const": "percentage",
+                "description": "When value should be presented as a percentage relative to something else. You will also need to specify the calculation formula in the item configuration."
+              },
+              {
+                "title": "variance",
+                "const": "variance",
+                "description": "The difference in value between defined date periods."
+              },
+              {
+                "title": "variance_percentage",
+                "const": "variance_percentage",
+                "description": "The difference in value expressed in percentage relative to some other value (typically, Total)."
+              },
+              {
+                "title": "budget_actual",
+                "const": "budget_actual",
+                "description": "The amount that was budgeted"
+              },
+              {
+                "title": "budget_percentage",
+                "const": "budget_percentage",
+                "description": "The percentage of the budgeted value that was used."
+              },
+              {
+                "title": "budget_variance",
+                "const": "budget_variance",
+                "description": "The difference between budgeted value and the actual value."
+              },
+              {
+                "title": "gross_percentage",
+                "const": "gross_percentage",
+                "description": "[Deprecated] Only used on Owner's Report right now"
+              },
+              {
+                "title": "gross_actual",
+                "const": "gross_actual",
+                "description": "[Deprecated] Only used on Owner's Report right now"
+              }
+            ]
+          },
+          "per_metric": {
+            "type": "string",
+            "description": "metric reference for calculating actual_per_metric",
+            "examples": [
+              "rooms_available",
+              "rooms_sold"
+            ]
+          },
+          "range": {
+            "type": "string",
+            "description": "Date range that this column is covering",
+            "anyOf": [
+              {
+                "title": "current_period",
+                "const": "current_period",
+                "description": "The currently selected period"
+              },
+              {
+                "title": "ytd",
+                "const": "ytd",
+                "description": "Year To Date. Period that begins on Jan 1st and ends on the currently selected day or month (based on the report type)"
+              },
+              {
+                "title": "mtd",
+                "const": "mtd",
+                "description": "Month To Date. Period that begins on the 1st of the currently selected month and ends at the end of the month."
+              }
+            ]
+          },
+          "year": {
+            "type": "string",
+            "description": "Calendar year that is covered by this column. Not required for Variance columns.",
+            "anyOf": [
+              {
+                "title": "current",
+                "const": "current",
+                "description": "Currently selected year"
+              },
+              {
+                "title": "prior",
+                "const": "prior",
+                "description": "Year that goes prior to the year that is currently selected"
+              },
+              {
+                "title": "previous_period",
+                "const": "previous_period",
+                "description": "Period that goes prior to the currently selected. For example, when Feb 2023 is selected, previous period is Jan 2023."
+              }
+            ]
+          }
+        },
+        "required": [
+          "type",
+          "range",
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "items": {
+      "type": "array",
+      "description": "List of report line items (rows)",
+      "examples": [
+        [
+          {
+            "id": "summary",
+            "name": "Summary",
+            "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+          },
+          {
+            "id": "rooms_available",
+            "name": "Rooms Available to sell",
+            "parent_id": "summary",
+            "type": {
+              "name": "reference",
+              "reference": "owners_operating_statement/rooms_available",
+              "metric": {
+                "name": "Available Rooms"
+              }
+            }
+          },
+          {
+            "id": "rooms_sold",
+            "name": "Rooms Sold",
+            "parent_id": "summary",
+            "type": {
+              "name": "reference",
+              "reference": "owners_operating_statement/rooms_sold",
+              "metric": {
+                "name": "Sold Rooms"
+              }
+            }
+          },
+          {
+            "id": "occupancy_percent",
+            "name": "Occupancy %",
+            "parent_id": "summary",
+            "type": {
+              "name": "reference",
+              "reference": "owners_operating_statement/occupancy_percent"
+            },
+            "values": {
+              "actual": {
+                "value": {
+                  "expression": {
+                    "operator": "%",
+                    "arg1": {
+                      "item_id": "rooms_sold"
+                    },
+                    "arg2": {
+                      "item_id": "rooms_available"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": "adr",
+            "name": "ADR",
+            "parent_id": "summary",
+            "type": {
+              "name": "stats"
+            },
+            "values": {
+              "actual": {
+                "value": {
+                  "expression": {
+                    "operator": "/",
+                    "arg1": {
+                      "item_id": "rooms_revenue"
+                    },
+                    "arg2": {
+                      "item_id": "rooms_sold"
+                    }
+                  }
+                }
+              }
+            }
+          },
+          {
+            "id": "rev_par",
+            "name": "RevPar",
+            "parent_id": "summary",
+            "type": {
+              "name": "stats"
+            },
+            "values": {
+              "actual": {
+                "value": {
+                  "expression": {
+                    "operator": "/",
+                    "arg1": {
+                      "item_id": "rooms_revenue"
+                    },
+                    "arg2": {
+                      "item_id": "rooms_available"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        ]
+      ],
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string",
+            "description": "Unique textual identifier of this row. Must be unique across the report. Only use alphabetical characters and underscores.",
+            "examples": [
+              "rooms_available",
+              "occupancy_percent"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "User-facing name of the row",
+            "examples": [
+              "Rooms Available to sell",
+              "Occupancy %"
+            ]
+          },
+          "per_metric_calculation_enabled": {
+            "type": "boolean",
+            "default": false,
+            "description": "This field is used for enabling actual_per_metric calculation for a metric item. By default, we have not calculated PAR/POR for metric items. This will add an opportunity for enabling this calculation if needed."
+          },
+          "data_type": {
+            "type": "string",
+            "description": "This field is used for providing a column_type of the future item value.",
+            "examples": [
+              "integer",
+              "currency"
+            ]
+          },
+          "type": {
+            "type": "object",
+            "description": "Row type configuration, defines how the row is calculated",
+            "default": "section",
+            "properties": {
+              "name": {
+                "type": "string",
+                "description": "Name of the row type",
+                "anyOf": [
+                  {
+                    "title": "section",
+                    "const": "section",
+                    "description": "Row is a section under which other rows will be nested. There is no calculation in this case since this row is just the parent for other rows.",
+                    "examples": [
+                      {
+                        "id": "summary",
+                        "name": "Summary",
+                        "type": {
+                          "name": "section"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "quickbooks_ledger",
+                    "const": "quickbooks_ledger",
+                    "description": "Data for this row will be calculated using the ledger (Quickbooks). For this type, you can also configure the list of `default_accounts` and expression logic on how to calculate percentage columns.",
+                    "examples": [
+                      {
+                        "id": "admin_general",
+                        "name": "Administrative & General",
+                        "parent_id": "undistributed_expenses",
+                        "type": {
+                          "name": "quickbooks_ledger"
+                        },
+                        "values": {
+                          "percentage": {
+                            "value": {
+                              "expression": {
+                                "operator": "%",
+                                "arg1": {
+                                  "item_id": "admin_general"
+                                },
+                                "arg2": {
+                                  "item_id": "total_operating_revenue"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "metric",
+                    "const": "metric",
+                    "description": "Data for this row will be calculated from metrics (using Metrics Service). You must also specify the `metric` property that defines what metric should be fetched (see below for documentation).",
+                    "examples": [
+                      {
+                        "id": "rooms_available",
+                        "name": "Rooms Available to sell",
+                        "type": {
+                          "name": "metric",
+                          "metric": {
+                            "code": "rooms_available"
+                          }
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "reference",
+                    "const": "reference",
+                    "description": "A reference to another row in this or another report. Helpful when you need to simply link to the data that was calculated in another row. Not suitable for custom formulas/expressons. For custom formulas, see `stats` type.",
+                    "examples": [
+                      {
+                        "id": "rooms_available",
+                        "name": "Rooms Available to sell",
+                        "type": {
+                          "name": "reference",
+                          "reference": "owners_operating_statement/rooms_available"
+                        }
+                      }
+                    ]
+                  },
+                  {
+                    "title": "stats",
+                    "const": "stats",
+                    "description": "This type can be used whenever you need to implement custom formulas or expression.",
+                    "examples": [
+                      {
+                        "id": "adr",
+                        "name": "ADR",
+                        "type": {
+                          "name": "stats"
+                        },
+                        "values": {
+                          "actual": {
+                            "value": {
+                              "expression": {
+                                "operator": "/",
+                                "arg1": {
+                                  "item_id": "rooms_revenue"
+                                },
+                                "arg2": {
+                                  "item_id": "rooms_sold"
+                                }
+                              }
+                            }
+                          }
+                        }
+                      }
+                    ]
+                  }
+                ]
+              },
+              "multi_month_calculation_type": {
+                "type": "string",
+                "description": "This type can be used whenever you need to calculate the value of multi-month.",
+                "examples": [
+                  {
+                    "id": "monthly_recurring_revenue",
+                    "name": "Monthly Recurring Revenue (MRR)",
+                    "type": {
+                      "name": "metric",
+                      "multi_month_calculation_type": "Average",
+                      "metric": {
+                        "code": "monthly_recurring_revenue"
+                      }
+                    }
+                  }
+                ]
+              },
+              "reference": {
+                "type": "string",
+                "description": "Only applicable to `reference` type.\n\nA reference to row ID from another report",
+                "examples": [
+                  {
+                    "id": "rooms_available",
+                    "name": "Rooms Available to sell",
+                    "type": {
+                      "name": "reference",
+                      "reference": "owners_operating_statement/rooms_available"
+                    }
+                  }
+                ]
+              },
+              "src_column_range": {
+                "type": "string",
+                "description": "Only applicable to `reference` type.\n\nThe type of column to fetch from the source report",
+                "anyOf": [
+                  {
+                    "title": "ytd",
+                    "const": "ytd",
+                    "description": "YTD column"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "rooms_available",
+                    "name": "Rooms Available to sell",
+                    "type": {
+                      "name": "reference",
+                      "reference": "owners_operating_statement/rooms_available",
+                      "src_column_range": "ytd"
+                    }
+                  }
+                ]
+              },
+              "calculation_type": {
+                "type": "string",
+                "description": "Only applicable to `quickbooks_ledger` type.\n\nType of calculation to use when pulling the data from Quickbooks.",
+                "anyOf": [
+                  {
+                    "title": "general_ledger",
+                    "const": "general_ledger",
+                    "description": "Fetch the actual value from general ledger API"
+                  },
+                  {
+                    "title": "balance_sheet",
+                    "const": "balance_sheet",
+                    "description": "Fetch the actual balance from balance sheet API"
+                  }
+                ],
+                "examples": [
+                  {
+                    "id": "short_term_investments",
+                    "name": "Short-Term Investments",
+                    "type": {
+                      "name": "quickbooks_ledger",
+                      "calculation_type": "balance_sheet"
+                    }
+                  }
+                ],
+                "default": "general_ledger"
+              },
+              "exclude_ledgers": {
+                "type": "string",
+                "description": "Ledgers to exclude from common ledger for tax calculation type",
+                "anyOf": [
+                  {
+                    "title": "bank",
+                    "const": "bank",
+                    "description": "Exclude Bank ledgers"
+                  },
+                  {
+                    "title": "bank_and_accounts_payable",
+                    "const": "bank_and_accounts_payable",
+                    "description": "Exclude Bank and AP ledgers"
+                  }
+                ]
+              },
+              "use_mapping": {
+                "type": "object",
+                "description": "Only applicable to `quickbooks_ledger` type.\n\nA property that enables this row to re-use mapping from another row",
+                "properties": {
+                  "item_id": {
+                    "type": "string",
+                    "description": "ID of the row from which the mapping will be used in this row"
+                  }
+                },
+                "examples": [
+                  {
+                    "id": "additional_accounts_receivables",
+                    "name": "Accounts Receivables (Direct Billing)",
+                    "type": {
+                      "name": "quickbooks_ledger",
+                      "calculation_type": "general_ledger",
+                      "use_mapping": {
+                        "item_id": "beginning_accounts_receivables"
+                      }
+                    }
+                  }
+                ]
+              },
+              "general_ledger_options": {
+                "type": "object",
+                "description": "Options to quickbooks_ledger",
+                "default": "section",
+                "properties": {
+                  "include_account_types": {
+                    "type": "array",
+                    "description": "Only include journal entries from the ledgers corresponding to the specified account types",
+                    "items": {
+                      "type": "string",
+                      "anyOf": [
+                        {
+                          "title": "Bank",
+                          "const": "Bank",
+                          "description": "account_type = Bank"
+                        },
+                        {
+                          "title": "Accounts Payable",
+                          "const": "Accounts Payable",
+                          "description": "account_type = 'Accounts Payable'"
+                        }
+                      ]
+                    },
+                    "examples": [
+                      [
+                        "Bank", "Accounts Payable"
+                      ]
+                    ]
+                  },
+                  "amount_type": {
+                    "type": "string",
+                    "description": "Defines what kind of amounts will be taken into consideration while calculating",
+                    "anyOf": [
+                      {
+                        "title": "debit",
+                        "const": "debit",
+                        "description": "Only calculate using debit amounts (amounts with positive signs). All other numbers will be ignored."
+                      },
+                      {
+                        "title": "credit",
+                        "const": "credit",
+                        "description": "Only calculate using credit amounts (amounts with negative signs). All other numbers will be ignored."
+                      }
+                    ]
+                  },
+                  "include_subledger_account_types": {
+                    "type": "array",
+                    "description": "Only include journal entries that used accounts corresponding to the specified account types",
+                    "items": {
+                      "type": "string",
+                      "anyOf": [
+                        {
+                          "title": "Bank",
+                          "const": "Bank",
+                          "description": "account_type = Bank"
+                        },
+                        {
+                          "title": "Accounts Payable",
+                          "const": "Accounts Payable",
+                          "description": "account_type = 'Accounts Payable'"
+                        }
+                      ]
+                    },
+                    "examples": [
+                      [
+                        "Bank", "Accounts Payable"
+                      ]
+                    ]
+                  },
+                  "exclude_subledger_account_types": {
+                    "type": "array",
+                    "description": "Ledger types to exclude from common ledger",
+                    "items": {
+                      "type": "string",
+                      "anyOf": [
+                        {
+                          "title": "Bank",
+                          "const": "Bank",
+                          "description": "account_type = Bank"
+                        },
+                        {
+                          "title": "Accounts Payable",
+                          "const": "Accounts Payable",
+                          "description": "account_type = 'Accounts Payable'"
+                        }
+                      ]
+                    },
+                    "examples": [
+                      [
+                        "Bank", "Accounts Payable"
+                      ]
+                    ]
+                  }
+                }
+              },
+              "balance_sheet_options": {
+                "type": "object",
+                "description": "Options to balance_sheet",
+                "default": "section",
+                "properties": {
+                  "balance_day": {
+                    "type": "string",
+                    "description": "The value will fetched for the day that preceeds the currently selected period."
+                  }
+                }
+              },
+              "metric": {
+                "type": "object",
+                "description": "Only applicable to `metric` type.\n\nConfiguration of what metric should be fetched.",
+                "examples": [
+                  {
+                    "code": "rooms_available"
+                  }
+                ],
+                "properties": {
+                  "code": {
+                    "type": "string",
+                    "description": "Code of the metric that is being pulled. Refer to [this list](https://bitbucket.org/kmnss/metrics-service/src/master/config/standard_metrics.yml) for available codes."
+                  },
+                  "name": {
+                    "type": "string",
+                    "description": "[Deprecated] Name of the metric that is being pulled"
+                  }
+                },
+                "required": [],
+                "additionalProperties": false
+              },
+              "default_accounts": {
+                "type": "array",
+                "description": "Only applicable to `quickbooks_ledger` type.\n\nList of chart of accounts that will be loaded by default into the report. All new reports must be configured with this field populated when possible. It helps to reduce the amount of manual work that users needs to do.",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "account_type": {
+                      "type": "string"
+                    },
+                    "account_detail_type": {
+                      "type": "string"
+                    }
+                  },
+                  "required": [
+                    "account_type",
+                    "account_detail_type"
+                  ],
+                  "additionalProperties": false
+                },
+                "examples": [
+                  [
+                    {
+                      "account_type": "Bank",
+                      "account_detail_type": "Cash on hand"
+                    },
+                    {
+                      "account_type": "Bank",
+                      "account_detail_type": "Checking"
+                    },
+                    {
+                      "account_type": "Bank",
+                      "account_detail_type": "Cash and Cash Equivalents"
+                    },
+                    {
+                      "account_type": "Bank",
+                      "account_detail_type": "Other Earmarked Bank Accounts"
+                    },
+                    {
+                      "account_type": "Other Current Assets",
+                      "account_detail_type": "Undeposited Funds"
+                    }
+                  ]
+                ]
+              }
+            },
+            "required": [
+              "name"
+            ],
+            "additionalProperties": false
+          },
+          "parent_id": {
+            "type": "string",
+            "description": "A reference to the parent row (when the row is nested under another one).",
+            "examples": [
+              "summary"
+            ]
+          },
+          "totals": {
+            "type": "boolean",
+            "description": "Calculate totals for this section?",
+            "default": false
+          },
+          "show": {
+            "type": "boolean",
+            "description": "[Deprecated] Must be set to `false` when `totals` is set to `true`.",
+            "default": true
+          },
+          "negative_for_total": {
+            "type": "boolean",
+            "description": "This field is used to calculate total value of parent item with negative number",
+            "default": false
+          },
+          "negative": {
+            "type": "boolean",
+            "description": "This field represents that this item's actual value will be multipled with -1",
+            "default": false
+          },
+          "depth_diff": {
+            "type": "integer",
+            "description": "This field is used for displaying the item in report table from front-end"
+          },
+          "_description": {
+            "type": "string",
+            "description": "User-facing description of the row"
+          },
+          "account_type": {
+            "type": "string",
+            "description": "This field indicates chart of account type for balance sheet report's leaf item"
+          },
+          "values": {
+            "type": "object",
+            "description": "Formulae that is used to calculate the value for this row",
+            "properties": {
+              "actual": {
+                "type": "object",
+                "description": "How to calculate values for actual column",
+                "properties": {
+                  "value": {
+                    "type": "object"
+                  }
+                }
+              },
+              "percentage": {
+                "type": "object",
+                "description": "How to calculate values for percentage column",
+                "properties": {
+                  "value": {
+                    "type": "object"
+                  }
+                }
+              },
+              "variance_percentage": {
+                "type": "object",
+                "description": "How to calculate values for variance percentage column",
+                "properties": {
+                  "value": {
+                    "type": "object"
+                  }
+                }
+              },
+              "gross_actual": {
+                "type": "object",
+                "description": "How to calculate values for gross actual column",
+                "properties": {
+                  "value": {
+                    "type": "object"
+                  }
+                }
+              },
+              "gross_percentage": {
+                "type": "object",
+                "description": "How to calculate values for gross percentage column",
+                "properties": {
+                  "value": {
+                    "type": "object"
+                  }
+                }
+              }
+            },
+            "additionalProperties": false
+          }
+        },
+        "required": [
+          "id",
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "rank": {
+      "type": "integer",
+      "default": 0,
+      "description": "Defines template's position in the list of templates. The lower the rank, the higher the position will be in the list."
+    },
+    "standard_category_ids": {
+      "type": "array",
+      "description": "A list of standard industries where this template will be shown. You can use one of the following values: \n\n* 8 - UPS Stores\n* 9 - Hospitality\n* 10 - Quick Service Restaurants\n* (Empty list) - All industries",
+      "default": [],
+      "examples": [8],
+      "items": {
+        "type": "integer",
+        "description": "ID of the standard industry",
+        "examples": [8]
+      }
+    },
+    "draft": {
+      "type": "boolean",
+      "description": "[Deprecated] When set to true, template won't be visible in the UI",
+      "default": false
+    },
+    "period_type": {
+      "type": "string",
+      "description": "Type of report - daily or monthly. Defines how granular the data will be pulled, stored and presented to the user.",
+      "anyOf": [
+        {
+          "title": "monthly",
+          "const": "monthly",
+          "description": "Data from the ledger will be pulled for the full month. There will be no way for the user to dive into a specific day."
+        },
+        {
+          "title": "daily",
+          "const": "daily",
+          "description": "Data from the ledger will be pulled for every day. User will be able to see the data for a specific day."
+        }
+      ],
+      "default": "monthly"
+    },
+    "missing_transactions_calculation_disabled": {
+      "type": "boolean",
+      "description": "Tells if template requires to calculate missing Ledger transactions.",
+      "default": true
+    },
+    "factory_class": {
+      "type": "string",
+      "description": "[Deprecated] This field represents which report factory class is used for this report. For internal use only.",
+      "default": "ReportFactory"
+    },
+    "enabled_budget_compare": {
+      "type": "boolean",
+      "description": "This flag defines if the report will have Compare With Budget feature enabled or not.",
+      "default": true
+    },
+    "enabled_blank_value_for_metric": {
+      "type": "boolean",
+      "description": "Can the value of item_value be nil for the metric of this report?",
+      "default": false
+    },
+    "total_column_visible": {
+      "type": "boolean",
+      "description": "Hide or show total column?",
+      "default": true
+    },
+    "export_parameters": {
+      "type": "object",
+      "items": {
+        "type": "object",
+        "properties": {
+          "main_column_position": {
+            "type": "string",
+            "description": "Position of the main column in the exported file",
+            "enum": [
+              "left",
+              "center"
+            ]
+          }
+        },
+        "required": [
+          "main_column_position"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "multi_entity_columns": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "type": {
+            "type": "string",
+            "description": "Type of the column",
+            "enum": [
+              "actual",
+              "percentage",
+              "gross_actual",
+              "gross_percentage"
+            ]
+          },
+          "name": {
+            "type": "string",
+            "description": "Column name"
+          }
+        },
+        "required": [
+          "type",
+          "name"
+        ],
+        "additionalProperties": false
+      }
+    },
+    "depends_on": {
+      "type": "array",
+      "description": "A list of reports on which this report depend upon",
+      "items": [
+        {
+          "type": "string"
+        }
+      ]
+    },
+    "accounting_class_check_disabled": {
+      "type": "boolean",
+      "description": "Tells if template calculate values without checking accounting department",
+      "default": false
+    },
+    "edit_mapping_disabled": {
+      "type": "boolean",
+      "description": "Tell if user can edit mapping",
+      "default": false
+    }
+  },
+  "required": [
+    "$schema",
+    "id",
+    "category",
+    "name",
+    "columns",
+    "items"
+  ],
+  "additionalProperties": false
+}

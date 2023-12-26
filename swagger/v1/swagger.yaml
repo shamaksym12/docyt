@@ -1,0 +1,129 @@
+---
+openapi: 3.0.1
+info:
+  title: reports_service API
+  version: v1
+components:
+  securitySchemes:
+    service_token:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+    oauth2:
+      type: oauth2
+      flows:
+        password:
+          tokenUrl: https://{defaultHost}
+  schemas:
+    errors_response:
+      type: object
+      properties:
+        errors:
+          type: array
+          items:
+            type: string
+      required:
+      - errors
+    meta:
+      type: object
+      properties:
+        pagination:
+          type: object
+          properties:
+            current_page:
+              type: integer
+            total_pages:
+              type: integer
+            total_count:
+              type: integer
+          required:
+          - current_page
+          - total_pages
+          - total_count
+      required:
+      - pagination
+    report_value:
+      type: object
+      properties:
+        date:
+          type: string
+        amount:
+          type: float
+      required:
+      - date
+paths:
+  "/reports/api/internal/report_values":
+    get:
+      summary: returns list Net Profit values
+      security:
+      - service_token: []
+      tags:
+      - Report
+      operationId: get_report_values
+      parameters:
+      - name: business_id
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: template_id
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: slug
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: item_identifier
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: period_type
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: from
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: to
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: column_year
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: column_type
+        in: query
+        required: true
+        schema:
+          type: string
+      - name: column_per_metric
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: returns list successfully
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  report_values:
+                    type: array
+                    items:
+                      "$ref": "#/components/schemas/report_value"
+servers:
+- url: https://{defaultHost}
+  variables:
+    defaultHost:
+      default: securedev.docyt.com

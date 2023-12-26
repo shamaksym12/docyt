@@ -1,0 +1,1333 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "administrative_general",
+  "name": "Schedule 5 - Administrative and General",
+  "category": "department",
+  "depends_on": [
+    "owners_operating_statement"
+  ],
+  "rank": 7,
+  "standard_category_ids": [9],
+  "draft": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "budget_actual", "range": "current_period", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "current_period", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "current_period", "name": "Budget Var"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "prior", "name": "POR LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "budget_actual", "range": "ytd", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "ytd", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "ytd", "name": "Budget Var"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "prior", "name": "POR LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"}
+  ],
+  "missing_transactions_calculation_disabled": false,
+  "items": [
+    {
+      "id": "summary",
+      "name": "Summary",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "rooms_available",
+      "name": "Rooms Available to sell",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_available",
+        "metric": {
+          "name": "Available Rooms"
+        }
+      }
+    },
+    {
+      "id": "rooms_sold",
+      "name": "Rooms Sold",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_sold",
+        "metric": {
+          "name": "Sold Rooms"
+        }
+      }
+    },
+    {
+      "id": "occupancy_percent",
+      "name": "Occupancy %",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/occupancy_percent"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rooms_sold"
+              },
+              "arg2": {
+                "item_id": "rooms_available"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "expenses",
+      "name": "Expenses"
+    },
+    {
+      "id": "labor_costs_related_expenses",
+      "name": "Labor Costs and Related Expenses",
+      "parent_id": "expenses"
+    },
+    {
+      "id": "s_w_sc_cl_b",
+      "name": "Salaries, Wages, Service Charges, Contracted Labor and Bonuses",
+      "parent_id": "labor_costs_related_expenses"
+    },
+    {
+      "id": "salaries_wages",
+      "name": "Salaries and Wages",
+      "parent_id": "s_w_sc_cl_b"
+    },
+    {
+      "id": "management",
+      "name": "Management",
+      "parent_id": "salaries_wages",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "management"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_management",
+      "name": "Non-Management",
+      "parent_id": "salaries_wages"
+    },
+    {
+      "id": "accounting",
+      "name": "Accounting",
+      "parent_id": "non_management",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "accounting"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "general_support",
+      "name": "General Support",
+      "parent_id": "non_management",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "general_support"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_management_human_resources",
+      "name": "Human Resources",
+      "parent_id": "non_management",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "non_management_human_resources"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "purchasing_receiving",
+      "name": "Purchasing/Receiving",
+      "parent_id": "non_management",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "purchasing_receiving"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_management_security",
+      "name": "Security",
+      "parent_id": "non_management",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "non_management_security"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_non_management",
+      "name": "Total Non-Management",
+      "parent_id": "non_management",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_non_management"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_salaries_wages",
+      "name": "Total Salaries and Wages",
+      "parent_id": "salaries_wages",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_salaries_wages"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "service_charge_distribution",
+      "name": "Service Charge Distribution",
+      "parent_id": "s_w_sc_cl_b",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "service_charge_distribution"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "contracted_leased_outsourced_abor",
+      "name": "Contracted, Leased and Outsourced Labor",
+      "parent_id": "s_w_sc_cl_b",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "contracted_leased_outsourced_abor"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "bonuses_incentives",
+      "name": "Bonuses and Incentives",
+      "parent_id": "s_w_sc_cl_b",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "bonuses_incentives"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_s_w_sc_cl_b",
+      "name": "Total Salaries, Wages, Service Charges, Contracted Labor and Bonuses",
+      "parent_id": "s_w_sc_cl_b",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_s_w_sc_cl_b"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_related_expenses",
+      "name": "Payroll-Related Expenses",
+      "parent_id": "labor_costs_related_expenses"
+    },
+    {
+      "id": "payroll_taxes",
+      "name": "Payroll Taxes",
+      "parent_id": "payroll_related_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_taxes"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "supplemental_pay",
+      "name": "Supplemental Pay",
+      "parent_id": "payroll_related_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "supplemental_pay"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "employee_benefits",
+      "name": "Employee Benefits",
+      "parent_id": "payroll_related_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "employee_benefits"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_payroll_related_expenses",
+      "name": "Total Payroll-Related Expenses",
+      "parent_id": "payroll_related_expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_payroll_related_expenses"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_labor_costs_related_expenses",
+      "name": "Total Labor Costs and Related Expenses",
+      "parent_id": "labor_costs_related_expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_labor_costs_related_expenses"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_expenses",
+      "name": "Other Expenses",
+      "parent_id": "expenses"
+    },
+    {
+      "id": "audit_charges",
+      "name": "Audit Charges",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "audit_charges"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "bank_charges",
+      "name": "Bank Charges",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "bank_charges"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cash_cverages_shortages",
+      "name": "Cash Overages and Shortages",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cash_cverages_shortages"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "centralized_accounting_charges",
+      "name": "Centralized Accounting Charges",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "centralized_accounting_charges"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cluster_services",
+      "name": "Cluster Services",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cluster_services"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "complimentary_services_gifts",
+      "name": "Complimentary Services and Gifts",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "complimentary_services_gifts"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "contract_services",
+      "name": "Contract Services",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "contract_services"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "corporate_office_reimbursables",
+      "name": "Corporate Office Reimbursables",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "corporate_office_reimbursables"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "credit_collection",
+      "name": "Credit and Collection",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "credit_collection"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "credit_card_commissions",
+      "name": "Credit Card Commissions",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "credit_card_commissions"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "decorations",
+      "name": "Decorations",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "decorations"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "donations",
+      "name": "Donations",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "donations"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "dues_subscriptions",
+      "name": "Dues and Subscriptions",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "dues_subscriptions"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "entertainment_house",
+      "name": "Entertainment—In-House",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "entertainment_house"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "equipment_rental",
+      "name": "Equipment Rental",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "equipment_rental"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "human_resources",
+      "name": "Human Resources",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "human_resources"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "legal_services",
+      "name": "Legal Services",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "legal_services"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "licenses_permits",
+      "name": "Licenses and Permits",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "licenses_permits"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "loss_damage",
+      "name": "Loss and Damage",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "loss_damage"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "miscellaneous",
+      "name": "Miscellaneous",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "miscellaneous"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "related_foreign_currency_exchange",
+      "name": "Non-Guest-Related Foreign Currency Exchange Gains (Losses)",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "related_foreign_currency_exchange"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "operating_supplies",
+      "name": "Operating Supplies",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "operating_supplies"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_processing",
+      "name": "Payroll Processing",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_processing"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "postage_overnight_delivery_charges",
+      "name": "Postage and Overnight Delivery Charges",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "postage_overnight_delivery_charges"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "professional_fees",
+      "name": "Professional Fees",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "professional_fees"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "provision_doubtful_accounts",
+      "name": "Provision for Doubtful Accounts",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "provision_doubtful_accounts"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "security",
+      "name": "Security",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "security"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "settlement_costs",
+      "name": "Settlement Costs",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "settlement_costs"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "staff_transportation",
+      "name": "Staff Transportation",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "staff_transportation"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "training",
+      "name": "Training",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "training"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "travel_meals_entertainment",
+      "name": "Travel—Meals and Entertainment",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "travel_meals_entertainment"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "travel_other",
+      "name": "Travel—Other",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "travel_other"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "uniform_costs",
+      "name": "Uniform Costs",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "uniform_costs"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "uniform_laundry",
+      "name": "Uniform Laundry",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "uniform_laundry"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_expenses",
+      "name": "Total Other Expenses",
+      "parent_id": "other_expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_expenses"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_expenses",
+      "name": "Total Expenses",
+      "parent_id": "expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_expenses"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

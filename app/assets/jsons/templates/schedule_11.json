@@ -1,0 +1,621 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "schedule_11",
+  "name": "Schedule 11 - Non-Operating Income and Expenses",
+  "category": "department",
+  "depends_on": [
+    "owners_operating_statement"
+  ],
+  "rank": 13,
+  "standard_category_ids": [9],
+  "draft": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "budget_actual", "range": "current_period", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "current_period", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "current_period", "name": "Budget Var"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "prior", "name": "POR LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "budget_actual", "range": "ytd", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "ytd", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "ytd", "name": "Budget Var"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "prior", "name": "POR LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"}
+  ],
+  "missing_transactions_calculation_disabled": false,
+  "items": [
+    {
+      "id": "summary",
+      "name": "Summary",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "rooms_available",
+      "name": "Rooms Available to sell",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_available",
+        "metric": {
+          "name": "Available Rooms"
+        }
+      }
+    },
+    {
+      "id": "rooms_sold",
+      "name": "Rooms Sold",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_sold",
+        "metric": {
+          "name": "Sold Rooms"
+        }
+      }
+    },
+    {
+      "id": "occupancy_percent",
+      "name": "Occupancy %",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/occupancy_percent"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rooms_sold"
+              },
+              "arg2": {
+                "item_id": "rooms_available"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_operating",
+      "name": "Non-Operating Income and Expenses"
+    },
+    {
+      "id": "income",
+      "name": "Income",
+      "parent_id": "non_operating"
+    },
+    {
+      "id": "cost_recovery_income",
+      "name": "Cost Recovery Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_recovery_income"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "interest_income",
+      "name": "Interest Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "interest_income"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_income",
+      "name": "Other Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_income"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_income",
+      "name": "Total Income",
+      "parent_id": "income",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_income"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rent",
+      "name": "Rent",
+      "parent_id": "non_operating"
+    },
+    {
+      "id": "land_and_buildings",
+      "name": "Land and Buildings",
+      "parent_id": "rent",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "land_and_buildings"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_property_and_equipment",
+      "name": "Other Property and Equipment",
+      "parent_id": "rent",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_property_and_equipment"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_rent",
+      "name": "Total Rent",
+      "parent_id": "rent",
+      "totals": true,
+      "negative_for_total": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_rent"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "property_other_taxes",
+      "name": "Property and Other Taxes",
+      "parent_id": "non_operating"
+    },
+    {
+      "id": "business_and_occupation",
+      "name": "Business and Occupation Taxes",
+      "parent_id": "property_other_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "business_and_occupation"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_and_assessments",
+      "name": "Other Taxes and Assessments",
+      "parent_id": "property_other_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_and_assessments"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "personal_property",
+      "name": "Personal Property Taxes",
+      "parent_id": "property_other_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "personal_property"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "real_estate",
+      "name": "Real Estate Taxes",
+      "parent_id": "property_other_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "real_estate"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_property_other_taxes",
+      "name": "Total Property and Other Taxes",
+      "parent_id": "property_other_taxes",
+      "totals": true,
+      "negative_for_total": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_property_other_taxes"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "insurance",
+      "name": "Insurance",
+      "parent_id": "non_operating"
+    },
+    {
+      "id": "building_and_contents",
+      "name": "Building and Contents",
+      "parent_id": "insurance",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "building_and_contents"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "liability",
+      "name": "Liability",
+      "parent_id": "insurance",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "liability"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "deductible",
+      "name": "Deductible",
+      "parent_id": "insurance",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "deductible"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_insurance",
+      "name": "Total Insurance",
+      "parent_id": "insurance",
+      "totals": true,
+      "negative_for_total": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_insurance"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other",
+      "name": "Other",
+      "parent_id": "non_operating"
+    },
+    {
+      "id": "cost_recovery_expense",
+      "name": "Cost Recovery Expense",
+      "parent_id": "other",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_recovery_expense"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gain_loss",
+      "name": "Gain/Loss on Fixed Assets",
+      "parent_id": "other",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "gain_loss"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "owner_expenses",
+      "name": "Owner Expenses",
+      "parent_id": "other",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "owner_expenses"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "unrealized_foreign",
+      "name": "Unrealized Foreign Exchange Gains or Losses",
+      "parent_id": "other",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "unrealized_foreign"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other",
+      "name": "Total Other",
+      "parent_id": "other",
+      "totals": true,
+      "negative_for_total": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_non_operating",
+      "name": "Total Non-Operating Income and Expenses",
+      "parent_id": "non_operating",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_non_operating"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

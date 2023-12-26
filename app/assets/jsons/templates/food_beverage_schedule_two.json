@@ -1,0 +1,2119 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "food_beverage_schedule_two",
+  "name": "Schedule 2 - Food and Beverage",
+  "category": "department",
+  "depends_on": [
+    "owners_operating_statement"
+  ],
+  "rank": 4,
+  "standard_category_ids": [9],
+  "draft": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "budget_actual", "range": "current_period", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "current_period", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "current_period", "name": "Budget Var"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "prior", "name": "POR LY $"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "budget_actual", "range": "ytd", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "ytd", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "ytd", "name": "Budget Var"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "prior", "name": "POR LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"}
+  ],
+  "missing_transactions_calculation_disabled": false,
+  "items": [
+    {
+      "id": "summary",
+      "name": "Summary",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "rooms_available",
+      "name": "Rooms Available to sell",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_available",
+        "metric": {
+          "name": "Available Rooms"
+        }
+      }
+    },
+    {
+      "id": "rooms_sold",
+      "name": "Rooms Sold",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_sold",
+        "metric": {
+          "name": "Sold Rooms"
+        }
+      }
+    },
+    {
+      "id": "occupancy_percent",
+      "name": "Occupancy %",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/occupancy_percent"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rooms_sold"
+              },
+              "arg2": {
+                "item_id": "rooms_available"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "revenue",
+      "name": "Revenue"
+    },
+    {
+      "id": "food_beverage_revenue",
+      "name": "Food and Beverage Revenue",
+      "parent_id": "revenue"
+    },
+    {
+      "id": "food_revenue",
+      "name": "Food Revenue",
+      "parent_id": "food_beverage_revenue"
+    },
+    {
+      "id": "venue_food_revenue",
+      "name": "Venue Food Revenue",
+      "parent_id": "food_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "venue_food_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "in_room_dining_food_revenue",
+      "name": "In-Room Dining Food Revenue",
+      "parent_id": "food_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "in_room_dining_food_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "banquet_conference_catering_food_revenue",
+      "name": "Banquet/Conference/Catering Food Revenue",
+      "parent_id": "food_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "banquet_conference_catering_food_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "mini_bar_food_revenue",
+      "name": "Mini Bar Food Revenue",
+      "parent_id": "food_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "mini_bar_food_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_food_revenue",
+      "name": "Other Food Revenue",
+      "parent_id": "food_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_food_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_food_revenue",
+      "name": "Total Food Revenue",
+      "parent_id": "food_revenue",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_food_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "beverage_revenue",
+      "name": "Beverage Revenue",
+      "parent_id": "food_beverage_revenue"
+    },
+    {
+      "id": "venue_beverage_revenue",
+      "name": "Venue Beverage Revenue",
+      "parent_id": "beverage_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "venue_beverage_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "in_room_dining_beverage_revenue",
+      "name": "In-Room Dining Beverage Revenue",
+      "parent_id": "beverage_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "in_room_dining_beverage_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "banquet_conference_catering_beverage_revenue",
+      "name": "Banquet/Conference/Catering Beverage Revenue",
+      "parent_id": "beverage_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "banquet_conference_catering_beverage_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "mini_bar_beverage_revenue",
+      "name": "Mini Bar Beverage Revenue",
+      "parent_id": "beverage_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "mini_bar_beverage_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_beverage_revenue",
+      "name": "Other Beverage Revenue",
+      "parent_id": "beverage_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_beverage_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_beverage_revenue",
+      "name": "Total Beverage Revenue",
+      "parent_id": "beverage_revenue",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_beverage_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "less_allowances",
+      "name": "Less: Allowances",
+      "parent_id": "food_beverage_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "less_allowances"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_food_beverage_revenue",
+      "name": "Total Food and Beverage Revenue",
+      "parent_id": "food_beverage_revenue",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_food_beverage_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_revenue",
+      "name": "Other Revenue",
+      "parent_id": "revenue"
+    },
+    {
+      "id": "audiovisual",
+      "name": "Audiovisual",
+      "parent_id": "other_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "audiovisual"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "function_room_rental_setup_charges",
+      "name": "Function Room Rental and Setup Charges",
+      "parent_id": "other_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "function_room_rental_setup_charges"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cover_charges",
+      "name": "Cover Charges",
+      "parent_id": "other_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cover_charges"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "surcharges_service_charges",
+      "name": "Surcharges and Service Charges",
+      "parent_id": "other_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "surcharges_service_charges"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "miscellaneous_other_revenue",
+      "name": "Miscellaneous Other Revenue",
+      "parent_id": "other_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "miscellaneous_other_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "less_allowances2",
+      "name": "Less: Allowances",
+      "parent_id": "other_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "less_allowances2"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_revenue",
+      "name": "Total Other Revenue",
+      "parent_id": "other_revenue",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_revenue",
+      "name": "Total Revenue",
+      "parent_id": "revenue",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_sales_other_revenue",
+      "name": "Cost of Sales and Other Revenue"
+    },
+    {
+      "id": "cost_food_beverage_sales",
+      "name": "Cost of Food and Beverage Sales",
+      "parent_id": "cost_sales_other_revenue"
+    },
+    {
+      "id": "cost_food_sales",
+      "name": "Cost of Food Sales",
+      "parent_id": "cost_food_beverage_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_food_sales"
+              },
+              "arg2": {
+                "item_id": "total_cost_sales_other_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_beverage_sales",
+      "name": "Cost of Beverage Sales",
+      "parent_id": "cost_food_beverage_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_beverage_sales"
+              },
+              "arg2": {
+                "item_id": "total_cost_sales_other_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_cost_food_beverage_sales",
+      "name": "Total Cost of Food and Beverage Sales",
+      "parent_id": "cost_food_beverage_sales",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_cost_food_beverage_sales"
+              },
+              "arg2": {
+                "item_id": "total_cost_sales_other_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_other_revenue",
+      "name": "Cost of Other Revenue",
+      "parent_id": "cost_sales_other_revenue"
+    },
+    {
+      "id": "audiovisual_cost",
+      "name": "Audiovisual Cost",
+      "parent_id": "cost_other_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "audiovisual_cost"
+              },
+              "arg2": {
+                "item_id": "total_cost_sales_other_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "miscellaneous_cost",
+      "name": "Miscellaneous Cost",
+      "parent_id": "cost_other_revenue",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "miscellaneous_cost"
+              },
+              "arg2": {
+                "item_id": "total_cost_sales_other_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_cost_other_revenue",
+      "name": "Total Cost of Other Revenue",
+      "parent_id": "cost_other_revenue",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_cost_other_revenue"
+              },
+              "arg2": {
+                "item_id": "total_cost_sales_other_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_cost_sales_other_revenue",
+      "name": "Total Cost of Sales and Other Revenue",
+      "parent_id": "cost_sales_other_revenue",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_cost_sales_other_revenue"
+              },
+              "arg2": {
+                "item_id": "total_cost_sales_other_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "expenses",
+      "name": "Expenses"
+    },
+    {
+      "id": "labor_costs",
+      "name": "Labor Costs and Related Expenses",
+      "parent_id": "expenses"
+    },
+    {
+      "id": "swscc",
+      "name": "Salaries, Wages, Service Charges, Contracted",
+      "parent_id": "labor_costs"
+    },
+    {
+      "id": "salaries_wages",
+      "name": "Salaries and Wages",
+      "parent_id": "swscc"
+    },
+    {
+      "id": "management",
+      "name": "Management",
+      "parent_id": "salaries_wages"
+    },
+    {
+      "id": "management_service",
+      "name": "Service",
+      "parent_id": "management",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "management_service"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "management_kitchen",
+      "name": "Kitchen",
+      "parent_id": "management",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "management_kitchen"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_management",
+      "name": "Total Management",
+      "parent_id": "management",
+      "totals": true,
+      "show": false,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_management"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_management",
+      "name": "Non-Management",
+      "parent_id": "salaries_wages"
+    },
+    {
+      "id": "banquet_conference_catering_service",
+      "name": "Banquet/Conference/Catering Service",
+      "parent_id": "non_management",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "banquet_conference_catering_service"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_management_kitchen",
+      "name": "Kitchen",
+      "parent_id": "non_management",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "non_management_kitchen"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_management_venues",
+      "name": "Venues",
+      "parent_id": "non_management",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "non_management_venues"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_non_management",
+      "name": "Total Non-Management",
+      "parent_id": "non_management",
+      "totals": true,
+      "show": false,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_non_management"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_salaries_wages",
+      "name": "Total Salaries and Wages",
+      "parent_id": "salaries_wages",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_salaries_wages"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "service_charge",
+      "name": "Service Charge Distribution",
+      "parent_id": "swscc",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "service_charge"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "clol",
+      "name": "Contracted, Leased and Outsourced Labor",
+      "parent_id": "swscc",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "clol"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "bonus_incentive",
+      "name": "Bonuses and Incentives",
+      "parent_id": "swscc",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "bonus_incentive"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_swscc",
+      "name": "Total Salaries, Wages, Service Charges, Contracted",
+      "parent_id": "swscc",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_swscc"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_expenses",
+      "name": "Payroll-Related Expenses",
+      "parent_id": "labor_costs"
+    },
+    {
+      "id": "payroll_tax",
+      "name": "Payroll Taxes",
+      "parent_id": "payroll_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_tax"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "supple_pay",
+      "name": "Supplemental Pay",
+      "parent_id": "payroll_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "supple_pay"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "employee_benefits",
+      "name": "Employee Benefits",
+      "parent_id": "payroll_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "employee_benefits"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_labor_costs",
+      "name": "Total Labor Costs and Related Expenses",
+      "parent_id": "labor_costs",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_labor_costs"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_payroll_expenses",
+      "name": "Total Payroll-Related Expenses",
+      "parent_id": "payroll_expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_payroll_expenses"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_expenses",
+      "name": "Other Expenses",
+      "parent_id": "expenses"
+    },
+    {
+      "id": "banquet_expenses",
+      "name": "Banquet Expenses",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "banquet_expenses"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "china",
+      "name": "China",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "china"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cleaning_supply",
+      "name": "Cleaning Supplies",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cleaning_supply"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cluster_service",
+      "name": "Cluster Services",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cluster_service"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "commission",
+      "name": "Commissions",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "commission"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "compli_service_gift",
+      "name": "Complimentary Services and Gifts",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "compli_service_gift"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "contract_service",
+      "name": "Contract Service",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "contract_service"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "corporate_office_reimburse",
+      "name": "Corporate Office Reimbursables",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "corporate_office_reimburse"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "decorations",
+      "name": "Decorations",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "decorations"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "dishwashing_supplies",
+      "name": "Dishwashing Supplies",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "dishwashing_supplies"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "dues_subscriptions",
+      "name": "Dues and Subscriptions",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "dues_subscriptions"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "entertainment_in_house",
+      "name": "Entertainment—In-House",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "entertainment_in_house"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "equipment_rental",
+      "name": "Equipment Rental",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "equipment_rental"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "flatware",
+      "name": "Flatware",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "flatware"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "glassware",
+      "name": "Glassware",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "glassware"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ice",
+      "name": "Ice",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "ice"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "kitchen_fuel",
+      "name": "Kitchen Fuel",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "kitchen_fuel"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "kitchen_smallwares",
+      "name": "Kitchen Smallwares",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "kitchen_smallwares"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "laundry_dry_cleaning",
+      "name": "Laundry and Dry Cleaning",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "laundry_dry_cleaning"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "licenses_permits",
+      "name": "Licenses and Permits",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "licenses_permits"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "linen",
+      "name": "Linen",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "linen"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "management_fees",
+      "name": "Management Fees",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "management_fees"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "menus_beverage_lists",
+      "name": "Menus and Beverage Lists",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "linen"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "miscellaneous",
+      "name": "Miscellaneous",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "miscellaneous"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "music_entertainment",
+      "name": "Music and Entertainment",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "music_entertainment"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "operating_supplies",
+      "name": "Operating Supplies",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "operating_supplies"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "paper_plastics",
+      "name": "Paper and Plastics",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "paper_plastics"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "podc",
+      "name": "Postage and Overnight Delivery Charges",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "podc"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "printing_stationery",
+      "name": "Printing and Stationery",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "printing_stationery"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "reservations",
+      "name": "Reservations",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "reservations"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "royalty_fees",
+      "name": "Royalty Fees",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "royalty_fees"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "training",
+      "name": "Training",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "training"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tranvel_meals",
+      "name": "Travel—Meals and Entertainment",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "tranvel_meals"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "tranvel_other",
+      "name": "Travel—Other",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "tranvel_other"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "uniform_costs",
+      "name": "Uniform Costs",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "uniform_costs"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "uniform_laundry",
+      "name": "Uniform Laundry",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "uniform_laundry"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "utensils",
+      "name": "Utensils",
+      "parent_id": "other_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "utensils"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_expenses",
+      "name": "Total Other Expenses",
+      "parent_id": "other_expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_expenses"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_expenses",
+      "name": "Total Expenses",
+      "parent_id": "expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_expenses"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "departmental_profit",
+      "name": "Departmental Profit",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "total_revenue", "negative": false },
+                  { "id": "total_cost_sales_other_revenue", "negative": true },
+                  { "id": "total_expenses", "negative": true }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

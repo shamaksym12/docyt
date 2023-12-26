@@ -1,0 +1,68 @@
+[
+    {
+        "id": 1848,
+        "business_id": 4967,
+        "name": "Utilities",
+        "external_id": "2800000000001228216"
+    },
+    {
+        "id": 1847,
+        "business_id": 4967,
+        "name": "Sales \u0026 Marketing",
+        "external_id": "2800000000001228215"
+    },
+    {
+        "id": 1846,
+        "business_id": 4967,
+        "name": "Rooms",
+        "external_id": "2800000000001228213"
+    },
+    {
+        "id": 1845,
+        "business_id": 4967,
+        "name": "Property Operations \u0026 Maintenance",
+        "external_id": "2800000000001228212"
+    },
+    {
+        "id": 1844,
+        "business_id": 4967,
+        "name": "Non-Operating Income \u0026 Expense",
+        "external_id": "2800000000001228211"
+    },
+    {
+        "id": 1843,
+        "business_id": 4967,
+        "name": "Miscellaneous Income",
+        "external_id": "2800000000001228210"
+    },
+    {
+        "id": 1842,
+        "business_id": 4967,
+        "name": "Minor Operated Departments",
+        "external_id": "2800000000001228209"
+    },
+    {
+        "id": 1841,
+        "business_id": 4967,
+        "name": "Management",
+        "external_id": "2800000000001228208"
+    },
+    {
+        "id": 1840,
+        "business_id": 4967,
+        "name": "Information \u0026 Telecom Services",
+        "external_id": "2800000000001228207"
+    },
+    {
+        "id": 1839,
+        "business_id": 4967,
+        "name": "Depreciation, Tax \u0026 Amortization",
+        "external_id": "2800000000001228206"
+    },
+    {
+        "id": 1838,
+        "business_id": 4967,
+        "name": "Administrative \u0026 General",
+        "external_id": "2800000000001228205"
+    }
+]

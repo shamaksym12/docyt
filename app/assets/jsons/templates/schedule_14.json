@@ -1,0 +1,1002 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "schedule_14",
+  "name": "Schedule 14 - Payroll-Related Expenses",
+  "category": "department",
+  "depends_on": [
+    "owners_operating_statement"
+  ],
+  "rank": 16,
+  "standard_category_ids": [9],
+  "draft": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "budget_actual", "range": "current_period", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "current_period", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "current_period", "name": "Budget Var"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "prior", "name": "POR LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "budget_actual", "range": "ytd", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "ytd", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "ytd", "name": "Budget Var"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "prior", "name": "POR LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"}
+  ],
+  "missing_transactions_calculation_disabled": false,
+  "items": [
+    {
+      "id": "summary",
+      "name": "Summary",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "rooms_available",
+      "name": "Rooms Available to sell",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_available",
+        "metric": {
+          "name": "Available Rooms"
+        }
+      }
+    },
+    {
+      "id": "rooms_sold",
+      "name": "Rooms Sold",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_sold",
+        "metric": {
+          "name": "Sold Rooms"
+        }
+      }
+    },
+    {
+      "id": "occupancy_percent",
+      "name": "Occupancy %",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/occupancy_percent"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rooms_sold"
+              },
+              "arg2": {
+                "item_id": "rooms_available"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_expenses",
+      "name": "Payroll-Related Expenses"
+    },
+    {
+      "id": "payroll_taxes",
+      "name": "Payroll Taxes",
+      "parent_id": "payroll_expenses"
+    },
+    {
+      "id": "national_disability",
+      "name": "National Disability Insurance",
+      "parent_id": "payroll_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "national_disability"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "national_medical",
+      "name": "National Medical Insurance",
+      "parent_id": "payroll_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "national_medical"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "national_retirement",
+      "name": "National Retirement Contribution",
+      "parent_id": "payroll_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "national_retirement"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "national_employment",
+      "name": "National Unemployment Insurance",
+      "parent_id": "payroll_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "national_employment"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "state_disability",
+      "name": "State Disability Insurance",
+      "parent_id": "payroll_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "state_disability"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "state_medical",
+      "name": "State Medical Insurance",
+      "parent_id": "payroll_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "state_medical"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "state_retirement",
+      "name": "State Retirement Contribution",
+      "parent_id": "payroll_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "state_retirement"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "state_unemployement",
+      "name": "State Unemployment Insurance",
+      "parent_id": "payroll_taxes",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "state_unemployement"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_payroll_taxes",
+      "name": "Total Payroll Taxes",
+      "parent_id": "payroll_taxes",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_payroll_taxes"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "supplement_pay",
+      "name": "Supplemental Pay",
+      "parent_id": "payroll_expenses"
+    },
+    {
+      "id": "other_pay",
+      "name": "Other Pay",
+      "parent_id": "supplement_pay",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_pay"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "personal_days",
+      "name": "Personal Days",
+      "parent_id": "supplement_pay",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "personal_days"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "severance_pay",
+      "name": "Severance Pay",
+      "parent_id": "supplement_pay",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "severance_pay"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "sick_pay",
+      "name": "Sick Pay",
+      "parent_id": "supplement_pay",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "sick_pay"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "holiday_pay",
+      "name": "Holiday Pay",
+      "parent_id": "supplement_pay",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "holiday_pay"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "vacation_paid",
+      "name": "Vacation/Paid Time Off",
+      "parent_id": "supplement_pay",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "vacation_paid"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_supplement_pay",
+      "name": "Total Supplemental Pay",
+      "parent_id": "supplement_pay",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_supplement_pay"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "employee_benefits",
+      "name": "Employee Benefits",
+      "parent_id": "payroll_expenses"
+    },
+    {
+      "id": "automobile_allowance",
+      "name": "Automobile Allowance",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "automobile_allowance"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "child_care",
+      "name": "Child Care",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "child_care"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "contributory_savings_plan",
+      "name": "Contributory Savings Plan",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "contributory_savings_plan"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "dental_insurance",
+      "name": "Dental Insurance",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "dental_insurance"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "disability_insurance",
+      "name": "Disability Insurance",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "disability_insurance"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "expat_benefits",
+      "name": "Expat Benefits",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "expat_benefits"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "group_life_insurance",
+      "name": "Group Life Insurance",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "group_life_insurance"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "health_insurance",
+      "name": "Health Insurance",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "health_insurance"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "house_and_educational",
+      "name": "Housing and Educational",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "house_and_educational"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "meals",
+      "name": "Meals",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "meals"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "miscellaneous",
+      "name": "Miscellaneous",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "miscellaneous"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "nonunion_insurance",
+      "name": "Nonunion Insurance",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "nonunion_insurance"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "nonunion_pension",
+      "name": "Nonunion Pension",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "nonunion_pension"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "profit_sharing",
+      "name": "Profit Sharing",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "profit_sharing"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "public_transportation",
+      "name": "Public Subsidized Transportation",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "public_transportation"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "stock_benefits",
+      "name": "Stock Benefits",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "stock_benefits"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "stock_options",
+      "name": "Stock Options",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "stock_options"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "union_insurance",
+      "name": "Union Insurance",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "union_insurance"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "union_other",
+      "name": "Union Other",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "union_other"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "union_pension",
+      "name": "Union Pension",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "union_pension"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "workers_insurance",
+      "name": "Workers’ Compensation Insurance",
+      "parent_id": "employee_benefits",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "workers_insurance"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_employee_benefits",
+      "name": "Total Employee Benefits",
+      "parent_id": "employee_benefits",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_employee_benefits"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_payroll_expenses",
+      "name": "Total Payroll-Related Expenses",
+      "parent_id": "payroll_expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_payroll_expenses"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

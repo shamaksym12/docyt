@@ -1,0 +1,416 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "saas_services_report",
+  "name": "Services",
+  "category": "department",
+  "rank": 31,
+  "standard_category_ids": [11],
+  "draft": false,
+  "missing_transactions_calculation_disabled": false,
+  "enabled_budget_compare": false,
+  "enabled_blank_value_for_metric": true,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+
+  "multi_entity_columns": [{ "type": "actual", "name": "$" }],
+
+  "items": [
+    {
+      "id": "revenue",
+      "name": "Revenue"
+    },
+    {
+      "id": "recurring_revenue",
+      "name": "Recurring Revenue",
+      "parent_id": "revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "recurring_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_recurring_revenue",
+      "name": "Non-recurring Revenue",
+      "parent_id": "revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "non_recurring_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "discounts_refunds_given",
+      "name": "Discounts/Refunds Given",
+      "parent_id": "revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "discounts_refunds_given"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_revenue",
+      "name": "Total Revenue",
+      "parent_id": "revenue",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_revenue",
+      "name": "Cost of Revenue"
+    },
+    {
+      "id": "hosted_servers_bandwidth",
+      "name": "Hosted Servers & Bandwidth",
+      "parent_id": "cost_of_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "hosted_servers_bandwidth"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "professional_services",
+      "name": "Professional Services",
+      "parent_id": "cost_of_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "professional_services"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "technical_support",
+      "name": "Technical Support",
+      "parent_id": "cost_of_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "technical_support"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other",
+      "name": "Other",
+      "parent_id": "cost_of_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_cost_of_revenue",
+      "name": "Total Cost of Revenue",
+      "parent_id": "cost_of_revenue",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_cost_of_revenue"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gross_profit",
+      "name": "Gross Profit",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "total_revenue", "negative": false },
+                  { "id": "total_cost_of_revenue", "negative": true }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "gross_profit"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "operating_expenses",
+      "name": "Operating Expenses"
+    },
+    {
+      "id": "salaries_wages",
+      "name": "Salaries & Wages",
+      "parent_id": "operating_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "salaries_wages"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_taxes",
+      "name": "Payroll Taxes",
+      "parent_id": "operating_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_taxes"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "employee_benefits",
+      "name": "Employee Benefits",
+      "parent_id": "operating_expenses",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "employee_benefits"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_operating_expenses",
+      "name": "Total Operating Expenses",
+      "parent_id": "operating_expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_operating_expenses"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gross_operating_profit",
+      "name": "Gross Operating Profit",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "gross_profit", "negative": false },
+                  { "id": "total_operating_expenses", "negative": true }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "gross_operating_profit"
+              },
+              "arg2": {
+                "item_id": "total_revenue"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

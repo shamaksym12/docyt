@@ -1,0 +1,32 @@
+[
+  {
+    "id": 2,
+    "business_id": 810,
+    "name": "Another class",
+    "external_id": "5000000000000145595"
+  },
+  {
+    "id": 3,
+    "business_id": 810,
+    "name": "My test class",
+    "external_id": "5000000000000145594"
+  },
+  {
+    "id": 16,
+    "business_id": 810,
+    "name": "Dept 2",
+    "external_id": "5000000000000173572"
+  },
+  {
+    "id": 17,
+    "business_id": 810,
+    "name": "Dept 3",
+    "external_id": "5000000000000173573"
+  },
+  {
+    "id": 18,
+    "business_id": 810,
+    "name": "Testing",
+    "external_id": "5000000000000173574"
+  }
+]

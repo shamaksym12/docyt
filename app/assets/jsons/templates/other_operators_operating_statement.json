@@ -1,0 +1,413 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "other_operators_operating_statement",
+  "name": "Operators Operating Statement",
+  "category": "management",
+  "rank": 1,
+  "standard_category_ids": [7],
+  "draft": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+  "multi_entity_columns": [
+    { "type": "actual", "name": "$" }
+  ],
+  "missing_transactions_calculation_disabled": false,
+  "enabled_budget_compare": false,
+
+  "items": [
+    {
+      "id": "income",
+      "name": "Income"
+    },
+    {
+      "id": "sales_of_product_income",
+      "name": "Sales of Product Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Sales of Product Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "sales_of_product_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "service_fee_income",
+      "name": "Service/Fee Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Service/Fee Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "service_fee_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_profit_income",
+      "name": "Non-Profit Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Non-Profit Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "non_profit_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_primary_income",
+      "name": "Other Primary Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Other Primary Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_primary_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "unapplied_cash_payment_income",
+      "name": "Unapplied Cash Payment Income",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Unapplied Cash Payment Income" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "unapplied_cash_payment_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "discounts_refunds_given",
+      "name": "Discounts/Refunds Given",
+      "parent_id": "income",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Discounts/Refunds Given" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "discounts_refunds_given"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_income",
+      "name": "Total Income",
+      "parent_id": "income",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold",
+      "name": "Cost of Goods Sold"
+    },
+    {
+      "id": "cost_of_labor_cos",
+      "name": "Cost of labor - COS",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Cost of labor - COS" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_labor_cos"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "equipment_rental_cos",
+      "name": "Equipment Rental - COS",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Equipment Rental - COS" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "equipment_rental_cos"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_costs_of_services_cos",
+      "name": "Other Costs of Services - COS",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Other Costs of Services - COS" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_costs_of_services_cos"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "shipping_freight_delivery_cos",
+      "name": "Shipping, Freight & Delivery - COS",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Shipping, Freight & Delivery - COS" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "shipping_freight_delivery_cos"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "supplies_materials_cogs",
+      "name": "Supplies & Materials - COGS",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Supplies & Materials - COGS" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "supplies_materials_cogs"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_cost_of_goods_sold",
+      "name": "Total Cost of Goods Sold",
+      "parent_id": "cost_of_goods_sold",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_cost_of_goods_sold"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gross_profit",
+      "name": "Gross profit",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "total_income"
+              },
+              "arg2": {
+                "item_id": "total_cost_of_goods_sold"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "gross_profit"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

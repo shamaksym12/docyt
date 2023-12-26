@@ -1,0 +1,1342 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "owners_report_qsr",
+  "name": "Owner's Report",
+  "category": "management",
+  "rank": 101,
+  "standard_category_ids": [10],
+  "draft": false,
+  "missing_transactions_calculation_disabled": false,
+  "enabled_budget_compare": false,
+  "enabled_blank_value_for_metric": true,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+  "items": [
+    {
+      "id": "sales",
+      "name": "Sales"
+    },
+    {
+      "id": "food_beverage_sales",
+      "name": "Food & Beverage Sales",
+      "parent_id": "sales",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Discounts/Refunds Given" },
+          { "account_type": "Income", "account_detail_type": "Sales of Product Income" },
+          { "account_type": "Income", "account_detail_type": "Revenue General" },
+          { "account_type": "Income", "account_detail_type": "Sales Retail" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "food_beverage_sales"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "catering_sales",
+      "name": "Catering Sales",
+      "parent_id": "sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "catering_sales"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_income",
+      "name": "Other Income",
+      "parent_id": "sales",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Income", "account_detail_type": "Non-Profit Income" },
+          { "account_type": "Income", "account_detail_type": "Other Primary Income" },
+          { "account_type": "Income", "account_detail_type": "Service/Fee Income" },
+          { "account_type": "Income", "account_detail_type": "Unapplied Cash Payment Income" },
+          { "account_type": "Income", "account_detail_type": "Cash Receipt Income" },
+          { "account_type": "Income", "account_detail_type": "Operating Grants" },
+          { "account_type": "Income", "account_detail_type": "Other Current Operating Income" },
+          { "account_type": "Income", "account_detail_type": "Own Work Capitalized" },
+          { "account_type": "Income", "account_detail_type": "Sales Wholesale" },
+          { "account_type": "Income", "account_detail_type": "Savings By Tax Scheme" },
+          { "account_type": "Other Income", "account_detail_type": "Dividend Income" },
+          { "account_type": "Other Income", "account_detail_type": "Interest Earned" },
+          { "account_type": "Other Income", "account_detail_type": "Other Investment Income" },
+          { "account_type": "Other Income", "account_detail_type": "Other Miscellaneous Income" },
+          { "account_type": "Other Income", "account_detail_type": "Tax-Exempt Interest" },
+          { "account_type": "Other Income", "account_detail_type": "Gain Loss On Sale of Fixed Assets" },
+          { "account_type": "Other Income", "account_detail_type": "Gain Loss On Sale Of Investments" },
+          { "account_type": "Other Income", "account_detail_type": "Loss On Disposal Of Assets" },
+          { "account_type": "Other Income", "account_detail_type": "Other Operating Income" },
+          { "account_type": "Other Income", "account_detail_type": "Unrealised Loss On Securities Net Of Tax" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_income"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_sales",
+      "name": "Total Sales",
+      "parent_id": "sales",
+      "totals": true,
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "food_beverage_sales", "negative": false },
+                  { "id": "catering_sales", "negative": false },
+                  { "id": "other_income", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_sales"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold",
+      "name": "Cost of Goods Sold"
+    },
+    {
+      "id": "cost_of_goods_sold_food",
+      "name": "Cost of Goods Sold - Food",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_goods_sold_food"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold_paper",
+      "name": "Cost of Goods Sold - Paper",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_goods_sold_paper"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold_beverage",
+      "name": "Cost of Goods Sold - Beverage",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_goods_sold_beverage"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold_other",
+      "name": "Cost of Goods Sold - Other",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Cost of labor - COS" },
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Equipment Rental - COS" },
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Shipping, Freight & Delivery - COS" },
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Supplies & Materials - COGS" },
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Cost Of Sales" },
+          { "account_type": "Cost of Goods Sold", "account_detail_type": "Other Costs of Services - COS" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_goods_sold_other"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_cost_of_goods_sold",
+      "name": "Total Cost of Goods Sold",
+      "parent_id": "cost_of_goods_sold",
+      "totals": true,
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "cost_of_goods_sold_food", "negative": false },
+                  { "id": "cost_of_goods_sold_paper", "negative": false },
+                  { "id": "cost_of_goods_sold_beverage", "negative": false },
+                  { "id": "cost_of_goods_sold_other", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_cost_of_goods_sold"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gross_profit_loss",
+      "name": "Gross Profit (Loss)",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "total_sales", "negative": false },
+                  { "id": "total_cost_of_goods_sold", "negative": true }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "gross_profit_loss"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "labor_cost",
+      "name": "Labor Cost"
+    },
+    {
+      "id": "salaried",
+      "name": "Salaried",
+      "parent_id": "labor_cost",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Management Compensation" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "salaried"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "hourly",
+      "name": "Hourly",
+      "parent_id": "labor_cost",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Payroll Expenses" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "hourly"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_tax",
+      "name": "Payroll Tax",
+      "parent_id": "labor_cost",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_tax"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "benefits",
+      "name": "Benefits",
+      "parent_id": "labor_cost",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "benefits"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_labor_cost",
+      "name": "Total Labor Cost",
+      "parent_id": "labor_cost",
+      "totals": true,
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "salaried", "negative": false },
+                  { "id": "hourly", "negative": false },
+                  { "id": "payroll_tax", "negative": false },
+                  { "id": "benefits", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_labor_cost"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "prime_cost",
+      "name": "Prime Cost (COGS + Labor)",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "total_cost_of_goods_sold", "negative": false },
+                  { "id": "total_labor_cost", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "prime_cost"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "operating_costs",
+      "name": "Operating Costs"
+    },
+    {
+      "id": "advertising",
+      "name": "Advertising",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Advertising/Promotional" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "advertising"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "bank_and_credit_fees",
+      "name": "Bank & Credit Card Fees",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Bank Charges" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "bank_and_credit_fees"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "franchise_fees_and_royalties",
+      "name": "Franchise Fees & Royalties",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "franchise_fees_and_royalties"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "insurance",
+      "name": "Insurance",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Insurance" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "insurance"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "legal_and_professional_fees",
+      "name": "Legal & Professional Fees",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Legal & Professional Fees" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "legal_and_professional_fees"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "licenses_and_fees",
+      "name": "Licenses & Fees",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "licenses_and_fees"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "meals_and_entertainment",
+      "name": "Meals & Entertainment",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Entertainment" },
+          { "account_type": "Expenses", "account_detail_type": "Entertainment Meals" },
+          { "account_type": "Expenses", "account_detail_type": "Travel Meals" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "meals_and_entertainment"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "office_expenses",
+      "name": "Office Expenses",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Office/General Administrative Expenses" },
+          { "account_type": "Expenses", "account_detail_type": "Office Expenses" },
+          { "account_type": "Other Expenses", "account_detail_type": "Home Office" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "office_expenses"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_operatiing_costs",
+      "name": "Other Operating Costs",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Auto" },
+          { "account_type": "Expenses", "account_detail_type": "Bad Debts" },
+          { "account_type": "Expenses", "account_detail_type": "Charitable Contributions" },
+          { "account_type": "Expenses", "account_detail_type": "Cost of Labor" },
+          { "account_type": "Expenses", "account_detail_type": "Dues & subscriptions" },
+          { "account_type": "Expenses", "account_detail_type": "Equipment Rental" },
+          { "account_type": "Expenses", "account_detail_type": "Finance costs" },
+          { "account_type": "Expenses", "account_detail_type": "Other Miscellaneous Service Cost" },
+          { "account_type": "Expenses", "account_detail_type": "Promotional Meals" },
+          { "account_type": "Expenses", "account_detail_type": "Shipping, Freight & Delivery" },
+          { "account_type": "Expenses", "account_detail_type": "Unapplied Cash Bill Payment Expense" },
+          { "account_type": "Expenses", "account_detail_type": "Commissions & Fees" },
+          { "account_type": "Expenses", "account_detail_type": "Other Business Expenses" },
+          { "account_type": "Expenses", "account_detail_type": "Other Current Operating Charges" },
+          { "account_type": "Expenses", "account_detail_type": "Other External Services" },
+          { "account_type": "Expenses", "account_detail_type": "Shipping & Delivery Expense" },
+          { "account_type": "Expenses", "account_detail_type": "Staff Costs" },
+          { "account_type": "Expenses", "account_detail_type": "Sundry" },
+          { "account_type": "Other Expenses", "account_detail_type": "Gas And Fuel" },
+          { "account_type": "Other Expenses", "account_detail_type": "Other Home Office Expenses" },
+          { "account_type": "Other Expenses", "account_detail_type": "Parking and Tolls" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_operatiing_costs"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_and_software_fees",
+      "name": "Payroll & Software Fees",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_and_software_fees"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "repairs",
+      "name": "Repairs",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Repair & Maintenance" },
+          { "account_type": "Other Expenses", "account_detail_type": "Repairs and Maintenance Home Office" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "repairs"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "small_tools_and_equipment",
+      "name": "Small Tools & Equipment",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "small_tools_and_equipment"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "supplies",
+      "name": "Supplies",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Supplies & Materials" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "supplies"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "telephone_and_internet",
+      "name": "Telephone & Internet",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "telephone_and_internet"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "travel",
+      "name": "Travel",
+      "parent_id": "operating_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Travel Expenses General & Admin Expenses" },
+          { "account_type": "Expenses", "account_detail_type": "Travel Expenses Selling Expense" },
+          { "account_type": "Expenses", "account_detail_type": "Travel" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "travel"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_operating_costs",
+      "name": "Total Operating Costs",
+      "parent_id": "operating_costs",
+      "totals": true,
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "advertising", "negative": false },
+                  { "id": "bank_and_credit_fees", "negative": false },
+                  { "id": "franchise_fees_and_royalties", "negative": false },
+                  { "id": "insurance", "negative": false },
+                  { "id": "legal_and_professional_fees", "negative": false },
+                  { "id": "licenses_and_fees", "negative": false },
+                  { "id": "meals_and_entertainment", "negative": false },
+                  { "id": "office_expenses", "negative": false },
+                  { "id": "other_operatiing_costs", "negative": false },
+                  { "id": "payroll_and_software_fees", "negative": false },
+                  { "id": "repairs", "negative": false },
+                  { "id": "small_tools_and_equipment", "negative": false },
+                  { "id": "supplies", "negative": false },
+                  { "id": "telephone_and_internet", "negative": false },
+                  { "id": "travel", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_operating_costs"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "occupancy_costs",
+      "name": "Occupancy Costs"
+    },
+    {
+      "id": "rent",
+      "name": "Rent",
+      "parent_id": "occupancy_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Rent or Lease of Buildings" },
+          { "account_type": "Expenses", "account_detail_type": "Other Rental Costs" },
+          { "account_type": "Other Expenses", "account_detail_type": "Rent and Lease Home Office" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rent"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "real_estate_tax",
+      "name": "Real Estate Tax",
+      "parent_id": "occupancy_costs",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "real_estate_tax"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "property_insurance",
+      "name": "Property Insurance",
+      "parent_id": "occupancy_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Other Expenses", "account_detail_type": "Homeowner Rental Insurance" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "property_insurance"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "utilities",
+      "name": "Utilities",
+      "parent_id": "occupancy_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Utilities" },
+          { "account_type": "Other Expenses", "account_detail_type": "Utilities Home Office" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "utilities"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_occupancy_costs",
+      "name": "Total Occupancy Costs",
+      "parent_id": "occupancy_costs",
+      "totals": true,
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "rent", "negative": false },
+                  { "id": "real_estate_tax", "negative": false },
+                  { "id": "property_insurance", "negative": false },
+                  { "id": "utilities", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_occupancy_costs"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_costs",
+      "name": "Other Costs"
+    },
+    {
+      "id": "other_expenses",
+      "name": "Other Expenses",
+      "parent_id": "other_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Taxes Paid" },
+          { "account_type": "Expenses", "account_detail_type": "Global Tax Expense" },
+          { "account_type": "Expenses", "account_detail_type": "Borrowing Cost" },
+          { "account_type": "Expenses", "account_detail_type": "Distribution Costs" },
+          { "account_type": "Expenses", "account_detail_type": "External Services" },
+          { "account_type": "Expenses", "account_detail_type": "Extraordinary Charges" },
+          { "account_type": "Expenses", "account_detail_type": "Income Tax Expense" },
+          { "account_type": "Expenses", "account_detail_type": "Loss On Discontinued Operations Net Of Tax" },
+          { "account_type": "Expenses", "account_detail_type": "Other Selling Expenses" },
+          { "account_type": "Expenses", "account_detail_type": "Project Studies Surveys Assessments" },
+          { "account_type": "Expenses", "account_detail_type": "Purchases Rebates" },
+          { "account_type": "Other Expenses", "account_detail_type": "Exchange Gain or Loss" },
+          { "account_type": "Other Expenses", "account_detail_type": "Other Miscellaneous Expense" },
+          { "account_type": "Other Expenses", "account_detail_type": "Penalties & Settlements" },
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle" },
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Insurance" },
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Lease" },
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Loan Interest" },
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Loan" },
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Registration" },
+          { "account_type": "Other Expenses", "account_detail_type": "Vehicle Repairs" },
+          { "account_type": "Other Expenses", "account_detail_type": "Other Vehicle Expenses" },
+          { "account_type": "Other Expenses", "account_detail_type": "Wash and Road Services" },
+          { "account_type": "Other Expenses", "account_detail_type": "Deferred Tax Expense" },
+          { "account_type": "Other Expenses", "account_detail_type": "Depletion" },
+          { "account_type": "Other Expenses", "account_detail_type": "Exceptional Items" },
+          { "account_type": "Other Expenses", "account_detail_type": "Extraordinary Items" },
+          { "account_type": "Other Expenses", "account_detail_type": "Income Tax Other Expense" },
+          { "account_type": "Other Expenses", "account_detail_type": "Mat Credit" },
+          { "account_type": "Other Expenses", "account_detail_type": "Prior Period Items" },
+          { "account_type": "Other Expenses", "account_detail_type": "Tax Roundoff Gain or Loss" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_expenses"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "depreciation",
+      "name": "Depreciation",
+      "parent_id": "other_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Appropriations To Depreciation" },
+          { "account_type": "Other Expenses", "account_detail_type": "Depreciation" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "depreciation"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "amortization",
+      "name": "Amortization",
+      "parent_id": "other_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Amortization Expense" },
+          { "account_type": "Other Expenses", "account_detail_type": "Amortization" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "amortization"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "interest_expense",
+      "name": "Interest Expense",
+      "parent_id": "other_costs",
+      "type": {
+        "name": "quickbooks_ledger",
+        "default_accounts": [
+          { "account_type": "Expenses", "account_detail_type": "Interest Paid" },
+          { "account_type": "Other Expenses", "account_detail_type": "Mortgage Interest Home Office" }
+        ]
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "interest_expense"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_costs",
+      "name": "Total Other Costs",
+      "parent_id": "other_costs",
+      "totals": true,
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "other_expenses", "negative": false },
+                  { "id": "depreciation", "negative": false },
+                  { "id": "amortization", "negative": false },
+                  { "id": "interest_expense", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_costs"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "net_profit_loss",
+      "name": "Net Profit (Loss)",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "gross_profit_loss", "negative": false },
+                  { "id": "total_labor_cost", "negative": true },
+                  { "id": "total_operating_costs", "negative": true },
+                  { "id": "total_occupancy_costs", "negative": true },
+                  { "id": "total_other_costs", "negative": true }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "net_profit_loss"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

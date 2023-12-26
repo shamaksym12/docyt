@@ -1,0 +1,44 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "departmental_report",
+  "name": "Departmental Report",
+  "category": "department",
+  "factory_class": "DepartmentalReportFactory",
+
+  "rank": 17,
+  "standard_category_ids": [9],
+  "edit_mapping_disabled": true,
+
+  "columns": [
+    {
+      "type": "actual",
+      "range": "current_period",
+      "year": "current",
+      "name": "PTD $"
+    },
+    {
+      "type": "budget_actual",
+      "range": "current_period",
+      "year": "current",
+      "name": "Budget $"
+    },
+    {
+      "type": "budget_percentage",
+      "range": "current_period",
+      "year": "current",
+      "name": "Budget %"
+    },
+    {
+      "type": "budget_variance",
+      "range": "current_period",
+      "year": "current",
+      "name": "Budget Var"
+    }
+  ],
+  "items": [
+    { "id": "revenue", "name": "Revenue" },
+    { "id": "expenses", "name": "Expenses" },
+    { "id": "profit", "name": "Profit" }
+  ]
+}

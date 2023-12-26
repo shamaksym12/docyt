@@ -1,0 +1,505 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "revenue_report",
+  "name": "Daily/Monthly Revenue report",
+  "category": "revenue",
+  "rank": 17,
+  "standard_category_ids": [9],
+  "draft": false,
+  "period_type": "daily",
+  "enabled_budget_compare": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "mtd", "year": "current", "name": "MTD"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+  "multi_entity_columns": [{ "type": "actual", "name": "$" }],
+  "missing_transactions_calculation_disabled": false,
+  "items": [
+    {
+      "id": "metrics",
+      "name": "Metrics",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "rooms_available",
+      "name": "Rooms Available to sell",
+      "parent_id": "metrics",
+      "type": {
+        "name": "metric",
+        "metric": {
+          "name": "Available Rooms",
+          "code": "rooms_available"
+        }
+      }
+    },
+    {
+      "id": "rooms_sold",
+      "name": "Rooms Sold",
+      "parent_id": "metrics",
+      "type": {
+        "name": "metric",
+        "metric": {
+          "name": "Sold Rooms",
+          "code": "rooms_sold"
+        }
+      }
+    },
+    {
+      "id": "occupancy_percent",
+      "name": "Occupancy percentage",
+      "parent_id": "metrics",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rooms_sold"
+              },
+              "arg2": {
+                "item_id": "rooms_available"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "adr",
+      "name": "ADR",
+      "parent_id": "metrics",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "/",
+              "arg1": {
+                "item_id": "rooms_revenue"
+              },
+              "arg2": {
+                "item_id": "rooms_sold"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "revpar",
+      "name": "Revpar",
+      "parent_id": "metrics",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "/",
+              "arg1": {
+                "item_id": "rooms_revenue"
+              },
+              "arg2": {
+                "item_id": "rooms_available"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "revenue_department",
+      "name": "Revenue by Departments",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "rooms_revenue",
+      "name": "Rooms Revenue",
+      "parent_id": "revenue_department",
+      "type": {
+        "name": "quickbooks_ledger"
+      }
+    },
+    {
+      "id": "minor_operated",
+      "name": "Minor Operated",
+      "parent_id": "revenue_department",
+      "type": {
+        "name": "quickbooks_ledger"
+      }
+    },
+    {
+      "id": "f_b",
+      "name": "F&B",
+      "parent_id": "revenue_department",
+      "type": {
+        "name": "quickbooks_ledger"
+      }
+    },
+    {
+      "id": "misc",
+      "name": "MISC",
+      "parent_id": "revenue_department",
+      "type": {
+        "name": "quickbooks_ledger"
+      }
+    },
+    {
+      "id": "total_revenue",
+      "name": "Total Revenue",
+      "totals": true,
+      "parent_id": "revenue_department",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "rooms_revenue", "negative": false },
+                  { "id": "minor_operated", "negative": false },
+                  { "id": "f_b", "negative": false },
+                  { "id": "misc", "negative": false }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "occupancy_sales_tax",
+      "name": "Occupancy and Sales Tax",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "transient_occupancy_tax",
+      "name": "Transient Occupancy Tax",
+      "parent_id": "occupancy_sales_tax",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank", "Accounts Payable"]
+        }
+      }
+    },
+    {
+      "id": "sales_tax",
+      "name": "Sales Tax",
+      "parent_id": "occupancy_sales_tax",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank", "Accounts Payable"]
+        }
+      }
+    },
+    {
+      "id": "total_occupancy_sales_tax",
+      "name": "Total Occupancy and Sales Tax",
+      "totals": true,
+      "parent_id": "occupancy_sales_tax",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "transient_occupancy_tax", "negative": false },
+                  { "id": "sales_tax", "negative": false }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_revenue_and_tax",
+      "name": "Total Revenue and Tax",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "total_occupancy_sales_tax", "negative": false },
+                  { "id": "total_revenue", "negative": false }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "guest_ledger",
+      "name": "Guest ledger",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "guest_begin_balance",
+      "name": "Beginning Balance",
+      "parent_id": "guest_ledger",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "guest_charges",
+      "name": "Charges",
+      "parent_id": "guest_ledger",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "amount_type": "debit"
+        },
+        "use_mapping": {
+          "item_id": "guest_begin_balance"
+        }
+      }
+    },
+    {
+      "id": "guest_payments",
+      "name": "Payments",
+      "parent_id": "guest_ledger",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "amount_type": "credit"
+        },
+        "use_mapping": {
+          "item_id": "guest_begin_balance"
+        }
+      }
+    },
+    {
+      "id": "guest_end_balance",
+      "name": "Ending Balance",
+      "parent_id": "guest_ledger",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "use_mapping": {
+          "item_id": "guest_begin_balance"
+        }
+      }
+    },
+    {
+      "id": "city_ledger",
+      "name": "City ledger",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "city_begin_balance",
+      "name": "Beginning Balance",
+      "parent_id": "city_ledger",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "city_charges",
+      "name": "Charges",
+      "parent_id": "city_ledger",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "amount_type": "debit"
+        },
+        "use_mapping": {
+          "item_id": "city_begin_balance"
+        }
+      }
+    },
+    {
+      "id": "city_payments",
+      "name": "Payments",
+      "parent_id": "city_ledger",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "amount_type": "credit"
+        },
+        "use_mapping": {
+          "item_id": "city_begin_balance"
+        }
+      }
+    },
+    {
+      "id": "city_end_balance",
+      "name": "Ending Balance",
+      "parent_id": "city_ledger",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "use_mapping": {
+          "item_id": "city_begin_balance"
+        }
+      }
+    },
+    {
+      "id": "advance_deposit",
+      "name": "Advance Deposit",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "advance_begin_balance",
+      "name": "Beginning Balance",
+      "parent_id": "advance_deposit",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "advance_charges",
+      "name": "Charges",
+      "parent_id": "advance_deposit",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "amount_type": "debit"
+        },
+        "use_mapping": {
+          "item_id": "advance_begin_balance"
+        }
+      }
+    },
+    {
+      "id": "advance_payments",
+      "name": "Payments",
+      "parent_id": "advance_deposit",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "amount_type": "credit"
+        },
+        "use_mapping": {
+          "item_id": "advance_begin_balance"
+        }
+      }
+    },
+    {
+      "id": "advance_end_balance",
+      "name": "Ending Balance",
+      "parent_id": "advance_deposit",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "use_mapping": {
+          "item_id": "advance_begin_balance"
+        }
+      }
+    },
+    {
+      "id": "payment_processor",
+      "name": "Payment Processor Settlements",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "credit_card",
+      "name": "Credit Card",
+      "parent_id": "payment_processor",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank"]
+        }
+      }
+    },
+    {
+      "id": "cash_check",
+      "name": "Cash/ Check",
+      "parent_id": "payment_processor",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank"]
+        }
+      }
+    },
+    {
+      "id": "eft",
+      "name": "EFT",
+      "parent_id": "payment_processor",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank"]
+        }
+      }
+    },
+    {
+      "id": "total_payment_processor",
+      "name": "Total Payment Processor Settlements",
+      "totals": true,
+      "parent_id": "payment_processor",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "credit_card", "negative": false },
+                  { "id": "cash_check", "negative": false },
+                  { "id": "eft", "negative": false }
+                ]
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

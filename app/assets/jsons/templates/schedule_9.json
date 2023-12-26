@@ -1,0 +1,303 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "schedule_9",
+  "name": "Schedule 9 - Utilities",
+  "category": "department",
+  "depends_on": [
+    "owners_operating_statement"
+  ],
+  "rank": 11,
+  "standard_category_ids": [9],
+  "draft": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "budget_actual", "range": "current_period", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "current_period", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "current_period", "name": "Budget Var"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "prior", "name": "POR LY $"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "budget_actual", "range": "ytd", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "ytd", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "ytd", "name": "Budget Var"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "prior", "name": "POR LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"}
+  ],
+  "missing_transactions_calculation_disabled": false,
+  "items": [
+    {
+      "id": "summary",
+      "name": "Summary",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "rooms_available",
+      "name": "Rooms Available to sell",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_available",
+        "metric": {
+          "name": "Available Rooms"
+        }
+      }
+    },
+    {
+      "id": "rooms_sold",
+      "name": "Rooms Sold",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_sold",
+        "metric": {
+          "name": "Sold Rooms"
+        }
+      }
+    },
+    {
+      "id": "occupancy_percent",
+      "name": "Occupancy %",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/occupancy_percent"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rooms_sold"
+              },
+              "arg2": {
+                "item_id": "rooms_available"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "utilities",
+      "name": "Utilities"
+    },
+    {
+      "id": "electricity",
+      "name": "Electricity",
+      "parent_id": "utilities",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "electricity"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gas",
+      "name": "Gas",
+      "parent_id": "utilities",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "gas"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "oil",
+      "name": "Oil",
+      "parent_id": "utilities",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "oil"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "water_sewer",
+      "name": "Water/Sewer",
+      "parent_id": "utilities",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "water_sewer"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "steam",
+      "name": "Steam",
+      "parent_id": "utilities",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "steam"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "chilled_water",
+      "name": "Chilled Water",
+      "parent_id": "utilities",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "chilled_water"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_fuels",
+      "name": "Other Fuels",
+      "parent_id": "utilities",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_fuels"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "contract_services",
+      "name": "Contract Services",
+      "parent_id": "utilities",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "contract_services"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_utilities",
+      "name": "Total Utilities",
+      "parent_id": "utilities",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_utilities"
+              },
+              "arg2": {
+                "item_id": "owners_operating_statement/total_operating_revenue"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

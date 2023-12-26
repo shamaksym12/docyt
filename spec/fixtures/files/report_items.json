@@ -1,0 +1,1576 @@
+[
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747c6"
+    },
+    "identifier": "summary",
+    "name": "Summary",
+    "negative": null,
+    "order": 0,
+    "type_config": null,
+    "values_config": null
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747c7"
+    },
+    "identifier": "rooms_available",
+    "name": "Rooms Available to sell",
+    "negative": false,
+    "order": 0,
+    "type_config": {
+      "name": "metric",
+      "metric": {
+        "name": "Available Rooms",
+        "code": "rooms_available"
+      }
+    },
+    "values_config": null,
+    "parent_id": "619f44897d368200067747c6"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747c8"
+    },
+    "identifier": "rooms_sold",
+    "name": "Rooms Sold",
+    "negative": false,
+    "order": 1,
+    "type_config": {
+      "name": "metric",
+      "metric": {
+        "name": "Sold Rooms",
+        "code": "rooms_sold"
+      }
+    },
+    "values_config": null,
+    "parent_id": "619f44897d368200067747c6"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747c9"
+    },
+    "identifier": "occupancy_percent",
+    "name": "Occupancy %",
+    "negative": false,
+    "order": 2,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "rooms_sold"
+            },
+            "arg2": {
+              "item_id": "rooms_available"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747c6"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747ca"
+    },
+    "identifier": "adr",
+    "name": "ADR",
+    "negative": false,
+    "order": 3,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "/",
+            "arg1": {
+              "item_id": "rooms_revenue"
+            },
+            "arg2": {
+              "item_id": "rooms_sold"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747c6"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747cb"
+    },
+    "identifier": "rev_par",
+    "name": "RevPar",
+    "negative": false,
+    "order": 4,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "/",
+            "arg1": {
+              "item_id": "rooms_revenue"
+            },
+            "arg2": {
+              "item_id": "rooms_available"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747c6"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747cc"
+    },
+    "identifier": "operating_revenue",
+    "name": "Operating Revenue",
+    "negative": null,
+    "order": 1
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747cd"
+    },
+    "identifier": "rooms_revenue",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "619f4c6024ed92000601a907"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 279243
+      },
+      {
+        "_id": {
+          "$oid": "619f4c6024ed92000601a908"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 364182
+      },
+      {
+        "_id": {
+          "$oid": "619f4c7124ed92000601a909"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 11874
+      },
+      {
+        "_id": {
+          "$oid": "619f4c7124ed92000601a90a"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 592376
+      },
+      {
+        "_id": {
+          "$oid": "619f4c997d3682000677489c"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 11884
+      },
+      {
+        "_id": {
+          "$oid": "619f4c997d3682000677489d"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 11942
+      }
+    ],
+    "name": "Rooms Revenue",
+    "negative": false,
+    "order": 0,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "rooms_revenue"
+            },
+            "arg2": {
+              "item_id": "rooms_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747cc"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747ce"
+    },
+    "identifier": "foodbev_revenue",
+    "name": "F u0026 B Revenue",
+    "negative": false,
+    "order": 1,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "foodbev_revenue"
+            },
+            "arg2": {
+              "item_id": "foodbev_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747cc"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747cf"
+    },
+    "identifier": "other_revenue",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "619f4cca24ed92000601a90b"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 603229
+      },
+      {
+        "_id": {
+          "$oid": "619f4cca24ed92000601a90c"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 246503
+      },
+      {
+        "_id": {
+          "$oid": "619f4cca24ed92000601a90d"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 603228
+      },
+      {
+        "_id": {
+          "$oid": "619f4ce67d3682000677489e"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 11883
+      },
+      {
+        "_id": {
+          "$oid": "619f4ce67d3682000677489f"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 597202
+      },
+      {
+        "_id": {
+          "$oid": "619f4ce67d368200067748a0"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 11887
+      },
+      {
+        "_id": {
+          "$oid": "619f4ce67d368200067748a1"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 11892
+      },
+      {
+        "_id": {
+          "$oid": "619f4ce67d368200067748a2"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 11882
+      }
+    ],
+    "name": "Other Operated Departments",
+    "negative": false,
+    "order": 2,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "other_revenue"
+            },
+            "arg2": {
+              "item_id": "other_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747cc"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747d0"
+    },
+    "identifier": "misc_revenue",
+    "name": "Miscellaneous Income",
+    "negative": false,
+    "order": 3,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "misc_revenue"
+            },
+            "arg2": {
+              "item_id": "misc_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747cc"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747d1"
+    },
+    "identifier": "departmental_expenses",
+    "name": "Departmental Expenses",
+    "negative": null,
+    "order": 2,
+    "type_config": null,
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "departmental_expenses"
+            },
+            "arg2": {
+              "item_id": "departmental_expenses"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747d2"
+    },
+    "identifier": "rooms_expenses",
+    "name": "Rooms Expenses",
+    "negative": false,
+    "order": 0,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "rooms_expenses"
+            },
+            "arg2": {
+              "item_id": "rooms_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747d1"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747d3"
+    },
+    "identifier": "foodbev_expenses",
+    "name": "F u0026 B Expenses",
+    "negative": false,
+    "order": 1,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "foodbev_expenses"
+            },
+            "arg2": {
+              "item_id": "foodbev_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747d1"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747d4"
+    },
+    "identifier": "other_expense",
+    "name": "Other Operated Depts. Expenses",
+    "negative": false,
+    "order": 2,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "other_expense"
+            },
+            "arg2": {
+              "item_id": "other_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747d1"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747d5"
+    },
+    "identifier": "misc_expense",
+    "name": "Miscellaneous Expenses",
+    "negative": false,
+    "order": 3,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "misc_expense"
+            },
+            "arg2": {
+              "item_id": "misc_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747d1"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747d6"
+    },
+    "identifier": "departmental_income",
+    "name": "Departmental Income",
+    "negative": null,
+    "order": 3,
+    "type_config": null,
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "departmental_income"
+            },
+            "arg2": {
+              "item_id": "departmental_income"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747d7"
+    },
+    "identifier": "rooms_income",
+    "name": "Rooms Income",
+    "negative": false,
+    "order": 0,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "rooms_revenue"
+            },
+            "arg2": {
+              "item_id": "rooms_expenses"
+            }
+          }
+        }
+      },
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "rooms_income"
+            },
+            "arg2": {
+              "item_id": "rooms_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747d6"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747d8"
+    },
+    "identifier": "foodbev_income",
+    "name": "F u0026 B Income",
+    "negative": false,
+    "order": 1,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "foodbev_revenue"
+            },
+            "arg2": {
+              "item_id": "foodbev_expenses"
+            }
+          }
+        }
+      },
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "foodbev_income"
+            },
+            "arg2": {
+              "item_id": "foodbev_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747d6"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747d9"
+    },
+    "identifier": "other_income",
+    "name": "Other Operated Depts. Income",
+    "negative": false,
+    "order": 2,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "other_revenue"
+            },
+            "arg2": {
+              "item_id": "other_expense"
+            }
+          }
+        }
+      },
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "other_income"
+            },
+            "arg2": {
+              "item_id": "other_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747d6"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747da"
+    },
+    "identifier": "misc_income",
+    "name": "Miscellaneous Income",
+    "negative": false,
+    "order": 3,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "misc_revenue"
+            },
+            "arg2": {
+              "item_id": "misc_expense"
+            }
+          }
+        }
+      },
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "misc_income"
+            },
+            "arg2": {
+              "item_id": "misc_revenue"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747d6"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747db"
+    },
+    "identifier": "undistributed_expenses",
+    "name": "Undistributed Operating Expenses",
+    "negative": null,
+    "order": 4,
+    "type_config": null,
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "undistributed_expenses"
+            },
+            "arg2": {
+              "item_id": "undistributed_expenses"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747dc"
+    },
+    "identifier": "admin_general",
+    "name": "Administrative u0026 General",
+    "negative": false,
+    "order": 0,
+    "type_config": {
+      "name": "quickbooks_ledger",
+      "calculation_type": "balance_sheet"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "admin_general"
+            },
+            "arg2": {
+              "item_id": "admin_general"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747db"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747dd"
+    },
+    "identifier": "info_telecom",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "619f44a27d368200067747f3"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 591689
+      },
+      {
+        "_id": {
+          "$oid": "619f44a27d368200067747f4"
+        },
+        "accounting_class_id": 2,
+        "chart_of_account_id": 591689
+      },
+      {
+        "_id": {
+          "$oid": "619f44a27d368200067747f5"
+        },
+        "accounting_class_id": 17,
+        "chart_of_account_id": 591689
+      },
+      {
+        "_id": {
+          "$oid": "619f44a27d368200067747f6"
+        },
+        "accounting_class_id": 3,
+        "chart_of_account_id": 591689
+      },
+      {
+        "_id": {
+          "$oid": "619f44a27d368200067747f7"
+        },
+        "accounting_class_id": 18,
+        "chart_of_account_id": 591689
+      }
+    ],
+    "name": "Information u0026 Telecommunications Systems",
+    "negative": false,
+    "order": 1,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "info_telecom"
+            },
+            "arg2": {
+              "item_id": "info_telecom"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747db"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747de"
+    },
+    "identifier": "sales_marketing",
+    "name": "Sales u0026 Marketing",
+    "negative": false,
+    "order": 2,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "sales_marketing"
+            },
+            "arg2": {
+              "item_id": "sales_marketing"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747db"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747df"
+    },
+    "identifier": "ops_maintenance",
+    "name": "Property Operations u0026 Maintenance",
+    "negative": false,
+    "order": 4,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "ops_maintenance"
+            },
+            "arg2": {
+              "item_id": "ops_maintenance"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747db"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747e0"
+    },
+    "identifier": "utilities",
+    "name": "Utilities",
+    "negative": false,
+    "order": 5,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "utilities"
+            },
+            "arg2": {
+              "item_id": "utilities"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747db"
+  },
+  {
+    "_id": {
+      "$oid": "61f252da69797003b2c1b58a"
+    },
+    "identifier": "franchise_royalties",
+    "name": "Franchise and Royalties",
+    "negative": false,
+    "order": 3,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "franchise_royalties"
+            },
+            "arg2": {
+              "item_id": "franchise_royalties"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747db"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747e1"
+    },
+    "identifier": "gross_profit",
+    "name": "Gross Operating Profit",
+    "negative": null,
+    "order": 5,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "franchise_royalties"
+            },
+            "arg2": {
+              "item_id": "franchise_royalties"
+            }
+          }
+        }
+      },
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "gross_profit"
+            },
+            "arg2": {
+              "item_id": "gross_profit"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747e2"
+    },
+    "identifier": "management_fees",
+    "name": "Management Fees",
+    "negative": null,
+    "order": 6,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "management_fees"
+            },
+            "arg2": {
+              "item_id": "management_fees"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747e3"
+    },
+    "identifier": "before_non_opr",
+    "name": "Income Before Non-Oper. Expenses",
+    "negative": null,
+    "order": 7,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "gross_profit"
+            },
+            "arg2": {
+              "item_id": "management_fees"
+            }
+          }
+        }
+      },
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "before_non_opr"
+            },
+            "arg2": {
+              "item_id": "before_non_opr"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747e4"
+    },
+    "identifier": "non_opr_inc_exp",
+    "name": "Non-Operating Income u0026 Expense",
+    "negative": null,
+    "order": 8,
+    "type_config": null,
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "non_opr_income"
+            },
+            "arg2": {
+              "item_id": "total_non_opr_expense"
+            }
+          }
+        }
+      },
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "non_opr_inc_exp"
+            },
+            "arg2": {
+              "item_id": "non_opr_inc_exp"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747e5"
+    },
+    "identifier": "non_opr_income",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "619f44fb7d368200067747f8"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 594308
+      },
+      {
+        "_id": {
+          "$oid": "619f44fb7d368200067747f9"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 161899
+      },
+      {
+        "_id": {
+          "$oid": "619f44fb7d368200067747fa"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 161900
+      },
+      {
+        "_id": {
+          "$oid": "619f44fb7d368200067747fb"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 161898
+      },
+      {
+        "_id": {
+          "$oid": "619f44fb7d368200067747fc"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 337979
+      },
+      {
+        "_id": {
+          "$oid": "619f44fb7d368200067747fd"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 11908
+      },
+      {
+        "_id": {
+          "$oid": "619f44fb7d368200067747fe"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 317594
+      },
+      {
+        "_id": {
+          "$oid": "619f44fb7d368200067747ff"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 332997
+      }
+    ],
+    "name": "Non-Operating Income",
+    "negative": false,
+    "order": 0,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "non_opr_income"
+            },
+            "arg2": {
+              "item_id": "non_opr_income"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747e4"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747e6"
+    },
+    "identifier": "rent",
+    "name": "Rent",
+    "negative": false,
+    "order": 1,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "rent"
+            },
+            "arg2": {
+              "item_id": "rent"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747e4"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747e7"
+    },
+    "identifier": "other_taxes",
+    "name": "Property u0026 Other Taxes",
+    "negative": false,
+    "order": 2,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "other_taxes"
+            },
+            "arg2": {
+              "item_id": "other_taxes"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747e4"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747e8"
+    },
+    "identifier": "insurance",
+    "name": "Insurance",
+    "negative": false,
+    "order": 3,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "insurance"
+            },
+            "arg2": {
+              "item_id": "insurance"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747e4"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747e9"
+    },
+    "identifier": "other_non_expenses",
+    "name": "Other Non Operating Expenses",
+    "negative": false,
+    "order": 4,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "other_non_expenses"
+            },
+            "arg2": {
+              "item_id": "other_non_expenses"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747e4"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747ea"
+    },
+    "identifier": "total_non_opr_expense",
+    "name": "Total Non-Operating Expense",
+    "negative": false,
+    "order": 5,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "sum",
+            "arg": {
+              "sub_items": [
+                {
+                  "id": "rent",
+                  "negative": false
+                },
+                {
+                  "id": "other_taxes",
+                  "negative": false
+                },
+                {
+                  "id": "insurance",
+                  "negative": false
+                },
+                {
+                  "id": "other_non_expenses",
+                  "negative": false
+                }
+              ]
+            }
+          }
+        }
+      },
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "total_non_opr_expense"
+            },
+            "arg2": {
+              "item_id": "total_non_opr_expense"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747e4"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747eb"
+    },
+    "identifier": "ebitda",
+    "name": "EBITDA",
+    "negative": null,
+    "order": 9,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "+",
+            "arg1": {
+              "item_id": "before_non_opr"
+            },
+            "arg2": {
+              "item_id": "before_non_opr"
+            }
+          }
+        }
+      },
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "ebitda"
+            },
+            "arg2": {
+              "item_id": "ebitda"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747ec"
+    },
+    "identifier": "int_dep_amo",
+    "name": "Interest, Depreciation u0026 Amortization Expenses",
+    "negative": null,
+    "order": 10,
+    "type_config": null,
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "int_dep_amo"
+            },
+            "arg2": {
+              "item_id": "int_dep_amo"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747ed"
+    },
+    "identifier": "interest",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "619f45217d36820006774800"
+        },
+        "accounting_class_id": null,
+        "chart_of_account_id": 594318
+      }
+    ],
+    "name": "Interest",
+    "negative": false,
+    "order": 0,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "interest"
+            },
+            "arg2": {
+              "item_id": "interest"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747ec"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747ee"
+    },
+    "identifier": "deprecation",
+    "name": "Depreciation",
+    "negative": false,
+    "order": 1,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "deprecation"
+            },
+            "arg2": {
+              "item_id": "deprecation"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747ec"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747ef"
+    },
+    "identifier": "amortization",
+    "name": "Amortization",
+    "negative": false,
+    "order": 2,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "amortization"
+            },
+            "arg2": {
+              "item_id": "amortization"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "619f44897d368200067747ec"
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747f0"
+    },
+    "identifier": "income_bef_taxes",
+    "name": "Income Before Taxes",
+    "negative": null,
+    "order": 11,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "ebitda"
+            },
+            "arg2": {
+              "item_id": "ebitda"
+            }
+          }
+        }
+      },
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "income_bef_taxes"
+            },
+            "arg2": {
+              "item_id": "income_bef_taxes"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747f1"
+    },
+    "identifier": "income_tax",
+    "name": "Income Tax",
+    "negative": null,
+    "order": 12,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "income_tax"
+            },
+            "arg2": {
+              "item_id": "income_tax"
+            }
+          }
+        }
+      }
+    }
+  },
+  {
+    "_id": {
+      "$oid": "619f44897d368200067747f2"
+    },
+    "identifier": "net_income",
+    "name": "Net Income",
+    "negative": null,
+    "order": 13,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "income_bef_taxes"
+            },
+            "arg2": {
+              "item_id": "income_tax"
+            }
+          }
+        }
+      },
+      "percentage": {
+        "value": {
+          "expression": {
+            "operator": "%",
+            "arg1": {
+              "item_id": "net_income"
+            },
+            "arg2": {
+              "item_id": "net_income"
+            }
+          }
+        }
+      }
+    }
+  }
+]

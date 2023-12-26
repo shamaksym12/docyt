@@ -1,0 +1,68 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "vendor_report",
+  "name": "Vendor Report",
+  "category": "expense",
+  "factory_class": "VendorReportFactory",
+
+  "rank": 20,
+  "draft": false,
+  "enabled_budget_compare": false,
+  "total_column_visible": false,
+  "accounting_class_check_disabled": true,
+  "edit_mapping_disabled": true,
+  "columns": [
+    {
+      "type": "actual",
+      "range": "current_period",
+      "year": "current",
+      "name": "PTD $"
+    },
+    {
+      "type": "percentage",
+      "range": "current_period",
+      "year": "current",
+      "name": "PTD %"
+    },
+    {
+      "type": "actual",
+      "range": "current_period",
+      "year": "prior",
+      "name": "PTD LY $"
+    },
+    {
+      "type": "percentage",
+      "range": "current_period",
+      "year": "prior",
+      "name": "PTD LY %"
+    },
+    { "type": "variance", "range": "current_period", "name": "Variance" },
+    {
+      "type": "actual",
+      "range": "ytd",
+      "year": "current",
+      "name": "YTD $"
+    },
+    {
+      "type": "percentage",
+      "range": "ytd",
+      "year": "current",
+      "name": "YTD %"
+    },
+    {
+      "type": "actual",
+      "range": "ytd",
+      "year": "prior",
+      "name": "YTD LY $"
+    },
+    {
+      "type": "percentage",
+      "range": "ytd",
+      "year": "prior",
+      "name": "YTD LY %"
+    },
+    { "type": "variance", "range": "ytd", "name": "Variance" }
+  ],
+  "items": []
+}

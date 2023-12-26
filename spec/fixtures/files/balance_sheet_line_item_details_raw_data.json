@@ -1,0 +1,517 @@
+{
+  "Header": {
+    "Time": "2022-08-30T23:37:49-07:00",
+    "ReportName": "BalanceSheet",
+    "ReportBasis": "Accrual",
+    "StartPeriod": "2022-03-01",
+    "EndPeriod": "2022-03-31",
+    "SummarizeColumnsBy": "Total",
+    "Currency": "USD",
+    "Option": [
+      {
+        "Name": "AccountingStandard",
+        "Value": "GAAP"
+      },
+      {
+        "Name": "NoReportData",
+        "Value": "false"
+      }
+    ]
+  },
+  "Columns": {
+    "Column": [
+      {
+        "ColTitle": "",
+        "ColType": "Account",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "account"
+          }
+        ]
+      },
+      {
+        "ColTitle": "Total",
+        "ColType": "Money",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "total"
+          }
+        ]
+      }
+    ]
+  },
+  "Rows": {
+    "Row": [
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "ASSETS"
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "Header": {
+                "ColData": [
+                  {
+                    "value": "Current Assets"
+                  },
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              "Rows": {
+                "Row": [
+                  {
+                    "Header": {
+                      "ColData": [
+                        {
+                          "value": "Bank Accounts"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    },
+                    "Rows": {
+                      "Row": [
+                        {
+                          "ColData": [
+                            {
+                              "value": "Checking",
+                              "id": "35"
+                            },
+                            {
+                              "value": "4179.36"
+                            }
+                          ],
+                          "type": "Data"
+                        }
+                      ]
+                    },
+                    "Summary": {
+                      "ColData": [
+                        {
+                          "value": "Total Bank Accounts"
+                        },
+                        {
+                          "value": "4179.36"
+                        }
+                      ]
+                    },
+                    "type": "Section",
+                    "group": "BankAccounts"
+                  },
+                  {
+                    "Header": {
+                      "ColData": [
+                        {
+                          "value": "Accounts Receivable"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    },
+                    "Rows": {
+                      "Row": [
+                        {
+                          "ColData": [
+                            {
+                              "value": "Accounts Receivable (A/R)",
+                              "id": "84"
+                            },
+                            {
+                              "value": "1535.80"
+                            }
+                          ],
+                          "type": "Data"
+                        }
+                      ]
+                    },
+                    "Summary": {
+                      "ColData": [
+                        {
+                          "value": "Total Accounts Receivable"
+                        },
+                        {
+                          "value": "1535.80"
+                        }
+                      ]
+                    },
+                    "type": "Section",
+                    "group": "AR"
+                  },
+                  {
+                    "Header": {
+                      "ColData": [
+                        {
+                          "value": "Other Current Assets"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    },
+                    "Rows": {
+                      "Row": [
+                        {
+                          "ColData": [
+                            {
+                              "value": "Undeposited Funds",
+                              "id": "4"
+                            },
+                            {
+                              "value": "226.75"
+                            }
+                          ],
+                          "type": "Data"
+                        }
+                      ]
+                    },
+                    "Summary": {
+                      "ColData": [
+                        {
+                          "value": "Total Other Current Assets"
+                        },
+                        {
+                          "value": "226.75"
+                        }
+                      ]
+                    },
+                    "type": "Section",
+                    "group": "OtherCurrentAssets"
+                  }
+                ]
+              },
+              "Summary": {
+                "ColData": [
+                  {
+                    "value": "Total Current Assets"
+                  },
+                  {
+                    "value": "5941.91"
+                  }
+                ]
+              },
+              "type": "Section",
+              "group": "CurrentAssets"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "TOTAL ASSETS"
+            },
+            {
+              "value": "5941.91"
+            }
+          ]
+        },
+        "type": "Section",
+        "group": "TotalAssets"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "LIABILITIES AND EQUITY"
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "Header": {
+                "ColData": [
+                  {
+                    "value": "Liabilities"
+                  },
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              "Rows": {
+                "Row": [
+                  {
+                    "Header": {
+                      "ColData": [
+                        {
+                          "value": "Current Liabilities"
+                        },
+                        {
+                          "value": ""
+                        }
+                      ]
+                    },
+                    "Rows": {
+                      "Row": [
+                        {
+                          "Header": {
+                            "ColData": [
+                              {
+                                "value": "Accounts Payable"
+                              },
+                              {
+                                "value": ""
+                              }
+                            ]
+                          },
+                          "Rows": {
+                            "Row": [
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "Accounts Payable (A/P)",
+                                    "id": "33"
+                                  },
+                                  {
+                                    "value": "392.94"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "Accounts Payable - Docyt",
+                                    "id": "93"
+                                  },
+                                  {
+                                    "value": "-1000.00"
+                                  }
+                                ],
+                                "type": "Data"
+                              }
+                            ]
+                          },
+                          "Summary": {
+                            "ColData": [
+                              {
+                                "value": "Total Accounts Payable"
+                              },
+                              {
+                                "value": "-607.06"
+                              }
+                            ]
+                          },
+                          "type": "Section",
+                          "group": "AP"
+                        },
+                        {
+                          "Header": {
+                            "ColData": [
+                              {
+                                "value": "Credit Cards"
+                              },
+                              {
+                                "value": ""
+                              }
+                            ]
+                          },
+                          "Rows": {
+                            "Row": [
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "Mastercard",
+                                    "id": "41"
+                                  },
+                                  {
+                                    "value": "158.08"
+                                  }
+                                ],
+                                "type": "Data"
+                              }
+                            ]
+                          },
+                          "Summary": {
+                            "ColData": [
+                              {
+                                "value": "Total Credit Cards"
+                              },
+                              {
+                                "value": "158.08"
+                              }
+                            ]
+                          },
+                          "type": "Section",
+                          "group": "CreditCards"
+                        },
+                        {
+                          "Header": {
+                            "ColData": [
+                              {
+                                "value": "Other Current Liabilities"
+                              },
+                              {
+                                "value": ""
+                              }
+                            ]
+                          },
+                          "Rows": {
+                            "Row": [
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "Arizona Dept. of Revenue Payable",
+                                    "id": "89"
+                                  },
+                                  {
+                                    "value": "0.00"
+                                  }
+                                ],
+                                "type": "Data"
+                              },
+                              {
+                                "ColData": [
+                                  {
+                                    "value": "Board of Equalization Payable",
+                                    "id": "90"
+                                  },
+                                  {
+                                    "value": "6.40"
+                                  }
+                                ],
+                                "type": "Data"
+                              }
+                            ]
+                          },
+                          "Summary": {
+                            "ColData": [
+                              {
+                                "value": "Total Other Current Liabilities"
+                              },
+                              {
+                                "value": "6.40"
+                              }
+                            ]
+                          },
+                          "type": "Section",
+                          "group": "OtherCurrentLiabilities"
+                        }
+                      ]
+                    },
+                    "Summary": {
+                      "ColData": [
+                        {
+                          "value": "Total Current Liabilities"
+                        },
+                        {
+                          "value": "-442.58"
+                        }
+                      ]
+                    },
+                    "type": "Section",
+                    "group": "CurrentLiabilities"
+                  }
+                ]
+              },
+              "Summary": {
+                "ColData": [
+                  {
+                    "value": "Total Liabilities"
+                  },
+                  {
+                    "value": "-442.58"
+                  }
+                ]
+              },
+              "type": "Section",
+              "group": "Liabilities"
+            },
+            {
+              "Header": {
+                "ColData": [
+                  {
+                    "value": "Equity"
+                  },
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              "Rows": {
+                "Row": [
+                  {
+                    "ColData": [
+                      {
+                        "value": "Opening Balance Equity",
+                        "id": "34"
+                      },
+                      {
+                        "value": "5000.00"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "Retained Earnings",
+                        "id": "2"
+                      },
+                      {
+                        "value": "700.00"
+                      }
+                    ],
+                    "type": "Data"
+                  },
+                  {
+                    "ColData": [
+                      {
+                        "value": "Net Income"
+                      },
+                      {
+                        "value": "684.49"
+                      }
+                    ],
+                    "type": "Data",
+                    "group": "NetIncome"
+                  }
+                ]
+              },
+              "Summary": {
+                "ColData": [
+                  {
+                    "value": "Total Equity"
+                  },
+                  {
+                    "value": "6384.49"
+                  }
+                ]
+              },
+              "type": "Section",
+              "group": "Equity"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "TOTAL LIABILITIES AND EQUITY"
+            },
+            {
+              "value": "5941.91"
+            }
+          ]
+        },
+        "type": "Section",
+        "group": "TotalLiabilitiesAndEquity"
+      }
+    ]
+  }
+}

@@ -1,0 +1,55 @@
+mongodb:
+  url: mongodb://localhost:27017/reports_service_development
+
+quickbooks:
+  client_id: "Q0U11mAOqtyrGFVjEtGztoHESET22lFqfcIbgrQQDVVtjBb0di"
+  client_secret: "rP5xCEMmGPfx0R7rFyHfkoKq1QFAG8VU0nmfTvIq"
+  redirect_uri: "https://app.localhost.docyt.com/cloud_service_authorizations/qbo_oauth_callback"
+  api_base_uri: "https://sandbox-quickbooks.api.intuit.com/v3/company"
+  client_webhook_token: "2771afa0-eb7d-4d89-9a4b-1b41aa98c130"
+
+settings:
+  faye_host: "https://devchat.docyt.com/faye"
+
+redis:
+  host: localhost:6379
+
+services:
+  admin-web-app:
+    url: http://admin-web-app
+
+  auth-service:
+    url: http://192.168.136.139:3031
+
+  docyt-server: &docyt-server
+    url: http://192.168.136.139:80
+
+  docyt-frontend:
+    url: http://docyt-frontend
+
+  docytbot-server:
+    url: http://docytbot-server
+
+  faye-chat:
+    url: http://faye-chat
+
+  gateway-service:
+    url: https://gateway-service.localhost.docyt.com
+
+  integrations-service:
+    url: https://integrations-service
+
+  reports-service:
+    url: https://reports-service
+
+  storage-service: &storage-service
+    url: http://192.168.136.139:3035
+
+  metrics-service:
+    url: http://192.168.136.139:3037
+
+  billing-service: &billing-service
+    url: http://192.168.136.139:3040
+
+  dashboards-service: &dashboards-service
+    url: http://192.168.136.139:3039

@@ -1,0 +1,924 @@
+{
+  "end_date": "2021-07-31",
+  "line_item_details": [
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6932"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 3.0,
+      "category": "Job Expenses:Equipment Rental",
+      "chart_of_account_qbo_id": "62",
+      "link": null,
+      "memo": "",
+      "qbo_id": "8741",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-01",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6931"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 15.25,
+      "category": "Automobile:Fuel:New Account Name",
+      "chart_of_account_qbo_id": "315",
+      "link": null,
+      "memo": "",
+      "qbo_id": "12185",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2868",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6930"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 1.0,
+      "category": "Automobile:Fuel",
+      "chart_of_account_qbo_id": "56",
+      "link": null,
+      "memo": "",
+      "qbo_id": "13152",
+      "split": "petty cash",
+      "transaction_date": "2021-07-30",
+      "transaction_number": "",
+      "transaction_type": "Expense",
+      "vendor": "Any Lab Test"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc692f"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 1.0,
+      "category": "692 Utility Costs:Fuel Cost",
+      "chart_of_account_qbo_id": "143",
+      "link": null,
+      "memo": "",
+      "qbo_id": "12766",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-28",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc692e"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 0.6,
+      "category": "692 Utility Costs:Fuel Cost",
+      "chart_of_account_qbo_id": "143",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9120",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-15",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc692d"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 2.0,
+      "category": "692 Utility Costs:Fuel Cost",
+      "chart_of_account_qbo_id": "143",
+      "link": null,
+      "memo": "",
+      "qbo_id": "8751",
+      "split": "Another category for super cool accnt",
+      "transaction_date": "2021-07-15",
+      "transaction_number": "",
+      "transaction_type": "Check",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc692c"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 0.6,
+      "category": "692 Utility Costs:Fuel Cost",
+      "chart_of_account_qbo_id": "143",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9122",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-15",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc692b"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 1.97,
+      "category": "6800 Freight",
+      "chart_of_account_qbo_id": "237",
+      "link": null,
+      "memo": "",
+      "qbo_id": "12178",
+      "split": "Testing Account Owner",
+      "transaction_date": "2021-07-16",
+      "transaction_number": "",
+      "transaction_type": "Expense",
+      "vendor": "101test"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc692a"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 0.51,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "",
+      "qbo_id": "7298",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2691",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6929"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 0.51,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "",
+      "qbo_id": "7375",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2698",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6928"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 0.5,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "",
+      "qbo_id": "12765",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-30",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6927"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 1.0,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "",
+      "qbo_id": "12766",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-28",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6926"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 1.2,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9122",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-15",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6925"
+      },
+      "accounting_class": "My test class",
+      "accounting_class_qbo_id": "5000000000000145594",
+      "amount": 1.0,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "",
+      "qbo_id": "8751",
+      "split": "Another category for super cool accnt",
+      "transaction_date": "2021-07-15",
+      "transaction_number": "",
+      "transaction_type": "Check",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6924"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 1.2,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9120",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-15",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6923"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 122.0,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9452",
+      "split": "Another category for super cool accnt",
+      "transaction_date": "2021-07-07",
+      "transaction_number": "",
+      "transaction_type": "Check",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6922"
+      },
+      "accounting_class": "Another class",
+      "accounting_class_qbo_id": "5000000000000145595",
+      "amount": 14000.0,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "",
+      "qbo_id": "8744",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-06",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6921"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": -4.22,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "INTRST PYMNT",
+      "qbo_id": "8768",
+      "split": "-Split-",
+      "transaction_date": "2021-07-04",
+      "transaction_number": "2760",
+      "transaction_type": "Journal Entry",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6920"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": -4.22,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "INTRST PYMNT",
+      "qbo_id": "8762",
+      "split": "-Split-",
+      "transaction_date": "2021-07-04",
+      "transaction_number": "2758",
+      "transaction_type": "Journal Entry",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc691f"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": -4.22,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "INTRST PYMNT",
+      "qbo_id": "7892",
+      "split": "-Split-",
+      "transaction_date": "2021-07-04",
+      "transaction_number": "2718",
+      "transaction_type": "Journal Entry",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc691e"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": -2.22,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "INTRST PYMNT",
+      "qbo_id": "14522",
+      "split": "-Split-",
+      "transaction_date": "2021-07-04",
+      "transaction_number": "3350",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc691d"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": -4.22,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "INTRST PYMNT",
+      "qbo_id": "8767",
+      "split": "-Split-",
+      "transaction_date": "2021-07-04",
+      "transaction_number": "2759",
+      "transaction_type": "Journal Entry",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc691c"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": -4.22,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "INTRST PYMNT",
+      "qbo_id": "14880",
+      "split": "-Split-",
+      "transaction_date": "2021-07-04",
+      "transaction_number": "3373",
+      "transaction_type": "Journal Entry",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc691b"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": -4.22,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "INTRST PYMNT",
+      "qbo_id": "14655",
+      "split": "-Split-",
+      "transaction_date": "2021-07-04",
+      "transaction_number": "3367",
+      "transaction_type": "Journal Entry",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc691a"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": -4.22,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "INTRST PYMNT",
+      "qbo_id": "7891",
+      "split": "-Split-",
+      "transaction_date": "2021-07-04",
+      "transaction_number": "2717",
+      "transaction_type": "Journal Entry",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6919"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": -4.22,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "INTRST PYMNT",
+      "qbo_id": "8769",
+      "split": "-Split-",
+      "transaction_date": "2021-07-04",
+      "transaction_number": "2761",
+      "transaction_type": "Journal Entry",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6918"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 1.0,
+      "category": "670 Marketing Expenses",
+      "chart_of_account_qbo_id": "132",
+      "link": null,
+      "memo": "",
+      "qbo_id": "8085",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-01",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6917"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 12.0,
+      "category": "570 Food Supplies",
+      "chart_of_account_qbo_id": "148",
+      "link": null,
+      "memo": "McDonalds #3322",
+      "qbo_id": "13136",
+      "split": "AR MAnual Test",
+      "transaction_date": "2021-07-06",
+      "transaction_number": "",
+      "transaction_type": "Check",
+      "vendor": "McDonalds"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6916"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 12.0,
+      "category": "570 Food Supplies",
+      "chart_of_account_qbo_id": "148",
+      "link": null,
+      "memo": "McDonalds #3322",
+      "qbo_id": "12577",
+      "split": "Brex",
+      "transaction_date": "2021-07-06",
+      "transaction_number": "",
+      "transaction_type": "Check",
+      "vendor": "McDonalds"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6915"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 15.12,
+      "category": "5500 Cost of Goods Sold-Inventory",
+      "chart_of_account_qbo_id": "226",
+      "link": null,
+      "memo": "",
+      "qbo_id": "12183",
+      "split": "petty cash",
+      "transaction_date": "2021-07-11",
+      "transaction_number": "",
+      "transaction_type": "Expense",
+      "vendor": "Your order was placed1"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6914"
+      },
+      "accounting_class": "Another class",
+      "accounting_class_qbo_id": "5000000000000145595",
+      "amount": 1000.0,
+      "category": "5160 Printing Cost",
+      "chart_of_account_qbo_id": "209",
+      "link": null,
+      "memo": "",
+      "qbo_id": "8744",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-06",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6913"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 3.0,
+      "category": "5080 Shipping Charges (UPS) Cost",
+      "chart_of_account_qbo_id": "188",
+      "link": null,
+      "memo": "",
+      "qbo_id": "12766",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-28",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6912"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 2.0,
+      "category": "5080 Shipping Charges (UPS) Cost",
+      "chart_of_account_qbo_id": "188",
+      "link": null,
+      "memo": "",
+      "qbo_id": "8751",
+      "split": "Another category for super cool accnt",
+      "transaction_date": "2021-07-15",
+      "transaction_number": "",
+      "transaction_type": "Check",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6911"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 1.2,
+      "category": "5080 Shipping Charges (UPS) Cost",
+      "chart_of_account_qbo_id": "188",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9120",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-15",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6910"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 1.2,
+      "category": "5080 Shipping Charges (UPS) Cost",
+      "chart_of_account_qbo_id": "188",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9122",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-15",
+      "transaction_number": "",
+      "transaction_type": "Bill",
+      "vendor": "7"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc690f"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 58.49,
+      "category": "5030 Color Copy Cost",
+      "chart_of_account_qbo_id": "182",
+      "link": null,
+      "memo": "",
+      "qbo_id": "13101",
+      "split": "petty cash",
+      "transaction_date": "2021-07-16",
+      "transaction_number": "",
+      "transaction_type": "Expense",
+      "vendor": "west elm"
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc690e"
+      },
+      "accounting_class": "Testing",
+      "accounting_class_qbo_id": "5000000000000173574",
+      "amount": 0.0,
+      "category": "5010 Mailbox Service Cost",
+      "chart_of_account_qbo_id": "179",
+      "link": null,
+      "memo": "test stripe 123",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc690d"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 0.0,
+      "category": "4140 Rubber Stamps Income",
+      "chart_of_account_qbo_id": "285",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc690c"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 1099.3,
+      "category": "4120 Packaging Service Fee Income",
+      "chart_of_account_qbo_id": "283",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc690b"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 1053.08,
+      "category": "4110 Packaging Materials Income",
+      "chart_of_account_qbo_id": "282",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc690a"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 2360.65,
+      "category": "4100 Retail Shipping Supplies Income",
+      "chart_of_account_qbo_id": "281",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6909"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 0.0,
+      "category": "4090 Total Shipping Income",
+      "chart_of_account_qbo_id": "280",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6908"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 22260.59,
+      "category": "4080 Shipping Charges (UPS) Income",
+      "chart_of_account_qbo_id": "279",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6907"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 2352.81,
+      "category": "4070 Metered Mail Income",
+      "chart_of_account_qbo_id": "278",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6906"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 634.5,
+      "category": "4060 Stamp Sales Income",
+      "chart_of_account_qbo_id": "277",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6905"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 298.7,
+      "category": "4050 Facsimilie Income",
+      "chart_of_account_qbo_id": "276",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6904"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 486.08,
+      "category": "4040 Laminating/Binding Income",
+      "chart_of_account_qbo_id": "275",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6903"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 524.23,
+      "category": "4030 Color Copies Income",
+      "chart_of_account_qbo_id": "274",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6902"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 437.99,
+      "category": "4020 Copies Income",
+      "chart_of_account_qbo_id": "273",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6901"
+      },
+      "accounting_class": null,
+      "accounting_class_qbo_id": null,
+      "amount": 3690.0,
+      "category": "4010 Mailbox Service Income",
+      "chart_of_account_qbo_id": "272",
+      "link": null,
+      "memo": "",
+      "qbo_id": "9339",
+      "split": "-Split-",
+      "transaction_date": "2021-07-31",
+      "transaction_number": "2772",
+      "transaction_type": "Journal Entry",
+      "vendor": ""
+    },
+    {
+      "_id": {
+        "$oid": "62b25c66908a920001dc6900"
+      },
+      "accounting_class": "Another class",
+      "accounting_class_qbo_id": "5000000000000145595",
+      "amount": -192.96,
+      "category": "12345 New Income Category",
+      "chart_of_account_qbo_id": "310",
+      "link": null,
+      "memo": "",
+      "qbo_id": "15174",
+      "split": "Accounts Payable - Docyt",
+      "transaction_date": "2021-07-01",
+      "transaction_number": "0014164603...",
+      "transaction_type": "Bill",
+      "vendor": "USA Today"
+    }
+  ],
+  "start_date": "2021-07-01"
+}

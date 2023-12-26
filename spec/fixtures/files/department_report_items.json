@@ -1,0 +1,525 @@
+[
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f232"
+    },
+    "identifier": "revenue",
+    "name": "Revenue",
+    "negative": null,
+    "order": 0,
+    "type_config": null,
+    "values_config": null
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f233"
+    },
+    "identifier": "revenue_5000000000000145595",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f234"
+        },
+        "accounting_class_id": 2,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Another class",
+    "negative": false,
+    "order": 1,
+    "type_config": {
+      "name": "quickbooks_ledger",
+      "general_ledger_options": {
+        "only_classes": ["5000000000000145595"],
+        "include_account_types": [
+          "Income",
+          "Other Income"
+        ]
+      }
+    },
+    "values_config": null,
+    "parent_id": "62b25ba0b6b8040001a0f232"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f235"
+    },
+    "identifier": "revenue_5000000000000145594",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f236"
+        },
+        "accounting_class_id": 3,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "My test class",
+    "negative": false,
+    "order": 2,
+    "type_config": {
+      "name": "quickbooks_ledger",
+      "general_ledger_options": {
+        "only_classes": ["5000000000000145594"],
+        "include_account_types": [
+          "Income",
+          "Other Income"
+        ]
+      }
+    },
+    "values_config": null,
+    "parent_id": "62b25ba0b6b8040001a0f232"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f237"
+    },
+    "identifier": "revenue_5000000000000173572",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f238"
+        },
+        "accounting_class_id": 16,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Dept 2",
+    "negative": false,
+    "order": 3,
+    "type_config": {
+      "name": "quickbooks_ledger",
+      "general_ledger_options": {
+        "only_classes": ["5000000000000173572"],
+        "include_account_types": [
+          "Income",
+          "Other Income"
+        ]
+      }
+    },
+    "values_config": null,
+    "parent_id": "62b25ba0b6b8040001a0f232"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f239"
+    },
+    "identifier": "revenue_5000000000000173573",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f23a"
+        },
+        "accounting_class_id": 17,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Dept 3",
+    "negative": false,
+    "order": 4,
+    "type_config": {
+      "name": "quickbooks_ledger",
+      "general_ledger_options": {
+        "only_classes": ["5000000000000173573"],
+        "include_account_types": [
+          "Income",
+          "Other Income"
+        ]
+      }
+    },
+    "values_config": null,
+    "parent_id": "62b25ba0b6b8040001a0f232"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f23b"
+    },
+    "identifier": "revenue_5000000000000173574",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f23c"
+        },
+        "accounting_class_id": 18,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Testing",
+    "negative": false,
+    "order": 5,
+    "type_config": {
+      "name": "quickbooks_ledger",
+      "general_ledger_options": {
+        "only_classes": ["5000000000000173574"],
+        "include_account_types": [
+          "Income",
+          "Other Income"
+        ]
+      }
+    },
+    "values_config": null,
+    "parent_id": "62b25ba0b6b8040001a0f232"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f23d"
+    },
+    "identifier": "expenses",
+    "name": "Expenses",
+    "negative": null,
+    "order": 6,
+    "type_config": null,
+    "values_config": null
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f23e"
+    },
+    "identifier": "expenses_5000000000000145595",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f23f"
+        },
+        "accounting_class_id": 2,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Another class",
+    "negative": false,
+    "order": 7,
+    "type_config": {
+      "name": "quickbooks_ledger",
+      "general_ledger_options": {
+        "only_classes": ["5000000000000145595"],
+        "include_account_types": [
+          "Expense",
+          "Cost Of Goods Sold",
+          "Other Expense"
+        ]
+      }
+    },
+    "values_config": null,
+    "parent_id": "62b25ba0b6b8040001a0f23d"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f240"
+    },
+    "identifier": "expenses_5000000000000145594",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f241"
+        },
+        "accounting_class_id": 3,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "My test class",
+    "negative": false,
+    "order": 8,
+    "type_config": {
+      "name": "quickbooks_ledger",
+      "general_ledger_options": {
+        "only_classes": ["5000000000000145594"],
+        "include_account_types": [
+          "Expense",
+          "Cost Of Goods Sold",
+          "Other Expense"
+        ]
+      }
+    },
+    "values_config": null,
+    "parent_id": "62b25ba0b6b8040001a0f23d"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f242"
+    },
+    "identifier": "expenses_5000000000000173572",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f243"
+        },
+        "accounting_class_id": 16,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Dept 2",
+    "negative": false,
+    "order": 9,
+    "type_config": {
+      "name": "quickbooks_ledger",
+      "general_ledger_options": {
+        "only_classes": ["5000000000000173572"],
+        "include_account_types": [
+          "Expense",
+          "Cost Of Goods Sold",
+          "Other Expense"
+        ]
+      }
+    },
+    "values_config": null,
+    "parent_id": "62b25ba0b6b8040001a0f23d"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f244"
+    },
+    "identifier": "expenses_5000000000000173573",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f245"
+        },
+        "accounting_class_id": 17,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Dept 3",
+    "negative": false,
+    "order": 10,
+    "type_config": {
+      "name": "quickbooks_ledger",
+      "general_ledger_options": {
+        "only_classes": ["5000000000000173573"],
+        "include_account_types": [
+          "Expense",
+          "Cost Of Goods Sold",
+          "Other Expense"
+        ]
+      }
+    },
+    "values_config": null,
+    "parent_id": "62b25ba0b6b8040001a0f23d"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f246"
+    },
+    "identifier": "expenses_5000000000000173574",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f247"
+        },
+        "accounting_class_id": 18,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Testing",
+    "negative": false,
+    "order": 11,
+    "type_config": {
+      "name": "quickbooks_ledger",
+      "general_ledger_options": {
+        "only_classes": ["5000000000000173574"],
+        "include_account_types": [
+          "Expense",
+          "Cost Of Goods Sold",
+          "Other Expense"
+        ]
+      }
+    },
+    "values_config": null,
+    "parent_id": "62b25ba0b6b8040001a0f23d"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f248"
+    },
+    "identifier": "profit",
+    "name": "Profit",
+    "negative": null,
+    "order": 12,
+    "type_config": null,
+    "values_config": null
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f249"
+    },
+    "identifier": "profit_5000000000000145595",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f24a"
+        },
+        "accounting_class_id": 2,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Another class",
+    "negative": false,
+    "order": 13,
+    "type_config": {
+      "name": "stats"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "revenue_5000000000000145595"
+            },
+            "arg2": {
+              "item_id": "expenses_5000000000000145595"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "62b25ba0b6b8040001a0f248"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f24b"
+    },
+    "identifier": "profit_5000000000000145594",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f24c"
+        },
+        "accounting_class_id": 3,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "My test class",
+    "negative": false,
+    "order": 14,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "revenue_5000000000000145594"
+            },
+            "arg2": {
+              "item_id": "expenses_5000000000000145594"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "62b25ba0b6b8040001a0f248"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f24d"
+    },
+    "identifier": "profit_5000000000000173572",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f24e"
+        },
+        "accounting_class_id": 16,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Dept 2",
+    "negative": false,
+    "order": 15,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "revenue_5000000000000173572"
+            },
+            "arg2": {
+              "item_id": "expenses_5000000000000173572"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "62b25ba0b6b8040001a0f248"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f24f"
+    },
+    "identifier": "profit_5000000000000173573",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f250"
+        },
+        "accounting_class_id": 17,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Dept 3",
+    "negative": false,
+    "order": 16,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "revenue_5000000000000173573"
+            },
+            "arg2": {
+              "item_id": "expenses_5000000000000173573"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "62b25ba0b6b8040001a0f248"
+  },
+  {
+    "_id": {
+      "$oid": "62b25ba0b6b8040001a0f251"
+    },
+    "identifier": "profit_5000000000000173574",
+    "item_accounts": [
+      {
+        "_id": {
+          "$oid": "62b25ba0b6b8040001a0f252"
+        },
+        "accounting_class_id": 18,
+        "chart_of_account_id": null
+      }
+    ],
+    "name": "Testing",
+    "negative": false,
+    "order": 17,
+    "type_config": {
+      "name": "quickbooks_ledger"
+    },
+    "values_config": {
+      "actual": {
+        "value": {
+          "expression": {
+            "operator": "-",
+            "arg1": {
+              "item_id": "revenue_5000000000000173574"
+            },
+            "arg2": {
+              "item_id": "expenses_5000000000000173574"
+            }
+          }
+        }
+      }
+    },
+    "parent_id": "62b25ba0b6b8040001a0f248"
+  }
+]

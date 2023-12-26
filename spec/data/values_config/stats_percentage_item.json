@@ -1,0 +1,15 @@
+{
+  "actual": {
+    "value": {
+      "expression": {
+        "operator": "%",
+        "arg1": {
+          "item_id": "child_item2"
+        },
+        "arg2": {
+          "item_id": "child_item1"
+        }
+      }
+    }
+  }
+}

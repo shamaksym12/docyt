@@ -1,0 +1,478 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "qsr_manager_report",
+  "name": "QSR Manager's Report",
+  "category": "management",
+  "rank": 102,
+  "standard_category_ids": [10],
+  "draft": false,
+  "missing_transactions_calculation_disabled": false,
+  "enabled_budget_compare": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+  "items": [
+    {
+      "id": "sales",
+      "name": "Sales"
+    },
+    {
+      "id": "food_beverage_sales",
+      "name": "Food & Beverage Sales",
+      "parent_id": "sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "food_beverage_sales"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "catering_sales",
+      "name": "Catering Sales",
+      "parent_id": "sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "catering_sales"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_income",
+      "name": "Other Income",
+      "parent_id": "sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_income"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_sales",
+      "name": "Total Sales",
+      "parent_id": "sales",
+      "totals": true,
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "food_beverage_sales", "negative": false },
+                  { "id": "catering_sales", "negative": false },
+                  { "id": "other_income", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_sales"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold",
+      "name": "Cost of Goods Sold"
+    },
+    {
+      "id": "cost_of_goods_sold_food",
+      "name": "Cost of Goods Sold - Food",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_goods_sold_food"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold_paper",
+      "name": "Cost of Goods Sold - Paper",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_goods_sold_paper"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold_beverage",
+      "name": "Cost of Goods Sold - Beverage",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_goods_sold_beverage"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold_other",
+      "name": "Cost of Goods Sold - Other",
+      "parent_id": "cost_of_goods_sold",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_goods_sold_other"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_cost_of_goods_sold",
+      "name": "Total Cost of Goods Sold",
+      "parent_id": "cost_of_goods_sold",
+      "totals": true,
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "cost_of_goods_sold_food", "negative": false },
+                  { "id": "cost_of_goods_sold_paper", "negative": false },
+                  { "id": "cost_of_goods_sold_beverage", "negative": false },
+                  { "id": "cost_of_goods_sold_other", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_cost_of_goods_sold"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gross_profit_loss",
+      "name": "Gross Profit (Loss)",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "total_sales", "negative": false },
+                  { "id": "total_cost_of_goods_sold", "negative": true }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "gross_profit_loss"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "labor_cost",
+      "name": "Labor Cost"
+    },
+    {
+      "id": "salaried",
+      "name": "Salaried",
+      "parent_id": "labor_cost",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "salaried"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "hourly",
+      "name": "Hourly",
+      "parent_id": "labor_cost",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "hourly"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_tax",
+      "name": "Payroll Tax",
+      "parent_id": "labor_cost",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_tax"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "benefits",
+      "name": "Benefits",
+      "parent_id": "labor_cost",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "benefits"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_labor_cost",
+      "name": "Total Labor Cost",
+      "parent_id": "labor_cost",
+      "totals": true,
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "salaried", "negative": false },
+                  { "id": "hourly", "negative": false },
+                  { "id": "payroll_tax", "negative": false },
+                  { "id": "benefits", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_labor_cost"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "prime_cost",
+      "name": "Prime Cost (COGS + Labor)",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "total_cost_of_goods_sold", "negative": false },
+                  { "id": "total_labor_cost", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "prime_cost"
+              },
+              "arg2": {
+                "item_id": "total_sales"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

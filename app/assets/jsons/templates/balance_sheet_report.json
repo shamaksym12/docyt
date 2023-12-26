@@ -1,0 +1,623 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "balance_sheet_report",
+  "name": "Balance Sheet",
+  "category": "basic",
+  "factory_class": "BalanceSheetReportFactory",
+  "draft": false,
+  "enabled_budget_compare": false,
+  "total_column_visible": false,
+  "accounting_class_check_disabled": true,
+  "edit_mapping_disabled": true,
+  "export_parameters": {
+    "main_column_position": "left"
+  },
+  "rank": 0,
+  "depends_on": [
+    "profit_and_loss"
+  ],
+
+  "columns": [
+    {
+      "type": "actual",
+      "range": "current_period",
+      "year": "current",
+      "name": "PTD $"
+    },
+    {
+      "type": "percentage",
+      "range": "current_period",
+      "year": "current",
+      "name": "PTD %"
+    },
+    {
+      "type": "actual",
+      "range": "current_period",
+      "year": "prior",
+      "name": "PTD LY $"
+    },
+    {
+      "type": "percentage",
+      "range": "current_period",
+      "year": "prior",
+      "name": "PTD LY %"
+    },
+    { "type": "variance", "range": "current_period", "name": "Variance" }
+  ],
+  "items": [
+    {
+      "id": "assets",
+      "name": "ASSETS"
+    },
+    {
+      "id": "current_assets",
+      "name": "Current Assets",
+      "parent_id": "assets"
+    },
+    {
+      "id": "bank",
+      "name": "Bank",
+      "parent_id": "current_assets",
+      "account_type": "Bank",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "bank"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_bank",
+      "name": "Total Bank",
+      "parent_id": "bank",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_bank"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "accounts_receivable",
+      "name": "Accounts Receivable",
+      "parent_id": "current_assets",
+      "account_type": "Accounts Receivable",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "accounts_receivable"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_accounts_receivable",
+      "name": "Total Accounts Receivable",
+      "parent_id": "accounts_receivable",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_accounts_receivable"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_current_asset",
+      "name": "Other Current Asset",
+      "parent_id": "current_assets",
+      "account_type": "Other Current Asset",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_current_asset"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_current_asset",
+      "name": "Total Other Current Asset",
+      "parent_id": "other_current_asset",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_current_asset"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_current_assets",
+      "name": "Total Current Assets",
+      "parent_id": "current_assets",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_current_assets"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fixed_assets",
+      "name": "Fixed Assets",
+      "parent_id": "assets",
+      "account_type": "Fixed Asset",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "fixed_assets"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_fixed_assets",
+      "name": "Total Fixed Assets",
+      "parent_id": "fixed_assets",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_fixed_assets"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_assets",
+      "name": "Other Assets",
+      "parent_id": "assets",
+      "account_type": "Other Asset",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_assets"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_assets",
+      "name": "Total Other Assets",
+      "parent_id": "other_assets",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_assets"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_assets",
+      "name": "Total ASSETS",
+      "parent_id": "assets",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_assets"
+              },
+              "arg2": {
+                "item_id": "total_assets"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "liabilities_and_equity",
+      "name": "LIABILITIES AND EQUITY"
+    },
+    {
+      "id": "liabilities",
+      "name": "Liabilities",
+      "parent_id": "liabilities_and_equity"
+    },
+    {
+      "id": "current_liabilities",
+      "name": "Current Liabilities",
+      "parent_id": "liabilities"
+    },
+    {
+      "id": "accounts_payable",
+      "name": "Accounts Payable",
+      "parent_id": "current_liabilities",
+      "account_type": "Accounts Payable",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "accounts_payable"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_accounts_payable",
+      "name": "Total Accounts Payable",
+      "parent_id": "accounts_payable",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_accounts_payable"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "credit_card",
+      "name": "Credit Card",
+      "parent_id": "current_liabilities",
+      "account_type": "Credit Card",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "credit_card"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_credit_card",
+      "name": "Total Credit Card",
+      "parent_id": "credit_card",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_credit_card"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_current_liabilities",
+      "name": "Other Current Liabilities",
+      "parent_id": "current_liabilities",
+      "account_type": "Other Current Liability",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_current_liabilities"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_current_liabilities",
+      "name": "Total Other Current Liabilities",
+      "parent_id": "other_current_liabilities",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_current_liabilities"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_current_liabilities",
+      "name": "Total Current Liabilities",
+      "parent_id": "current_liabilities",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_current_liabilities"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "long_term_liabilities",
+      "name": "Long-Term Liabilities",
+      "parent_id": "liabilities",
+      "account_type": "Long Term Liability",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "long_term_liabilities"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_long_term_liabilities",
+      "name": "Total Long-Term Liabilities",
+      "parent_id": "long_term_liabilities",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_long_term_liabilities"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_liabilities",
+      "name": "Total Liabilities",
+      "parent_id": "liabilities",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_liabilities"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "equity",
+      "name": "Equity",
+      "parent_id": "liabilities_and_equity",
+      "account_type": "Equity",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "equity"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "net_income",
+      "name": "Net Income",
+      "parent_id": "equity",
+      "type": {
+        "name": "reference",
+        "reference": "profit_and_loss/net_profit",
+        "src_column_range": "ytd"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "net_income"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_equity",
+      "name": "Total Equity",
+      "parent_id": "equity",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_equity"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_liabilities_and_equity",
+      "name": "Total LIABILITIES AND EQUITY",
+      "parent_id": "liabilities_and_equity",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_liabilities_and_equity"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_equity"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

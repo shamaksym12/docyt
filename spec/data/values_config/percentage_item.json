@@ -1,0 +1,16 @@
+{
+  "percentage": {
+    "value": {
+      "expression": {
+        "operator": "%",
+        "arg1": {
+          "item_id": "child_item2",
+          "column_type": "actual"
+        },
+        "arg2": {
+          "item_id": "owners_operating_statement/child_item1"
+        }
+      }
+    }
+  }
+}

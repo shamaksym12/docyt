@@ -1,0 +1,14 @@
+version: '3'
+
+services:
+  reports-service:
+    build:
+      context: .
+      args:
+        BUNDLER_OPTS: "--without test"
+    environment:
+      DOCYT_ENV: development_docker
+      PUMA_PORT: 3032
+      POSTGRES_HOST: host.docker.internal
+    ports:
+    - "3032:3032"

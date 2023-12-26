@@ -1,0 +1,6 @@
+{
+  "minify": false,
+  "collapse_long_descriptions": false,
+  "collapse_long_examples": false,
+  "deprecated_from_description": true
+}

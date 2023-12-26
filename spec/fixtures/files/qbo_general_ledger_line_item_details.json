@@ -1,0 +1,2022 @@
+{
+  "Header": {
+    "Time": "2021-08-16T04:44:13-07:00",
+    "ReportName": "GeneralLedger",
+    "ReportBasis": "Accrual",
+    "StartPeriod": "2020-01-01",
+    "EndPeriod": "2021-06-30",
+    "Currency": "USD",
+    "Option": [
+      {
+        "Name": "NoReportData",
+        "Value": "false"
+      }
+    ]
+  },
+  "Columns": {
+    "Column": [
+      {
+        "ColTitle": "Date",
+        "ColType": "Date",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "tx_date"
+          }
+        ]
+      },
+      {
+        "ColTitle": "Transaction Type",
+        "ColType": "String",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "txn_type"
+          }
+        ]
+      },
+      {
+        "ColTitle": "Num",
+        "ColType": "String",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "doc_num"
+          }
+        ]
+      },
+      {
+        "ColTitle": "Vendor",
+        "ColType": "String",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "vend_name"
+          }
+        ]
+      },
+      {
+        "ColTitle": "Memo/Description",
+        "ColType": "String",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "memo"
+          }
+        ]
+      },
+      {
+        "ColTitle": "Account",
+        "ColType": "String",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "account_name"
+          }
+        ]
+      },
+      {
+        "ColTitle": "Split",
+        "ColType": "String",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "split_acc"
+          }
+        ]
+      },
+      {
+        "ColTitle": "Amount",
+        "ColType": "Money",
+        "MetaData": [
+          {
+            "Name": "ColKey",
+            "Value": "subt_nat_amount"
+          }
+        ]
+      }
+    ]
+  },
+  "Rows": {
+    "Row": [
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Aaaa",
+              "id": "101"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            },
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-09"
+                },
+                {
+                  "value": "Bill",
+                  "id": "152"
+                },
+                {
+                  "value": "1111..."
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "Aaaa",
+                  "id": "101"
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "100.00"
+                }
+              ],
+              "type": "Data"
+            },
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-11"
+                },
+                {
+                  "value": "Bill",
+                  "id": "148"
+                },
+                {
+                  "value": "one..."
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "Aaaa",
+                  "id": "101"
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "1.00"
+                }
+              ],
+              "type": "Data"
+            },
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-13"
+                },
+                {
+                  "value": "Bill Payment (Check)",
+                  "id": "150"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "Aaaa",
+                  "id": "101"
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "-1941.56"
+                }
+              ],
+              "type": "Data"
+            },
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-16"
+                },
+                {
+                  "value": "Bill Payment (Check)",
+                  "id": "156"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "Aaaa",
+                  "id": "101"
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "-1941.56"
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Aaaa"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": "-3782.12"
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Checking",
+              "id": "35"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Checking"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Petty Cash",
+              "id": "96"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Petty Cash"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "plaid gold standard 0% interest checking",
+              "id": "204"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-13"
+                },
+                {
+                  "value": "Bill Payment (Check)",
+                  "id": "157"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "plaid gold standard 0% interest checking",
+                  "id": "204"
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "-1.00"
+                }
+              ],
+              "type": "Data"
+            },
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-13"
+                },
+                {
+                  "value": "Bill Payment (Check)",
+                  "id": "153"
+                },
+                {
+                  "value": "10000"
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "plaid gold standard 0% interest checking",
+                  "id": "204"
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "-10.00"
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for plaid gold standard 0% interest checking"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": "-11.00"
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Savings",
+              "id": "36"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Savings"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Accounts Receivable (A/R)",
+              "id": "84"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Accounts Receivable (A/R)"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Inventory Asset",
+              "id": "81"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Inventory Asset"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Undeposited Funds",
+              "id": "4"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Undeposited Funds"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Truck"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "Header": {
+                "ColData": [
+                  {
+                    "value": "Original Cost",
+                    "id": "38"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              "Rows": {
+                "Row": [
+                  {
+                    "ColData": [
+                      {
+                        "value": "Beginning Balance"
+                      },
+                      {
+                        "value": ""
+                      },
+                      {
+                        "value": ""
+                      },
+                      {
+                        "value": ""
+                      },
+                      {
+                        "value": ""
+                      },
+                      {
+                        "value": ""
+                      },
+                      {
+                        "value": ""
+                      },
+                      {
+                        "value": ""
+                      }
+                    ],
+                    "type": "Data"
+                  }
+                ]
+              },
+              "Summary": {
+                "ColData": [
+                  {
+                    "value": "Total for Original Cost"
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  },
+                  {
+                    "value": ""
+                  }
+                ]
+              },
+              "type": "Section"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Truck"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Accounts Payable - Docyt",
+              "id": "33"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            },
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-09"
+                },
+                {
+                  "value": "Bill",
+                  "id": "152"
+                },
+                {
+                  "value": "1111..."
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "Aaaa",
+                  "id": "101"
+                },
+                {
+                  "value": "100.00"
+                }
+              ],
+              "type": "Data"
+            },
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-11"
+                },
+                {
+                  "value": "Bill",
+                  "id": "148"
+                },
+                {
+                  "value": "one..."
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "Aaaa",
+                  "id": "101"
+                },
+                {
+                  "value": "1.00"
+                }
+              ],
+              "type": "Data"
+            },
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-13"
+                },
+                {
+                  "value": "Bill Payment (Check)",
+                  "id": "153"
+                },
+                {
+                  "value": "10000"
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "plaid gold standard 0% interest checking",
+                  "id": "204"
+                },
+                {
+                  "value": "-10.00"
+                }
+              ],
+              "type": "Data"
+            },
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-13"
+                },
+                {
+                  "value": "Bill Payment (Check)",
+                  "id": "150"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "Aaaa",
+                  "id": "101"
+                },
+                {
+                  "value": "-1941.56"
+                }
+              ],
+              "type": "Data"
+            },
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-13"
+                },
+                {
+                  "value": "Bill Payment (Check)",
+                  "id": "157"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "plaid gold standard 0% interest checking",
+                  "id": "204"
+                },
+                {
+                  "value": "-1.00"
+                }
+              ],
+              "type": "Data"
+            },
+            {
+              "ColData": [
+                {
+                  "value": "2020-03-16"
+                },
+                {
+                  "value": "Bill Payment (Check)",
+                  "id": "156"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "DIRECTV",
+                  "id": "59"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": "Accounts Payable - Docyt",
+                  "id": "33"
+                },
+                {
+                  "value": "Aaaa",
+                  "id": "101"
+                },
+                {
+                  "value": "-1941.56"
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Accounts Payable - Docyt"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": "-3793.12"
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Mastercard",
+              "id": "41"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Mastercard"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Board of Equalization Payable",
+              "id": "90"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Board of Equalization Payable"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Loan Payable",
+              "id": "43"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Loan Payable"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Notes Payable",
+              "id": "44"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Notes Payable"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Opening Balance Equity",
+              "id": "34"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Opening Balance Equity"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      },
+      {
+        "Header": {
+          "ColData": [
+            {
+              "value": "Retained Earnings",
+              "id": "2"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "Rows": {
+          "Row": [
+            {
+              "ColData": [
+                {
+                  "value": "Beginning Balance"
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                },
+                {
+                  "value": ""
+                }
+              ],
+              "type": "Data"
+            }
+          ]
+        },
+        "Summary": {
+          "ColData": [
+            {
+              "value": "Total for Retained Earnings"
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            },
+            {
+              "value": ""
+            }
+          ]
+        },
+        "type": "Section"
+      }
+    ]
+  }
+}

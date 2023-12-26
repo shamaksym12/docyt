@@ -1,0 +1,3441 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "owners_report",
+  "name": "Owner's Report",
+  "category": "management",
+  "rank": 1,
+  "standard_category_ids": [8],
+  "draft": false,
+  "missing_transactions_calculation_disabled": false,
+  "enabled_budget_compare": false,
+  "enabled_blank_value_for_metric": true,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+  "items": [
+    {
+      "id": "metrics",
+      "name": "Metrics"
+    },
+    {
+      "id": "customer_count",
+      "name": "Customer Count",
+      "parent_id": "metrics",
+      "type": {
+        "name": "metric",
+        "metric": {
+          "code": "customer_count"
+        }
+      }
+    },
+    {
+      "id": "avg_customer_transaction",
+      "name": "ACT (Avg Customer Transaction)",
+      "parent_id": "metrics",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "/",
+              "arg1": {
+                "item_id": "total_adjusted_gross_sales"
+              },
+              "arg2": {
+                "item_id": "customer_count"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "adjusted_gross_sales",
+      "name": "AGS (Adjusted Gross Sales)"
+    },
+    {
+      "id": "mailbox_service",
+      "name": "Mailbox Service",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "mailbox_service"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "copies",
+      "name": "Copies",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "copies"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "color_copies",
+      "name": "Color Copies",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "color_copies"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "laminating_binding",
+      "name": "Laminating/Binding",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "laminating_binding"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "facsimile",
+      "name": "Facsimile",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "facsimile"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "stamp_sales",
+      "name": "Stamp Sales",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "stamp_sales"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "metered_mail",
+      "name": "Metered Mail",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "metered_mail"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "shipping_charges",
+      "name": "Shipping Charges (UPS)",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "shipping_charges"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "no_limit_freight",
+      "name": "No Limit Freight",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "no_limit_freight"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "retail_shipping_supplies",
+      "name": "Retail Shipping Supplies",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "retail_shipping_supplies"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "packaging_materials",
+      "name": "Packaging Materials",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "packaging_materials"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "packaging_service_fee",
+      "name": "Packaging Service Fee",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "packaging_service_fee"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "office_supplies_income",
+      "name": "Office Supplies Income",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "office_supplies_income"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rubber_stamps",
+      "name": "Rubber Stamps",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rubber_stamps"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "greeting_cards",
+      "name": "Greeting Cards",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "greeting_cards"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "printing_income",
+      "name": "Printing Income",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "printing_income"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "word_processing_income",
+      "name": "Word Processing Income",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "word_processing_income"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "computer_timeshare",
+      "name": "Computer Timeshare",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "computer_timeshare"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "message_service",
+      "name": "Message Service",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "message_service"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "pagers",
+      "name": "Pagers",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "pagers"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "money_transfer",
+      "name": "Money Transfer",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "money_transfer"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "money_orders",
+      "name": "Money Orders",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "money_orders"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "notary",
+      "name": "Notary",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "notary"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "passport_photos",
+      "name": "Passport Photos",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "passport_photos"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "public_service_payments",
+      "name": "Public Service Payments",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "public_service_payments"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rapid_air",
+      "name": "Rapid Air",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rapid_air"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "misc_taxable",
+      "name": "Misc. Taxable",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "misc_taxable"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "misc_non_taxable",
+      "name": "Misc. Non-Taxable",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "misc_non_taxable"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "deposits_owed",
+      "name": "Deposits Owed",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "deposits_owed"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "money_transfer_commission",
+      "name": "Money Transfer Commission",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "money_transfer_commission"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_commissions1",
+      "name": "Other Commissions (1)",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_commissions1"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_commissions2",
+      "name": "Other Commissions (2)",
+      "parent_id": "adjusted_gross_sales",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_commissions2"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_adjusted_gross_sales",
+      "name": "Total AGS (Adjusted Gross Sales)",
+      "parent_id": "adjusted_gross_sales",
+      "totals": true,
+      "_description": "",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_adjusted_gross_sales"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold_on_ags",
+      "name": "Cost of Goods Sold on AGS"
+    },
+    {
+      "id": "mailbox_service_cost",
+      "name": "Mailbox Service Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "mailbox_service_cost"
+              },
+              "arg2": {
+                "item_id": "mailbox_service"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "copy_costs",
+      "name": "Copy Costs",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "copy_costs"
+              },
+              "arg2": {
+                "item_id": "copies"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "color_copy_cost",
+      "name": "Color Copy Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "color_copy_cost"
+              },
+              "arg2": {
+                "item_id": "color_copies"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "laminating_binding_cost",
+      "name": "Laminating/Binding Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "laminating_binding_cost"
+              },
+              "arg2": {
+                "item_id": "laminating_binding"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "facsimile_cost",
+      "name": "Facsimile Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "facsimile_cost"
+              },
+              "arg2": {
+                "item_id": "facsimile"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "stamp_sales_cost",
+      "name": "Stamp Sales Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "stamp_sales_cost"
+              },
+              "arg2": {
+                "item_id": "stamp_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "metered_mail_cost",
+      "name": "Metered Mail Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "metered_mail_cost"
+              },
+              "arg2": {
+                "item_id": "metered_mail"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "shipping_charges_cost",
+      "name": "Shipping Charges (UPS) Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "shipping_charges_cost"
+              },
+              "arg2": {
+                "item_id": "shipping_charges"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "no_limit_freight_cost",
+      "name": "No Limit Freight Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "no_limit_freight_cost"
+              },
+              "arg2": {
+                "item_id": "no_limit_freight"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "retail_shipping_supplies_cost",
+      "name": "Retail Shipping Supplies Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "retail_shipping_supplies_cost"
+              },
+              "arg2": {
+                "item_id": "retail_shipping_supplies"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "packaging_materials_cost",
+      "name": "Packaging Materials Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "packaging_materials_cost"
+              },
+              "arg2": {
+                "item_id": "packaging_materials"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "packaging_service_fee_cost",
+      "name": "Packaging Service Fee Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "packaging_service_fee_cost"
+              },
+              "arg2": {
+                "item_id": "packaging_service_fee"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "office_supplies_cost",
+      "name": "Office Supplies Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "office_supplies_cost"
+              },
+              "arg2": {
+                "item_id": "office_supplies_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rubber_stamps_cost",
+      "name": "Rubber Stamps Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rubber_stamps_cost"
+              },
+              "arg2": {
+                "item_id": "rubber_stamps"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "greeting_cards_cost",
+      "name": "Greeting Cards Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "greeting_cards_cost"
+              },
+              "arg2": {
+                "item_id": "greeting_cards"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "printing_cost",
+      "name": "Printing Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "printing_cost"
+              },
+              "arg2": {
+                "item_id": "printing_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "word_processing_cost",
+      "name": "Word Processing Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "word_processing_cost"
+              },
+              "arg2": {
+                "item_id": "word_processing_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "computer_timeshare_cost",
+      "name": "Computer Timeshare Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "computer_timeshare_cost"
+              },
+              "arg2": {
+                "item_id": "computer_timeshare"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "message_service_cost",
+      "name": "Message Service Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "message_service_cost"
+              },
+              "arg2": {
+                "item_id": "message_service"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "pagers_cost",
+      "name": "Pagers Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "pagers_cost"
+              },
+              "arg2": {
+                "item_id": "pagers"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "money_transfer_cost",
+      "name": "Money Transfer Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "money_transfer_cost"
+              },
+              "arg2": {
+                "item_id": "money_transfer"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "money_orders_cost",
+      "name": "Money Orders Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "money_orders_cost"
+              },
+              "arg2": {
+                "item_id": "money_orders"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "notary_cost",
+      "name": "Notary Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "notary_cost"
+              },
+              "arg2": {
+                "item_id": "notary"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "passport_photo_cost",
+      "name": "Passport Photo Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "passport_photo_cost"
+              },
+              "arg2": {
+                "item_id": "passport_photos"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "public_service_payment_cost",
+      "name": "Public Service Payment Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "public_service_payment_cost"
+              },
+              "arg2": {
+                "item_id": "public_service_payments"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rapid_air_cost",
+      "name": "Rapid Air Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rapid_air_cost"
+              },
+              "arg2": {
+                "item_id": "rapid_air"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "misc_taxable_cost",
+      "name": "Misc. Taxable Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "misc_taxable_cost"
+              },
+              "arg2": {
+                "item_id": "misc_taxable"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "misc_non_taxable_cost",
+      "name": "Misc. Non-Taxable Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "misc_non_taxable_cost"
+              },
+              "arg2": {
+                "item_id": "misc_non_taxable"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "deposit_cost",
+      "name": "Deposit Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "deposit_cost"
+              },
+              "arg2": {
+                "item_id": "deposits_owed"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "money_transfer_comm_cost",
+      "name": "Money Transfer Comm. Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "money_transfer_comm_cost"
+              },
+              "arg2": {
+                "item_id": "money_transfer_commission"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_commissions1_cost",
+      "name": "Other Commissions (1) Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_commissions1_cost"
+              },
+              "arg2": {
+                "item_id": "other_commissions1"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_commissions2_cost",
+      "name": "Other Commissions (2) Cost",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_commissions2_cost"
+              },
+              "arg2": {
+                "item_id": "other_commissions2"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_cost_of_goods_sold_on_ags",
+      "name": "Total Cost of Goods Sold on AGS",
+      "parent_id": "cost_of_goods_sold_on_ags",
+      "totals": true,
+      "_description": "",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_cost_of_goods_sold_on_ags"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gross_profit_on_ags_sales",
+      "name": "Gross Profit on AGS Sales"
+    },
+    {
+      "id": "mailbox_service_gross_profit",
+      "name": "Mailbox Service Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "mailbox_service"
+              },
+              "arg2": {
+                "item_id": "mailbox_service_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "mailbox_service_gross_profit"
+              },
+              "arg2": {
+                "item_id": "mailbox_service"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "copies_gross_profit",
+      "name": "Copies Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "copies"
+              },
+              "arg2": {
+                "item_id": "copy_costs"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "copies_gross_profit"
+              },
+              "arg2": {
+                "item_id": "copies"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "color_copies_gross_profit",
+      "name": "Color Copies Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "color_copies"
+              },
+              "arg2": {
+                "item_id": "color_copy_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "color_copies_gross_profit"
+              },
+              "arg2": {
+                "item_id": "color_copies"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "laminating_binding_gross_profit",
+      "name": "Laminating/Binding Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "laminating_binding"
+              },
+              "arg2": {
+                "item_id": "laminating_binding_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "laminating_binding_gross_profit"
+              },
+              "arg2": {
+                "item_id": "laminating_binding"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "facsimile_gross_profit",
+      "name": "Facsimile Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "facsimile"
+              },
+              "arg2": {
+                "item_id": "facsimile_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "facsimile_gross_profit"
+              },
+              "arg2": {
+                "item_id": "facsimile"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "stamp_sales_gross_profit",
+      "name": "Stamp Sales Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "stamp_sales"
+              },
+              "arg2": {
+                "item_id": "stamp_sales_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "stamp_sales_gross_profit"
+              },
+              "arg2": {
+                "item_id": "stamp_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "metered_mail_gross_profit",
+      "name": "Metered Mail Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "metered_mail"
+              },
+              "arg2": {
+                "item_id": "metered_mail_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "metered_mail_gross_profit"
+              },
+              "arg2": {
+                "item_id": "metered_mail"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "shipping_charges_gross_profit",
+      "name": "Shipping Charges (UPS) Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "shipping_charges"
+              },
+              "arg2": {
+                "item_id": "shipping_charges_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "shipping_charges_gross_profit"
+              },
+              "arg2": {
+                "item_id": "shipping_charges"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "no_limit_freight_gross_profit",
+      "name": "No Limit Freight Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "no_limit_freight"
+              },
+              "arg2": {
+                "item_id": "no_limit_freight_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "no_limit_freight_gross_profit"
+              },
+              "arg2": {
+                "item_id": "no_limit_freight"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "retail_shipping_supplies_gross_profit",
+      "name": "Retail Shipping Supplies Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "retail_shipping_supplies"
+              },
+              "arg2": {
+                "item_id": "retail_shipping_supplies_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "retail_shipping_supplies_gross_profit"
+              },
+              "arg2": {
+                "item_id": "retail_shipping_supplies"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "packaging_materials_gross_profit",
+      "name": "Packaging Materials Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "packaging_materials"
+              },
+              "arg2": {
+                "item_id": "packaging_materials_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "packaging_materials_gross_profit"
+              },
+              "arg2": {
+                "item_id": "packaging_materials"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "packaging_service_fee_gross_profit",
+      "name": "Packaging Service Fee Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "packaging_service_fee"
+              },
+              "arg2": {
+                "item_id": "packaging_service_fee_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "packaging_service_fee_gross_profit"
+              },
+              "arg2": {
+                "item_id": "packaging_service_fee"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "office_supplies_gross_profit",
+      "name": "Office Supplies Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "office_supplies_income"
+              },
+              "arg2": {
+                "item_id": "office_supplies_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "office_supplies_gross_profit"
+              },
+              "arg2": {
+                "item_id": "office_supplies_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rubber_stamps_gross_profit",
+      "name": "Rubber Stamps Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "rubber_stamps"
+              },
+              "arg2": {
+                "item_id": "rubber_stamps_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rubber_stamps_gross_profit"
+              },
+              "arg2": {
+                "item_id": "rubber_stamps"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "greeting_cards_gross_profit",
+      "name": "Greeting Cards Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "greeting_cards"
+              },
+              "arg2": {
+                "item_id": "greeting_cards_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "greeting_cards_gross_profit"
+              },
+              "arg2": {
+                "item_id": "greeting_cards"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "printing_gross_profit",
+      "name": "Printing Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "printing_income"
+              },
+              "arg2": {
+                "item_id": "printing_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "printing_gross_profit"
+              },
+              "arg2": {
+                "item_id": "printing_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "word_processing_gross_profit",
+      "name": "Word Processing Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "word_processing_income"
+              },
+              "arg2": {
+                "item_id": "word_processing_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "word_processing_gross_profit"
+              },
+              "arg2": {
+                "item_id": "word_processing_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "computer_timeshare_gross_profit",
+      "name": "Computer Timeshare Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "computer_timeshare"
+              },
+              "arg2": {
+                "item_id": "computer_timeshare_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "computer_timeshare_gross_profit"
+              },
+              "arg2": {
+                "item_id": "computer_timeshare"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "message_service_gross_profit",
+      "name": "Message Service Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "message_service"
+              },
+              "arg2": {
+                "item_id": "message_service_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "message_service_gross_profit"
+              },
+              "arg2": {
+                "item_id": "message_service"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "pagers_gross_profit",
+      "name": "Pagers Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "pagers"
+              },
+              "arg2": {
+                "item_id": "pagers_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "pagers_gross_profit"
+              },
+              "arg2": {
+                "item_id": "pagers"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "money_transfer_gross_profit",
+      "name": "Money Transfer Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "money_transfer"
+              },
+              "arg2": {
+                "item_id": "money_transfer_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "money_transfer_gross_profit"
+              },
+              "arg2": {
+                "item_id": "money_transfer"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "money_orders_gross_profit",
+      "name": "Money Orders Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "money_orders"
+              },
+              "arg2": {
+                "item_id": "money_orders_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "money_orders_gross_profit"
+              },
+              "arg2": {
+                "item_id": "money_orders"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "notary_gross_profit",
+      "name": "Notary Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "notary"
+              },
+              "arg2": {
+                "item_id": "notary_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "notary_gross_profit"
+              },
+              "arg2": {
+                "item_id": "notary"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "passport_photo_gross_profit",
+      "name": "Passport Photo Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "passport_photos"
+              },
+              "arg2": {
+                "item_id": "passport_photo_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "passport_photo_gross_profit"
+              },
+              "arg2": {
+                "item_id": "passport_photos"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "public_service_payment_gross_profit",
+      "name": "Public Service Payment Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "public_service_payments"
+              },
+              "arg2": {
+                "item_id": "public_service_payment_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "public_service_payment_gross_profit"
+              },
+              "arg2": {
+                "item_id": "public_service_payments"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rapid_air_gross_profit",
+      "name": "Rapid Air Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "rapid_air"
+              },
+              "arg2": {
+                "item_id": "rapid_air_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rapid_air_gross_profit"
+              },
+              "arg2": {
+                "item_id": "rapid_air"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "misc_taxable_gross_profit",
+      "name": "Misc. Taxable Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "misc_taxable"
+              },
+              "arg2": {
+                "item_id": "misc_taxable_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "misc_taxable_gross_profit"
+              },
+              "arg2": {
+                "item_id": "misc_taxable"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "misc_non_taxable_gross_profit",
+      "name": "Misc. Non-Taxable Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "misc_non_taxable"
+              },
+              "arg2": {
+                "item_id": "misc_non_taxable_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "misc_non_taxable_gross_profit"
+              },
+              "arg2": {
+                "item_id": "misc_non_taxable"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "deposits_owed_gross_profit",
+      "name": "Deposits Owed Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "deposits_owed"
+              },
+              "arg2": {
+                "item_id": "deposit_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "deposits_owed_gross_profit"
+              },
+              "arg2": {
+                "item_id": "deposits_owed"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "money_transfer_commission_gross_profit",
+      "name": "Money Transfer Commission Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "money_transfer_commission"
+              },
+              "arg2": {
+                "item_id": "money_transfer_comm_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "money_transfer_commission_gross_profit"
+              },
+              "arg2": {
+                "item_id": "money_transfer_commission"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_commissions1_gross_profit",
+      "name": "Other Commissions (1) Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "other_commissions1"
+              },
+              "arg2": {
+                "item_id": "other_commissions1_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_commissions1_gross_profit"
+              },
+              "arg2": {
+                "item_id": "other_commissions1"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_commissions2_gross_profit",
+      "name": "Other Commissions (2) Gross Profit",
+      "parent_id": "gross_profit_on_ags_sales",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "other_commissions2"
+              },
+              "arg2": {
+                "item_id": "other_commissions2_cost"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_commissions2_gross_profit"
+              },
+              "arg2": {
+                "item_id": "other_commissions2"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_gross_profit_on_ags_sales",
+      "name": "Total Gross Profit on AGS Sales",
+      "parent_id": "gross_profit_on_ags_sales",
+      "totals": true,
+      "_description": "",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_gross_profit_on_ags_sales"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "variable_expenses",
+      "name": "Variable Expenses"
+    },
+    {
+      "id": "payroll_salaries_subtotal",
+      "name": "Payroll/Salaries Subtotal",
+      "parent_id": "variable_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_salaries_subtotal"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "advertising_promotion_subtotal",
+      "name": "Advertising/Promotion Subtotal",
+      "parent_id": "variable_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "advertising_promotion_subtotal"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "royalty_adv_media_fees_subtotal",
+      "name": "Royalty/Adv./Media Fees Subtotal",
+      "parent_id": "variable_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "royalty_adv_media_fees_subtotal"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "bank_charges",
+      "name": "Bank Charges",
+      "parent_id": "variable_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "bank_charges"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "office_supplies_expense",
+      "name": "Office Supplies Expense",
+      "parent_id": "variable_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "office_supplies_expense"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_supplies",
+      "name": "Other Supplies",
+      "parent_id": "variable_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_supplies"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "repairs_maintenance",
+      "name": "Repairs & Maintenance",
+      "parent_id": "variable_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "repairs_maintenance"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "taxes_payroll",
+      "name": "Taxes-Payroll",
+      "parent_id": "variable_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "taxes_payroll"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_variable_expenses_subtotal",
+      "name": "Other Variable Expenses Subtotal",
+      "parent_id": "variable_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_variable_expenses_subtotal"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_variable_expenses",
+      "name": "Total Variable Expenses",
+      "parent_id": "variable_expenses",
+      "totals": true,
+      "_description": "",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_variable_expenses"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fixed_expenses",
+      "name": "Fixed Expenses"
+    },
+    {
+      "id": "equipment_lease_rent_subtotal",
+      "name": "Equipment Lease/Rent Subtotal",
+      "parent_id": "fixed_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "equipment_lease_rent_subtotal"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "insurance_business",
+      "name": "Insurance-Business",
+      "parent_id": "fixed_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "insurance_business"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rent_store",
+      "name": "Rent-Store",
+      "parent_id": "fixed_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rent_store"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "telephone",
+      "name": "Telephone",
+      "parent_id": "fixed_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "telephone"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "utilities",
+      "name": "Utilities",
+      "parent_id": "fixed_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "utilities"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_fixed_expenses_subtotal",
+      "name": "Other Fixed Expenses Subtotal",
+      "parent_id": "fixed_expenses",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_fixed_expenses_subtotal"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_fixed_expenses",
+      "name": "Total Fixed Expenses",
+      "parent_id": "fixed_expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_fixed_expenses"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_operating_expenses",
+      "name": "Total Operating Expenses",
+      "_description": "",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "total_variable_expenses"
+              },
+              "arg2": {
+                "item_id": "total_fixed_expenses"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_operating_expenses"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "operating_profit",
+      "name": "Operating Profit",
+      "_description": "",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "total_gross_profit_on_ags_sales"
+              },
+              "arg2": {
+                "item_id": "total_operating_expenses"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "operating_profit"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_operating_income_expense",
+      "name": "Non-Operating Income & Expense"
+    },
+    {
+      "id": "other_income",
+      "name": "Other Income",
+      "parent_id": "non_operating_income_expense",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_income"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "interest_expense",
+      "name": "Interest Expense",
+      "parent_id": "non_operating_income_expense",
+      "negative_for_total": true,
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "interest_expense"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_cash_items",
+      "name": "Non-Cash Items",
+      "parent_id": "non_operating_income_expense",
+      "negative_for_total": true,
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "non_cash_items"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_expenses",
+      "name": "Other Expenses",
+      "parent_id": "non_operating_income_expense",
+      "negative_for_total": true,
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_expenses"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "salaries_owner",
+      "name": "Salaries-Owner",
+      "parent_id": "non_operating_income_expense",
+      "negative_for_total": true,
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "salaries_owner"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "taxes_income",
+      "name": "Taxes-Income",
+      "parent_id": "non_operating_income_expense",
+      "negative_for_total": true,
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "taxes_income"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_non_operating_income_expense",
+      "name": "Total Non-Operating Income & Expense",
+      "parent_id": "non_operating_income_expense",
+      "totals": true,
+      "_description": "",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_non_operating_income_expense"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "net_operating_profit",
+      "name": "Net Operating Profit",
+      "_description": "",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "operating_profit"
+              },
+              "arg2": {
+                "item_id": "total_non_operating_income_expense"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "net_operating_profit"
+              },
+              "arg2": {
+                "item_id": "total_adjusted_gross_sales"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

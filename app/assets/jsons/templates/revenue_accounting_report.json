@@ -1,0 +1,458 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "revenue_accounting_report",
+  "name": "Revenue Accounting Report",
+  "category": "revenue",
+  "rank": 19,
+  "standard_category_ids": [9],
+  "draft": false,
+  "enabled_budget_compare": false,
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+  "multi_entity_columns": [
+    { "type": "actual", "name": "$" }
+  ],
+  "missing_transactions_calculation_disabled": false,
+  "items": [
+    {
+      "id": "beginning_outstanding_revenue",
+      "name": "Beginning balance for Outstanding revenue"
+    },
+    {
+      "id": "beginning_accounts_receivables",
+      "name": "Accounts Receivables (Direct Billing)",
+      "parent_id": "beginning_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "beginning_accounts_receivables_guest_ledger",
+      "name": "Accounts Receivables (Guest Ledger)",
+      "parent_id": "beginning_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "beginning_cash_check",
+      "name": "Cash/ Check",
+      "parent_id": "beginning_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "beginning_eft",
+      "name": "EFT",
+      "parent_id": "beginning_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "beginning_credit_cards",
+      "name": "Credit cards",
+      "parent_id": "beginning_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "beginning_others",
+      "name": "Others",
+      "parent_id": "beginning_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        }
+      }
+    },
+    {
+      "id": "total_beginning_outstanding_revenue",
+      "name": "Total Beginning balance for Outstanding revenue",
+      "parent_id": "beginning_outstanding_revenue",
+      "totals": true
+    },
+    {
+      "id": "additional_outstanding_revenue",
+      "name": "Additional outstanding revenue through the period"
+    },
+    {
+      "id": "additional_accounts_receivables",
+      "name": "Accounts Receivables (Direct Billing)",
+      "parent_id": "additional_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_accounts_receivables"
+        }
+      }
+    },
+    {
+      "id": "additional_accounts_receivables_guest_ledger",
+      "name": "Accounts Receivables (Guest Ledger)",
+      "parent_id": "additional_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_accounts_receivables_guest_ledger"
+        }
+      }
+    },
+    {
+      "id": "additional_cash_check",
+      "name": "Cash/ Check",
+      "parent_id": "additional_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_cash_check"
+        }
+      }
+    },
+    {
+      "id": "additional_cash_check_collected_revenue",
+      "name": "Earned Revenue",
+      "parent_id": "additional_outstanding_revenue",
+      "depth_diff": 1,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank", "Accounts Payable"]
+        },
+        "use_mapping": {
+          "item_id": "beginning_cash_check"
+        }
+      }
+    },
+    {
+      "id": "additional_cash_check_deposited_revenue",
+      "name": "Deposited Revenue",
+      "parent_id": "additional_outstanding_revenue",
+      "depth_diff": 1,
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_cash_check"
+        },
+        "general_ledger_options": {
+          "include_subledger_account_types": ["Bank", "Accounts Payable"]
+        }
+      }
+    },
+    {
+      "id": "additional_eft",
+      "name": "EFT",
+      "parent_id": "additional_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_eft"
+        }
+      }
+    },
+    {
+      "id": "additional_eft_collected_revenue",
+      "name": "Earned Revenue",
+      "parent_id": "additional_outstanding_revenue",
+      "depth_diff": 1,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank", "Accounts Payable"]
+        },
+        "use_mapping": {
+          "item_id": "beginning_eft"
+        }
+      }
+    },
+    {
+      "id": "additional_eft_deposited_revenue",
+      "name": "Deposited Revenue",
+      "parent_id": "additional_outstanding_revenue",
+      "depth_diff": 1,
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_eft"
+        },
+        "general_ledger_options": {
+          "include_subledger_account_types": ["Bank", "Accounts Payable"]
+        }
+      }
+    },
+    {
+      "id": "additional_credit_cards",
+      "name": "Credit cards",
+      "parent_id": "additional_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_credit_cards"
+        }
+      }
+    },
+    {
+      "id": "additional_credit_cards_collected_revenue",
+      "name": "Earned Revenue",
+      "parent_id": "additional_outstanding_revenue",
+      "depth_diff": 1,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "general_ledger_options": {
+          "exclude_subledger_account_types": ["Bank", "Accounts Payable"]
+        },
+        "use_mapping": {
+          "item_id": "beginning_credit_cards"
+        }
+      }
+    },
+    {
+      "id": "additional_credit_cards_deposited_revenue",
+      "name": "Deposited Revenue",
+      "parent_id": "additional_outstanding_revenue",
+      "depth_diff": 1,
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_credit_cards"
+        },
+        "general_ledger_options": {
+          "include_subledger_account_types": ["Bank", "Accounts Payable"]
+        }
+      }
+    },
+    {
+      "id": "additional_others",
+      "name": "Others",
+      "parent_id": "additional_outstanding_revenue",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "use_mapping": {
+          "item_id": "beginning_others"
+        }
+      }
+    },
+    {
+      "id": "total_additional_outstanding_revenue",
+      "name": "Total Additional outstanding revenue through the period",
+      "parent_id": "additional_outstanding_revenue",
+      "totals": true,
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "additional_accounts_receivables", "negative": false },
+                  { "id": "additional_accounts_receivables_guest_ledger", "negative": false },
+                  { "id": "additional_cash_check", "negative": false },
+                  { "id": "additional_eft", "negative": false },
+                  { "id": "additional_credit_cards", "negative": false },
+                  { "id": "additional_others", "negative": false }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ending_outstanding_revenue",
+      "name": "Ending balance for Outstanding revenue"
+    },
+    {
+      "id": "ending_accounts_receivables",
+      "name": "Accounts Receivables (Direct Billing)",
+      "parent_id": "ending_outstanding_revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "beginning_accounts_receivables"
+              },
+              "arg2": {
+                "item_id": "additional_accounts_receivables"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ending_accounts_receivables_guest_ledger",
+      "name": "Accounts Receivables (Guest Ledger)",
+      "parent_id": "ending_outstanding_revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "beginning_accounts_receivables_guest_ledger"
+              },
+              "arg2": {
+                "item_id": "additional_accounts_receivables_guest_ledger"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ending_cash_check",
+      "name": "Cash/ Check",
+      "parent_id": "ending_outstanding_revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "beginning_cash_check"
+              },
+              "arg2": {
+                "item_id": "additional_cash_check"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ending_eft",
+      "name": "EFT",
+      "parent_id": "ending_outstanding_revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "beginning_eft"
+              },
+              "arg2": {
+                "item_id": "additional_eft"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ending_credit_cards",
+      "name": "Credit cards",
+      "parent_id": "ending_outstanding_revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "beginning_credit_cards"
+              },
+              "arg2": {
+                "item_id": "additional_credit_cards"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "ending_others",
+      "name": "Others",
+      "parent_id": "ending_outstanding_revenue",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "beginning_others"
+              },
+              "arg2": {
+                "item_id": "additional_others"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_ending_outstanding_revenue",
+      "name": "Total Ending balance for Outstanding revenue",
+      "parent_id": "ending_outstanding_revenue",
+      "totals": true
+    }
+  ]
+}

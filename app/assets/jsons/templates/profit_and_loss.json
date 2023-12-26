@@ -1,0 +1,367 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "profit_and_loss",
+  "name": "Profit and Loss",
+  "category": "basic",
+  "factory_class": "ProfitAndLossReportFactory",
+  "enabled_budget_compare": false,
+  "edit_mapping_disabled": true,
+  "rank": -1,
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+  "multi_entity_columns": [{ "type": "actual", "name": "$" }],
+  "accounting_class_check_disabled": true,
+  "items": [
+    {
+      "id": "income",
+      "name": "Income",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_income",
+      "name": "Total Income",
+      "parent_id": "income",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cost_of_goods_sold",
+      "name": "Cost of Goods Sold",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cost_of_goods_sold"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_cost_of_goods_sold",
+      "name": "Total Cost of Goods Sold",
+      "parent_id": "cost_of_goods_sold",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_cost_of_goods_sold"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gross_profit",
+      "name": "Gross profit",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "total_income"
+              },
+              "arg2": {
+                "item_id": "total_cost_of_goods_sold"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "gross_profit"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "expenses",
+      "name": "Expenses",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_expenses",
+      "name": "Total Expenses",
+      "parent_id": "expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "net_operating_income",
+      "name": "Net Operating Income",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "gross_profit"
+              },
+              "arg2": {
+                "item_id": "total_expenses"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "net_operating_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_income",
+      "name": "Other Income",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_income",
+      "name": "Total Other Income",
+      "parent_id": "other_income",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_expenses",
+      "name": "Other Expenses",
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_expenses",
+      "name": "Total Other Expenses",
+      "parent_id": "other_expenses",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_expenses"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "net_other_income",
+      "name": "Net Other Income",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "-",
+              "arg1": {
+                "item_id": "total_other_income"
+              },
+              "arg2": {
+                "item_id": "total_other_expenses"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "net_other_income"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "net_profit",
+      "name": "Net Profit",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "+",
+              "arg1": {
+                "item_id": "net_operating_income"
+              },
+              "arg2": {
+                "item_id": "net_other_income"
+              }
+            }
+          }
+        },
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "net_profit"
+              },
+              "arg2": {
+                "item_id": "total_income"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

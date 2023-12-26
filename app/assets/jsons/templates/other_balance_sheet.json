@@ -1,0 +1,2988 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "other_balance_sheet",
+  "name": "Balance Sheet Statement",
+  "category": "management",
+  "rank": 106,
+  "standard_category_ids": [7],
+  "draft": false,
+  "missing_transactions_calculation_disabled": false,
+  "enabled_budget_compare": false,
+  "total_column_visible": false,
+  "depends_on": [
+    "other_owners_operating_statement"
+  ],
+  "export_parameters": {
+    "main_column_position": "left"
+  },
+  "multi_entity_columns": [{ "type": "actual", "name": "$" }],
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual", "range": "current_period", "year": "previous_period", "name": "PP $"},
+    {"type": "variance", "range": "current_period", "year": "previous_period", "name": "PTD Var"},
+    {"type": "variance_percentage", "range": "current_period", "year": "current", "name": "Variance %"}
+  ],
+  "items": [
+    {
+      "id": "assets",
+      "name": "Assets"
+    },
+    {
+      "id": "current_assets",
+      "name": "Current Assets",
+      "parent_id": "assets"
+    },
+    {
+      "id": "bank_accounts",
+      "name": "Bank Accounts",
+      "parent_id": "current_assets"
+    },
+    {
+      "id": "cash_on_hand",
+      "name": "Cash on hand",
+      "parent_id": "bank_accounts",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Bank", "account_detail_type": "Cash on hand" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cash_on_hand",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "cash_on_hand",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "checking",
+      "name": "Checking",
+      "parent_id": "bank_accounts",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Bank", "account_detail_type": "Checking" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "checking",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "checking",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "money_market",
+      "name": "Money Market",
+      "parent_id": "bank_accounts",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Bank", "account_detail_type": "Money Market" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "money_market",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "money_market",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rents_held_in_trust",
+      "name": "Rents Held in Trust",
+      "parent_id": "bank_accounts",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Bank", "account_detail_type": "Rents Held in Trust" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rents_held_in_trust",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "rents_held_in_trust",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "savings",
+      "name": "Savings",
+      "parent_id": "bank_accounts",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Bank", "account_detail_type": "Savings" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "savings",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "savings",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "trust_account",
+      "name": "Trust account",
+      "parent_id": "bank_accounts",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Bank", "account_detail_type": "Trust account" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "trust_account",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "trust_account",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_bank_accounts",
+      "name": "Total Bank Accounts",
+      "parent_id": "bank_accounts",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_bank_accounts",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_bank_accounts",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "accounts_receivable_ar_section",
+      "name": "Accounts Receivable (A/R)",
+      "parent_id": "current_assets"
+    },
+    {
+      "id": "accounts_receivable_ar",
+      "name": "Accounts Receivable (A/R)",
+      "parent_id": "accounts_receivable_ar_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Accounts Receivable (A/R)", "account_detail_type": "Accounts Receivable (A/R)" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "accounts_receivable_ar",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "accounts_receivable_ar",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_accounts_receivable_ar",
+      "name": "Total Accounts Receivable (A/R)",
+      "parent_id": "accounts_receivable_ar_section",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_accounts_receivable_ar",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_accounts_receivable_ar",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_current_assets_section",
+      "name": "Other Current Assets",
+      "parent_id": "current_assets"
+    },
+    {
+      "id": "allowance_for_bad_debts",
+      "name": "Allowance for Bad Debts",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Allowance for Bad Debts" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "allowance_for_bad_debts",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "allowance_for_bad_debts",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "development_costs",
+      "name": "Development Costs",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Development Costs" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "development_costs",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "development_costs",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "employee_cash_advances",
+      "name": "Employee Cash Advances",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Employee Cash Advances" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "employee_cash_advances",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "employee_cash_advances",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "inventory",
+      "name": "Inventory",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Inventory" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "inventory",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "inventory",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "investment_mortgage_real_estate_loans",
+      "name": "Investment - Mortgage/Real Estate Loans",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Investment - Mortgage/Real Estate Loans" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "investment_mortgage_real_estate_loans",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "investment_mortgage_real_estate_loans",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "investment_tax_exempt_securities",
+      "name": "Investment - Tax-Exempt Securities",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Investment - Tax-Exempt Securities" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "investment_tax_exempt_securities",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "investment_tax_exempt_securities",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "investment_us_government_obligations",
+      "name": "Investment - U.S. Government Obligations",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Investment - U.S. Government Obligations" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "investment_us_government_obligations",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "investment_us_government_obligations",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "investments_other",
+      "name": "Investments - Other",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Investments - Other" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "investments_other",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "investments_other",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "loans_to_officers",
+      "name": "Loans To Officers",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Loans To Officers" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "loans_to_officers",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "loans_to_officers",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "loans_to_others",
+      "name": "Loans to Others",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Loans to Others" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "loans_to_others",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "loans_to_others",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "loans_to_stockholders",
+      "name": "Loans to Stockholders",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Loans to Stockholders" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "loans_to_stockholders",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "loans_to_stockholders",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_current_assets",
+      "name": "Other Current Assets",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Other Current Assets" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_current_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "other_current_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "prepaid_expenses",
+      "name": "Prepaid Expenses",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Prepaid Expenses" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "prepaid_expenses",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "prepaid_expenses",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "retainage",
+      "name": "Retainage",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Retainage" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "retainage",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "retainage",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "undeposited_funds",
+      "name": "Undeposited Funds",
+      "parent_id": "other_current_assets_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Undeposited Funds" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "undeposited_funds",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "undeposited_funds",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_current_assets",
+      "name": "Total Other Current Assets",
+      "parent_id": "other_current_assets_section",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_current_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_other_current_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_current_assets",
+      "name": "Total Current Assets",
+      "parent_id": "current_assets",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_current_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_current_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "non_current_assets",
+      "name": "Non-Current Assets",
+      "parent_id": "assets"
+    },
+    {
+      "id": "fixed_assets",
+      "name": "Fixed Assets",
+      "parent_id": "non_current_assets"
+    },
+    {
+      "id": "buildings",
+      "name": "Buildings",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Buildings" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "buildings",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "buildings",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "depletable_assets",
+      "name": "Depletable Assets",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Depletable Assets" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "depletable_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "depletable_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fixed_asset_computers",
+      "name": "Fixed Asset Computers",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Computers" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "fixed_asset_computers",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "fixed_asset_computers",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fixed_asset_copiers",
+      "name": "Fixed Asset Copiers",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Copiers" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "fixed_asset_copiers",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "fixed_asset_copiers",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fixed_asset_furniture",
+      "name": "Fixed Asset Furniture",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Furniture" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "fixed_asset_furniture",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "fixed_asset_furniture",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fixed_asset_other_tools_equipment",
+      "name": "Fixed Asset Other Tools Equipment",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Other Tools Equipment" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "fixed_asset_other_tools_equipment",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "fixed_asset_other_tools_equipment",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fixed_asset_phone",
+      "name": "Fixed Asset Phone",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Phone" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "fixed_asset_phone",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "fixed_asset_phone",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fixed_asset_photo_video",
+      "name": "Fixed Asset Photo Video",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Photo Video" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "fixed_asset_photo_video",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "fixed_asset_photo_video",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "fixed_asset_software",
+      "name": "Fixed Asset Software",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Software" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "fixed_asset_software",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "fixed_asset_software",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "furniture_fixtures",
+      "name": "Furniture & Fixtures",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Furniture & Fixtures" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "furniture_fixtures",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "furniture_fixtures",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "intangible_assets",
+      "name": "Intangible Assets",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Intangible Assets" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "intangible_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "intangible_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "land",
+      "name": "Land",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Land" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "land",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "land",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "leasehold_improvements",
+      "name": "Leasehold Improvements",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Leasehold Improvements" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "leasehold_improvements",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "leasehold_improvements",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "machinery_equipment",
+      "name": "Machinery & Equipment",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Machinery & Equipment" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "machinery_equipment",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "machinery_equipment",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_fixed_assets",
+      "name": "Other fixed assets",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Other Fixed Asset" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_fixed_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "other_fixed_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "vehicles",
+      "name": "Vehicles",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Vehicles" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "vehicles",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "vehicles",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "accumulated_amortization",
+      "name": "Accumulated Amortization",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Accumulated Amortization" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "accumulated_amortization",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "accumulated_amortization",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "accumulated_depletion",
+      "name": "Accumulated Depletion",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Accumulated Depletion" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "accumulated_depletion",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "accumulated_depletion",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "accumulated_depreciation",
+      "name": "Accumulated Depreciation",
+      "parent_id": "fixed_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Accumulated Depreciation" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "accumulated_depreciation",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "accumulated_depreciation",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_fixed_assets",
+      "name": "Total Fixed Assets",
+      "parent_id": "fixed_assets",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_fixed_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_fixed_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_assets",
+      "name": "Other Assets",
+      "parent_id": "non_current_assets"
+    },
+    {
+      "id": "goodwill",
+      "name": "Goodwill",
+      "parent_id": "other_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Goodwill" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "goodwill",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "goodwill",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "lease_buyout",
+      "name": "Lease Buyout",
+      "parent_id": "other_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Lease Buyout" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "lease_buyout",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "lease_buyout",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "licenses",
+      "name": "Licenses",
+      "parent_id": "other_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Licenses" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "licenses",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "licenses",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "organizational_costs",
+      "name": "Organizational Costs",
+      "parent_id": "other_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Organizational Costs" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "organizational_costs",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "organizational_costs",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_long_term_assets",
+      "name": "Other Long-term Assets",
+      "parent_id": "other_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Other Long-term Assets" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_long_term_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "other_long_term_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "security_deposits",
+      "name": "Security Deposits",
+      "parent_id": "other_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Security Deposits" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "security_deposits",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "security_deposits",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "accumulated_amortization_of_other_assets",
+      "name": "Accumulated Amortization of Other Assets",
+      "parent_id": "other_assets",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Accumulated Amortization of Other Assets" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "accumulated_amortization_of_other_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "accumulated_amortization_of_other_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_assets",
+      "name": "Total Other Assets",
+      "parent_id": "other_assets",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_other_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_non_current_assets",
+      "name": "Total Non-Current Assets",
+      "parent_id": "non_current_assets",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_non_current_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_non_current_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_assets",
+      "name": "Total Assets",
+      "parent_id": "assets",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_assets",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_assets",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "liabilities",
+      "name": "Liabilities"
+    },
+    {
+      "id": "current_liabilities",
+      "name": "Current Liabilities",
+      "parent_id": "liabilities"
+    },
+    {
+      "id": "credit_card_section",
+      "name": "Credit Card",
+      "parent_id": "current_liabilities"
+    },
+    {
+      "id": "credit_card",
+      "name": "Credit Card",
+      "parent_id": "credit_card_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Credit Card", "account_detail_type": "Credit Card" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "credit_card",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "credit_card",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_credit_card",
+      "name": "Total Credit Card",
+      "parent_id": "credit_card_section",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_credit_card",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_credit_card",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "accounts_payable_ap_section",
+      "name": "Accounts Payable (A/P)",
+      "parent_id": "current_liabilities"
+    },
+    {
+      "id": "accounts_payable_ap",
+      "name": "Accounts Payable (A/P)",
+      "parent_id": "accounts_payable_ap_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Accounts Payable (A/P)", "account_detail_type": "Accounts Payable (A/P)" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "accounts_payable_ap",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "accounts_payable_ap",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_accounts_payable_ap",
+      "name": "Total Accounts Payable (A/P)",
+      "parent_id": "accounts_payable_ap_section",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_accounts_payable_ap",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_accounts_payable_ap",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_current_liabilities_section",
+      "name": "Other Current Liabilities",
+      "parent_id": "current_liabilities"
+    },
+    {
+      "id": "deferred_revenue",
+      "name": "Deferred Revenue",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Deferred Revenue" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "deferred_revenue",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "deferred_revenue",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "federal_income_tax_payable",
+      "name": "Federal Income Tax Payable",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Federal Income Tax Payable" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "federal_income_tax_payable",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "federal_income_tax_payable",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "insurance_payable",
+      "name": "Insurance Payable",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Insurance Payable" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "insurance_payable",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "insurance_payable",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "line_of_credit",
+      "name": "Line of Credit",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Line of Credit" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "line_of_credit",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "line_of_credit",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "loan_payable",
+      "name": "Loan Payable",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Loan Payable" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "loan_payable",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "loan_payable",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_current_liabilities",
+      "name": "Other Current Liabilities",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Other Current Liabilities" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_current_liabilities",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "other_current_liabilities",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_clearing",
+      "name": "Payroll Clearing",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Payroll Clearing" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_clearing",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "payroll_clearing",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "payroll_tax_payable",
+      "name": "Payroll Tax Payable",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Payroll Tax Payable" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "payroll_tax_payable",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "payroll_tax_payable",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "prepaid_expenses_payable",
+      "name": "Prepaid Expenses Payable",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Prepaid Expenses Payable" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "prepaid_expenses_payable",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "prepaid_expenses_payable",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rents_in_trust_liability",
+      "name": "Rents in trust - Liability",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Rents in trust - Liability" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rents_in_trust_liability",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "rents_in_trust_liability",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "sales_tax_payable",
+      "name": "Sales Tax Payable",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Sales Tax Payable" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "sales_tax_payable",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "sales_tax_payable",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "state_local_income_tax_payable",
+      "name": "State/Local Income Tax Payable",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "State/Local Income Tax Payable" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "state_local_income_tax_payable",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "state_local_income_tax_payable",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "trust_accounts_liabilities",
+      "name": "Trust Accounts - Liabilities",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Trust Accounts - Liabilities" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "trust_accounts_liabilities",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "trust_accounts_liabilities",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "undistributed_tips",
+      "name": "Undistributed Tips",
+      "parent_id": "other_current_liabilities_section",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Undistributed Tips" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "undistributed_tips",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "undistributed_tips",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_other_current_liabilities",
+      "name": "Total Other Current Liabilities",
+      "parent_id": "other_current_liabilities_section",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_other_current_liabilities",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_other_current_liabilities",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_current_liabilities",
+      "name": "Total Current Liabilities",
+      "parent_id": "current_liabilities",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_current_liabilities",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_current_liabilities",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "long_term_liabilities",
+      "name": "Long Term Liabilities",
+      "parent_id": "liabilities"
+    },
+    {
+      "id": "notes_payable",
+      "name": "Notes Payable",
+      "parent_id": "long_term_liabilities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Long Term Liabilities", "account_detail_type": "Notes Payable" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "notes_payable",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "notes_payable",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_long_term_liabilities",
+      "name": "Other Long Term Liabilities",
+      "parent_id": "long_term_liabilities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Long Term Liabilities", "account_detail_type": "Other Long Term Liabilities" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_long_term_liabilities",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "other_long_term_liabilities",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "shareholder_notes_payable",
+      "name": "Shareholder Notes Payable",
+      "parent_id": "long_term_liabilities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Long Term Liabilities", "account_detail_type": "Shareholder Notes Payable" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "shareholder_notes_payable",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "shareholder_notes_payable",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_long_term_liabilities",
+      "name": "Total Long-Term Liabilities",
+      "parent_id": "long_term_liabilities",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_long_term_liabilities",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_long_term_liabilities",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_liabilities",
+      "name": "Total Liabilities",
+      "parent_id": "liabilities",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_liabilities",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_liabilities",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "equity",
+      "name": "Equity"
+    },
+    {
+      "id": "accumulated_adjustment",
+      "name": "Accumulated Adjustment",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Accumulated Adjustment" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "accumulated_adjustment",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "accumulated_adjustment",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "common_stock",
+      "name": "Common Stock",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Common Stock" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "common_stock",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "common_stock",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "estimated_taxes",
+      "name": "Estimated Taxes",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Estimated Taxes" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "estimated_taxes",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "estimated_taxes",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "health_insurance_premium",
+      "name": "Health Insurance Premium",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Health Insurance Premium" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "health_insurance_premium",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "health_insurance_premium",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "health_savings_account_contribution",
+      "name": "Health Savings Account Contribution",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Health Savings Account Contribution" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "health_savings_account_contribution",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "health_savings_account_contribution",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "opening_balance_equity",
+      "name": "Opening Balance Equity",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Opening Balance Equity" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "opening_balance_equity",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "opening_balance_equity",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "owners_equity",
+      "name": "Owner’s Equity",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Owner's Equity" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "owners_equity",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "owners_equity",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "paid_in_capital_or_surplus",
+      "name": "Paid-In Capital or Surplus",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Paid-In Capital or Surplus" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "paid_in_capital_or_surplus",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "paid_in_capital_or_surplus",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "partner_contributions",
+      "name": "Partner Contributions",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Partner Contributions" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "partner_contributions",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "partner_contributions",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "partner_distributions",
+      "name": "Partner Distributions",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Partner Distributions" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "partner_distributions",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "partner_distributions",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "partners_equity",
+      "name": "Partner’s Equity",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Partner's Equity" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "partners_equity",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "partners_equity",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "personal_expense",
+      "name": "Personal Expense",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Personal Expense" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "personal_expense",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "personal_expense",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "personal_income",
+      "name": "Personal Income",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Personal Income" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "personal_income",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "personal_income",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "preferred_stock",
+      "name": "Preferred Stock",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Preferred Stock" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "preferred_stock",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "preferred_stock",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "treasury_stock",
+      "name": "Treasury Stock",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Treasury Stock" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "treasury_stock",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "treasury_stock",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "retained_earnings",
+      "name": "Retained Earnings",
+      "parent_id": "equity",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Retained Earnings" }
+        ]
+      },
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "retained_earnings",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "retained_earnings",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_equity",
+      "name": "Total Equity",
+      "parent_id": "equity",
+      "totals": true,
+      "values": {
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_equity",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_equity",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_liabilities_and_stockholders_equity",
+      "name": "Total Liabilities and Stockholders' Equity",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "total_liabilities", "negative": false },
+                  { "id": "total_equity", "negative": false }
+                ]
+              }
+            }
+          }
+        },
+        "variance_percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_liabilities_and_stockholders_equity",
+                "column_type": "variance",
+                "column_year": "previous_period"
+              },
+              "arg2": {
+                "item_id": "total_liabilities_and_stockholders_equity",
+                "column_year": "previous_period"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,73 @@
+version: 2.1
+
+orbs:
+  jira: circleci/jira@1.3.1
+
+workflows:
+  build:
+    jobs:
+      - build:
+          post-steps:
+            - jira/notify
+
+jobs:
+  build:
+    working_directory: ~/docyt_service
+
+    docker:
+    - image: circleci/ruby:2.6.3
+      environment:
+        DOCYT_ENV: test
+        BUNDLE_JOBS: 3
+        BUNDLE_RETRY: 3
+        BUNDLE_PATH: vendor/bundle
+        MONGODB_URL: mongodb://localhost:27017/reports_service_test
+        REDIS_HOST: localhost:6379
+
+    # mongo
+    - image: circleci/mongo:4.4.3
+
+    # redis
+    - image: circleci/redis:4.0.14-alpine
+
+    steps:
+    - add_ssh_keys:
+        fingerprints:
+        - "a0:5b:d8:b0:05:39:d8:ba:bd:fe:f7:50:d7:cf:6c:1b"
+
+    - checkout
+
+    - restore_cache:
+        keys:
+        - docyt_service-{{ checksum "Gemfile.lock" }}
+        - docyt_service-
+
+    - run:
+        name: Install Ruby dependencies
+        command: |
+          gem install bundler -v 2.2.5
+          bundle install
+
+    - save_cache:
+        key: docyt_service-{{ checksum "Gemfile.lock" }}
+        paths:
+        - vendor/bundle
+
+    - run:
+        name: Rubocop Check
+        command: |
+          bundle exec rubocop
+
+    - run:
+        name: RSpec
+        command: bundle exec rspec --format progress --format RspecJunitFormatter -o ~/rspec/rspec.xml
+
+    - run:
+        name: Upload coverage to Codacy
+        command: bash <(curl -Ls https://coverage.codacy.com/get.sh) report -r coverage/coverage.xml
+
+    - store_artifacts:
+        path: coverage
+
+    - store_test_results:
+        path: ~/rspec

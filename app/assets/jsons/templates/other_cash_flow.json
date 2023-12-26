@@ -1,0 +1,1104 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "other_cash_flow",
+  "name": "Cash Flow Statement",
+  "category": "management",
+  "depends_on": [
+    "other_owners_operating_statement"
+  ],
+  "rank": 106,
+  "standard_category_ids": [7],
+  "draft": false,
+  "missing_transactions_calculation_disabled": false,
+  "enabled_budget_compare": false,
+  "export_parameters": {
+    "main_column_position": "left"
+  },
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual", "range": "current_period", "year": "previous_period", "name": "PP $"}
+  ],
+  "multi_entity_columns": [
+    { "type": "actual", "name": "$" }
+  ],
+
+  "items": [
+    {
+      "id": "cash_flows_from_operating_activities",
+      "name": "Cash Flows from Operating Activities"
+    },
+    {
+      "id": "net_income",
+      "name": "Net Income",
+      "parent_id": "cash_flows_from_operating_activities",
+      "type": {
+        "name": "reference",
+        "reference": "other_owners_operating_statement/net_income"
+      }
+    },
+    {
+      "id": "adjustments_reconcile_net_income_cash",
+      "name": "Adjustments to Reconcile Net Income To Cash Provided by (Used In) Operating Activities",
+      "parent_id": "cash_flows_from_operating_activities"
+    },
+    {
+      "id": "increase_decrease_in_accumulated_depreciation",
+      "name": "Increase (Decrease) in Accumulated Depreciation",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Accumulated Depreciation" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_accumulated_depletion",
+      "name": "Increase (Decrease) in Accumulated Depletion",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Accumulated Depletion" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_accumulated_amortization",
+      "name": "Increase (Decrease) in Accumulated Amortization",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Accumulated Amortization" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_accumulated_amortization_of_other_assets",
+      "name": "Increase (Decrease) in Accumulated Amortization of Other Assets",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Accumulated Amortization of Other Assets" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_allowance_for_bad_debts",
+      "name": "Increase (Decrease) in Allowance for Bad Debts",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Allowance for Bad Debts" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_accounts_receivable_ar",
+      "name": "Decrease (Increase) in Accounts Receivable (A/R)",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Accounts Receivable (A/R)", "account_detail_type": "Accounts Receivable (A/R)" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_development_costs",
+      "name": "Decrease (Increase) in Development Costs",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Development Costs" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_employee_cash_advances",
+      "name": "Decrease (increase) in Employee Cash Advances",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Employee Cash Advances" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_inventory",
+      "name": "Decrease (Increase) in Inventory",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Inventory" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_prepaid_expenses",
+      "name": "Decrease (Increase) in Prepaid Expenses",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Prepaid Expenses" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_other_current_assets",
+      "name": "Decrease (Increase) in Other Current Assets",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Other Current Assets" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_retainage",
+      "name": "Decrease (Increase) in Retainage",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Retainage" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_undeposited_funds",
+      "name": "Decrease (Increase) in Undeposited Funds",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Undeposited Funds" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_other_long_term_assets",
+      "name": "Decrease (Increase) in Other Long-Term Assets",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Other Long-Term Assets" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_security_deposits",
+      "name": "Decrease (Increase) in Security Deposits",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Security Deposits" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_accounts_payable_ap",
+      "name": "Increase (Decrease) in Accounts Payable (A/P)",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Accounts Payable (A/P)", "account_detail_type": "Accounts Payable (A/P)" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_credit_card",
+      "name": "Increase (Decrease) in Credit Card",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Credit Card", "account_detail_type": "Credit Card" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_federal_income_tax_payable",
+      "name": "Increase (Decrease) in Federal Income Tax Payable",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Federal Income Tax Payable" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_deferred_revenue",
+      "name": "Increase (Decrease) in Deferred Revenue",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Deferred Revenue" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_insurance_payable",
+      "name": "Increase (Decrease) in Insurance Payable",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Insurance Payable" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_payroll_clearing",
+      "name": "Increase (Decrease) in Payroll Clearing",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Payroll Clearing" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_payroll_tax_payable",
+      "name": "Increase (Decrease) in Payroll Tax Payable",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Payroll Tax Payable" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_prepaid_expenses_payable",
+      "name": "Increase (Decrease) in Prepaid Expenses Payable",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Prepaid Expenses Payable" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_rents_in_trust_liability",
+      "name": "Increase (Decrease) in Rents in trust - Liability",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Rents in trust - Liability" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_sales_tax_payable",
+      "name": "Increase (Decrease) in Sales Tax Payable",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Sales Tax Payable" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_state_local_income_tax_payable",
+      "name": "Increase (Decrease) in State/Local Income Tax Payable",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "State/Local Income Tax Payable" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_trust_accounts_liabilities",
+      "name": "Increase (Decrease) in Trust Accounts - Liabilities",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Trust Accounts - Liabilities" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_undistributed_tips",
+      "name": "Increase (Decrease) in Undistributed Tips",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Undistributed Tips" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_other_current_liabilities",
+      "name": "Increase (Decrease) in Other Current Liabilities",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Other Current Liabilities" }
+        ]
+      }
+    },
+    {
+      "id": "total_adjustments_reconcile_net_income_cash",
+      "name": "Total Adjustments to Reconcile Net Income To Cash Provided by (Used In) Operating Activities",
+      "parent_id": "adjustments_reconcile_net_income_cash",
+      "totals": true,
+      "show": false
+    },
+    {
+      "id": "total_cash_flows_from_operating_activities",
+      "name": "Net Cash Provided By (Used In) Operating Activities",
+      "parent_id": "cash_flows_from_operating_activities",
+      "totals": true
+    },
+    {
+      "id": "cash_flows_from_investing_activities",
+      "name": "Cash Flows from Investing Activities"
+    },
+    {
+      "id": "decrease_increase_in_investment_mortgage_real_estate_loans",
+      "name": "Decrease (Increase) in Investment - Mortgage/Real Estate Loans",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Investment - Mortgage/Real Estate Loans" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_investment_tax_exempt_securities",
+      "name": "Decrease (Increase) in Investment - Tax-Exempt Securities",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Investment - Tax-Exempt Securities" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_investment_us_government_obligations",
+      "name": "Decrease (Increase) in Investment - U.S. Government Obligations",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Investment - U.S. Government Obligations" }
+        ]
+      }
+    },
+    {
+      "id": "decrease_increase_in_investment_other",
+      "name": "Decrease (Increase) in Investments - Other",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Investments - Other" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_buildings",
+      "name": "Disposal (Purchases) of Buildings",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Buildings" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_acquisitions_of_depletable_assets",
+      "name": "Disposal (Acquisitions) of Depletable Assets",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Depletable Assets" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_fixed_asset_computers",
+      "name": "Disposal (Purchases) of Fixed Asset Computers",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Computers" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_fixed_asset_copiers",
+      "name": "Disposal (Purchases) of Fixed Asset Copiers",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Copiers" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_fixed_asset_furniture",
+      "name": "Disposal (Purchases) of Fixed Asset Furniture",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Furniture" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_fixed_asset_other_tools_equipment",
+      "name": "Disposal (Purchases) of Fixed Asset Other Tools Equipment",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Other Tools Equipment" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_fixed_asset_phone",
+      "name": "Disposal (Purchases) of Fixed Asset Phone",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Phone" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_fixed_asset_photo_video",
+      "name": "Disposal (Purchases) of Fixed Asset Photo Video",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Photo Video" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_fixed_asset_software",
+      "name": "Disposal (Purchases) of Fixed Asset Software",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Fixed Asset Software" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_furniture_fixtures",
+      "name": "Disposal (Purchases) of Furniture & Fixtures",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Furniture & Fixtures" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_acquisitions_of_intangible_assets",
+      "name": "Disposal (Acquisitions) of Intangible Assets",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Intangible Assets" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_land",
+      "name": "Disposal (Purchases) of Land",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Land" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_leasehold_improvements",
+      "name": "Disposal (Purchases) of Leasehold Improvements",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Leasehold Improvements" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_machinery_equipment",
+      "name": "Disposal (Purchases) of Machinery & Equipment",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Machinery & Equipment" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_other_fixed_assets",
+      "name": "Disposal (Purchases) of Other fixed assets",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Other Fixed Asset" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_purchases_of_vehicles",
+      "name": "Disposal (Purchases) of Vehicles",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Fixed Assets", "account_detail_type": "Vehicles" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_acquisitions_of_goodwill",
+      "name": "Disposal (Acquisitions) of Goodwill",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Goodwill" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_acquisitions_of_lease_buyout",
+      "name": "Disposal (Acquisitions) of Lease Buyout",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Lease Buyout" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_acquisitions_of_licenses",
+      "name": "Disposal (Acquisitions) of Licenses",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Licenses" }
+        ]
+      }
+    },
+    {
+      "id": "disposal_acquisitions_of_organizational_costs",
+      "name": "Disposal (Acquisitions) of Organizational Costs",
+      "parent_id": "cash_flows_from_investing_activities",
+      "negative": true,
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Assets", "account_detail_type": "Organizational Costs" }
+        ]
+      }
+    },
+    {
+      "id": "total_cash_flows_from_investing_activities",
+      "name": "Net Cash Provided By (Used In) Investing Activities",
+      "parent_id": "cash_flows_from_investing_activities",
+      "totals": true
+    },
+    {
+      "id": "cash_flows_from_financing_activities",
+      "name": "Cash Flows from Financing Activities"
+    },
+    {
+      "id": "increase_decrease_in_loans_to_officers",
+      "name": "Increase (Decrease) in Loans to Officers",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Loans to Officers" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_loans_to_others",
+      "name": "Increase (Decrease) in Loans to Others",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Loans to Others" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_loans_to_stockholders",
+      "name": "Increase (Decrease) in Loans to Stockholders",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Assets", "account_detail_type": "Loans to Stockholders" }
+        ]
+      }
+    },
+    {
+      "id": "proceeds_from_repayments_on_line_of_credit",
+      "name": "Proceeds from (Repayments on) Line of Credit",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Line of Credit" }
+        ]
+      }
+    },
+    {
+      "id": "proceeds_from_repatments_on_loan_payable",
+      "name": "Proceeds from (Repatments on) Loan Payable",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Other Current Liabilities", "account_detail_type": "Loan Payable" }
+        ]
+      }
+    },
+    {
+      "id": "proceeds_from_repayments_on_notes_payable",
+      "name": "Proceeds from (Repayments on) Notes Payable",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Long Term Liabilities", "account_detail_type": "Notes Payable" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_other_long_term_liabilities",
+      "name": "Increase (Decrease) in Other Long Term Liabilities",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Long Term Liabilities", "account_detail_type": "Other Long Term Liabilities" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_shareholder_notes_payable",
+      "name": "Increase (Decrease) in Shareholder Notes Payable",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Long Term Liabilities", "account_detail_type": "Shareholder Notes Payable" }
+        ]
+      }
+    },
+    {
+      "id": "proceeds_from_issuance_of_preferred_stock",
+      "name": "Proceeds from Issuance of Preferred Stock",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Preferred Stock" }
+        ]
+      }
+    },
+    {
+      "id": "proceeds_from_issuance_of_common_stock",
+      "name": "Proceeds from Issuance of Common Stock",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Common Stock" }
+        ]
+      }
+    },
+    {
+      "id": "proceeds_from_paid_in_capital_or_surplus",
+      "name": "Proceeds from Paid-in Capital or Surplus",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Paid-in Capital or Surplus" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_accumulated_adjustment",
+      "name": "Increase (Decrease) in Accumulated Adjustment",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Accumulated Adjustment" }
+        ]
+      }
+    },
+    {
+      "id": "estimated_taxes",
+      "name": "Estimated Taxes",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Estimated Taxes" }
+        ]
+      }
+    },
+    {
+      "id": "health_insurance_premium",
+      "name": "Health Insurance Premium",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Health Insurance Premium" }
+        ]
+      }
+    },
+    {
+      "id": "repurchase_reissuance_of_treasury_stock",
+      "name": "Repurchase (Reissuance) of Treasury Stock",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Treasury Stock" }
+        ]
+      }
+    },
+    {
+      "id": "health_savings_account_contribution",
+      "name": "Health Savings Account Contribution",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Health Savings Account Contribution" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_opening_balance_equity",
+      "name": "Increase (Decrease) in Opening Balance Equity",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Opening Balance Equity" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_owners_equity",
+      "name": "Increase (Decrease) in Owner's Equity",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Owner's Equity" }
+        ]
+      }
+    },
+    {
+      "id": "partner_contributions",
+      "name": "Partner Contributions",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Partner Contributions" }
+        ]
+      }
+    },
+    {
+      "id": "partner_distributions",
+      "name": "Partner Distributions",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Partner Distributions" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_in_partners_equity",
+      "name": "Increase (Decrease) in Partner's Equity",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Partner's Equity" }
+        ]
+      }
+    },
+    {
+      "id": "personal_expense",
+      "name": "Personal Expense",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Personal Expense" }
+        ]
+      }
+    },
+    {
+      "id": "personal_income",
+      "name": "Personal Income",
+      "parent_id": "cash_flows_from_financing_activities",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger",
+        "default_accounts": [
+          { "account_type": "Equity", "account_detail_type": "Personal Income" }
+        ]
+      }
+    },
+    {
+      "id": "total_cash_flows_from_financing_activities",
+      "name": "Net Cash Provided By (Used In) Financing Activities",
+      "parent_id": "cash_flows_from_financing_activities",
+      "totals": true
+    },
+    {
+      "id": "cash_temporary_cash_investments_beginning_of_period",
+      "name": "Cash and Temporary Cash Investments, Beginning of Period",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "balance_sheet",
+        "balance_sheet_options": {
+          "balance_day": "prior_day"
+        },
+        "default_accounts": [
+          { "account_type": "Bank", "account_detail_type": "Cash on hand" },
+          { "account_type": "Bank", "account_detail_type": "Checking" },
+          { "account_type": "Bank", "account_detail_type": "Money Market" },
+          { "account_type": "Bank", "account_detail_type": "Rents Held in Trust" },
+          { "account_type": "Bank", "account_detail_type": "Savings" },
+          { "account_type": "Bank", "account_detail_type": "Trust account" },
+          { "account_type": "Bank", "account_detail_type": "Cash And Cash Equivalents" },
+          { "account_type": "Bank", "account_detail_type": "Other Earmarked Bank Accounts" }
+        ]
+      }
+    },
+    {
+      "id": "increase_decrease_cash_temporary_cash_investments",
+      "name": "Increase (Decrease) in Cash and Temporary Cash Investments",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "total_cash_flows_from_operating_activities", "negative": false },
+                  { "id": "total_cash_flows_from_investing_activities", "negative": false },
+                  { "id": "total_cash_flows_from_financing_activities", "negative": false }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cash_temporary_cash_investments_end_period",
+      "name": "Cash and Temporary Cash Investments, End of Period",
+      "type": {
+        "name": "stats"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "sum",
+              "arg": {
+                "sub_items": [
+                  { "id": "cash_temporary_cash_investments_beginning_of_period", "negative": false },
+                  { "id": "increase_decrease_cash_temporary_cash_investments", "negative": false }
+                ]
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "interest_paid",
+      "name": "Interest Paid",
+      "type": {
+        "name": "quickbooks_ledger",
+        "calculation_type": "general_ledger"
+      }
+    }
+  ]
+}

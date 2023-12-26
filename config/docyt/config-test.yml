@@ -1,0 +1,12 @@
+mongodb:
+  url: mongodb://localhost:27017/reports_service_test
+
+quickbooks:
+  client_id: "Q0DTskSt5YSXZ576sN90twnp5fKpWwhDic6Lq9Y3DikOkFg7TP"
+  client_secret: "aIR8kYOYyN6sGLGt4DGdDEJzsbX72HjyBOy1Gy1i"
+  redirect_uri: "http://docyt-dev.com/cloud_service_authorizations/qbo_oauth_callback"
+  api_base_uri: "https://sandbox-quickbooks.api.intuit.com/v3/company"
+  client_webhook_token: "2771afa0-eb7d-4d89-9a4b-1b41aa98c130"
+
+redis:
+  host: localhost:6379

@@ -1,0 +1,441 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "miscellaneous_income",
+  "name": "Schedule 4 - Miscellaneous Income",
+  "category": "department",
+  "depends_on": [
+    "owners_operating_statement"
+  ],
+  "rank": 6,
+  "standard_category_ids": [9],
+  "draft": false,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "budget_actual", "range": "current_period", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "current_period", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "current_period", "name": "Budget Var"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "prior", "name": "POR LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "current", "name": "PAR $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "current", "name": "POR $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "budget_actual", "range": "ytd", "year": "current", "name": "Budget $"},
+    {"type": "budget_percentage", "range": "ytd", "year": "current", "name": "Budget %"},
+    {"type": "budget_variance", "range": "ytd", "name": "Budget Var"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "ytd", "year": "prior", "name": "PAR LY $"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "ytd", "year": "prior", "name": "POR LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"}
+  ],
+  "missing_transactions_calculation_disabled": false,
+  "items": [
+    {
+      "id": "summary",
+      "name": "Summary",
+      "_description": "This section consists of items that use standard hotel metrics to calculate the values"
+    },
+    {
+      "id": "rooms_available",
+      "name": "Rooms Available to sell",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_available",
+        "metric": {
+          "name": "Available Rooms"
+        }
+      }
+    },
+    {
+      "id": "rooms_sold",
+      "name": "Rooms Sold",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/rooms_sold",
+        "metric": {
+          "name": "Sold Rooms"
+        }
+      }
+    },
+    {
+      "id": "occupancy_percent",
+      "name": "Occupancy %",
+      "parent_id": "summary",
+      "type": {
+        "name": "reference",
+        "reference": "owners_operating_statement/occupancy_percent"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rooms_sold"
+              },
+              "arg2": {
+                "item_id": "rooms_available"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "miscellaneous_income",
+      "name": "Miscellaneous Income"
+    },
+    {
+      "id": "attrition_fees",
+      "name": "Attrition Fees",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "attrition_fees"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cancellation_fees",
+      "name": "Cancellation Fees",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cancellation_fees"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "cash_discounts_earned",
+      "name": "Cash Discounts Earned",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "cash_discounts_earned"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "commissions",
+      "name": "Commissions",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "commissions"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "grf_currency_transaction_gains",
+      "name": "Guest-Related Foreign Currency Transaction Gains (Losses)",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "grf_currency_transaction_gains"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "gl_dr",
+      "name": "Guest Laundry and Dry Cleaning",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "gl_dr"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "interest_income",
+      "name": "Interest Income",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "interest_income"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "rmo_units",
+      "name": "Net Revenue from Renting Mixed-Ownership Units",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "rmo_units"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other_breakage",
+      "name": "Other Breakage",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other_breakage"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "package_breakage",
+      "name": "Package Breakage",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "package_breakage"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "proceeds_bii",
+      "name": "Proceeds from Business Interruption Insurance",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "proceeds_bii"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "resort_fees",
+      "name": "Resort Fees",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "resort_fees"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "space_rental_concessions",
+      "name": "Space Rental and Concessions",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "space_rental_concessions"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "other",
+      "name": "Other",
+      "parent_id": "miscellaneous_income",
+      "type": {
+        "name": "quickbooks_ledger"
+      },
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "other"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "id": "total_miscellaneous_income",
+      "name": "Total Miscellaneous Income",
+      "parent_id": "miscellaneous_income",
+      "totals": true,
+      "values": {
+        "percentage": {
+          "value": {
+            "expression": {
+              "operator": "%",
+              "arg1": {
+                "item_id": "total_miscellaneous_income"
+              },
+              "arg2": {
+                "item_id": "total_miscellaneous_income"
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

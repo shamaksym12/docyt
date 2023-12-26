@@ -1,0 +1,11 @@
+{
+  "id": "multi_range_columns",
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current"},
+    {"type": "actual_per_metric", "per_metric": "rooms_available", "range": "current_period", "year": "current"},
+    {"type": "actual_per_metric", "per_metric": "rooms_sold", "range": "current_period", "year": "current"},
+    {"type": "gross_actual", "range": "current_period", "year": "current"},
+    {"type": "budget_actual", "range": "current_period", "year": "current"},
+    {"type": "budget_variance", "range": "current_period"}
+  ]
+}

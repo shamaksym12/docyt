@@ -1,0 +1,1 @@
+DocytLib.rails_init

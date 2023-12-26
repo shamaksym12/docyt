@@ -1,0 +1,44 @@
+{
+    "id": "report_filters",
+    "report_filter": [
+      {
+        "id": "last_year",
+        "name": "Last Year",
+        "column_filter": [
+          {"year": "prior"},
+          {"type": "variance"}
+        ],
+        "needed_for_multi_range" : false,
+        "needed_for_first_drill_down": false
+      },
+      {
+        "id": "per_available_room", 
+        "name": "Per Available Room",
+        "column_filter": [
+          {"per_metric": "rooms_available"}
+        ],
+        "needed_for_multi_range" : true,
+        "needed_for_first_drill_down": true
+      },
+      {
+        "id": "per_occupied_room", 
+        "name": "Per Occupied Room",
+        "column_filter": [
+          {"per_metric": "rooms_sold"}
+        ],
+        "needed_for_multi_range" : true,
+        "needed_for_first_drill_down": true
+      },
+      {
+        "id": "budgets_comparison", 
+        "name": "Budgets Comparison",
+        "column_filter": [
+          {"type": "budget_actual"},
+          {"type": "budget_percentage"},
+          {"type": "budget_variance"}
+        ],
+        "needed_for_multi_range" : true,
+        "needed_for_first_drill_down": true
+      }
+    ]
+  }

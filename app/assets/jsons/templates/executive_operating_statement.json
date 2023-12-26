@@ -1,0 +1,68 @@
+{
+  "$schema": "../../schemas/report-schema.json",
+
+  "id": "executive_operating_statement",
+  "name": "Executive Operating Statement",
+  "category": "management",
+  "rank": 21,
+  "standard_category_ids": [11],
+  "draft": false,
+  "missing_transactions_calculation_disabled": false,
+  "enabled_budget_compare": false,
+  "enabled_blank_value_for_metric": true,
+
+  "columns": [
+    {"type": "actual", "range": "current_period", "year": "current", "name": "PTD $"},
+    {"type": "percentage", "range": "current_period", "year": "current", "name": "PTD %"},
+    {"type": "actual", "range": "current_period", "year": "prior", "name": "PTD LY $"},
+    {"type": "percentage", "range": "current_period", "year": "prior", "name": "PTD LY %"},
+    {"type": "variance", "range": "current_period", "name": "PTD Var"},
+    {"type": "actual", "range": "ytd", "year": "current", "name": "YTD $"},
+    {"type": "percentage", "range": "ytd", "year": "current", "name": "YTD %"},
+    {"type": "actual", "range": "ytd", "year": "prior", "name": "YTD LY $"},
+    {"type": "percentage", "range": "ytd", "year": "prior", "name": "YTD LY %"},
+    {"type": "variance", "range": "ytd", "name": "YTD Var"}
+  ],
+  "items": [
+    {
+      "id": "metrics",
+      "name": "Metrics"
+    },
+    {
+      "id": "monthly_recurring_revenue",
+      "name": "Monthly Recurring Revenue (MRR)",
+      "parent_id": "metrics",
+      "type": {
+        "name": "metric",
+        "multi_month_calculation_type": "Average",
+        "metric": {
+          "code": "monthly_recurring_revenue"
+        }
+      }
+    },
+    {
+      "id": "annual_recurring_revenue",
+      "name": "Annual Recurring Revenue (ARR)",
+      "parent_id": "metrics",
+      "type": {
+        "name": "stats",
+        "multi_month_calculation_type": "Average"
+      },
+      "values": {
+        "actual": {
+          "value": {
+            "expression": {
+              "operator": "*",
+              "arg1": {
+                "item_id": "monthly_recurring_revenue"
+              },
+              "arg2": {
+                "constant": 12
+              }
+            }
+          }
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,169 @@
+services:
+  reports-service:
+    type: server
+    hostname: reports-service
+    autoscale:
+      cpu: 70
+    command:
+    - bin/server.sh
+    resources:
+      requests:
+        cpu: 250m
+        memory: 500Mi
+      limits:
+        memory: 1000Mi
+    healthcheck:
+      initial_delay_seconds: 30
+      http:
+        path: /
+        port: 8088
+        scheme: HTTP
+    ports:
+    - "443:3000"
+
+  reports-service-report-datas-updater:
+    type: worker
+    command:
+    - bundle
+    - exec
+    - rake
+    - docyt:workers:run[ReportDatasUpdater]
+    autoscale:
+      max: 10
+      rabbitmq:
+        queues: docyt.v2.report_datas_updater.report.refresh_report_datas
+        target: 3
+    resources:
+      requests:
+        cpu: 100m
+        memory: 1000Mi
+      limits:
+        cpu: 500m
+        memory: 1500Mi
+
+  reports-service-report-data-updater:
+    type: worker
+    command:
+    - bundle
+    - exec
+    - rake
+    - docyt:workers:run[ReportDataUpdater]
+    autoscale:
+      max: 100
+      rabbitmq:
+        queues: docyt.v2.report_data_updater.report.refresh_report_data
+        target: 3
+    resources:
+      requests:
+        cpu: 100m
+        memory: 500Mi
+      limits:
+        cpu: 500m
+        memory: 600Mi
+
+  reports-service-syncer:
+    type: worker
+    command:
+    - bundle
+    - exec
+    - rake
+    - docyt:workers:run_multiple[ReportServiceCreateWorker;ReportServiceDeleteWorker]
+    resources:
+      requests:
+        cpu: 100m
+        memory: 500Mi
+      limits:
+        cpu: 500m
+        memory: 600Mi
+
+  reports-service-cron-sync-report-services: &cron
+    type: cron
+    schedule: 0 0 * * *
+    command:
+      - bundle
+      - exec
+      - rake
+    args:
+      - report_services:sync_all
+    resources:
+      requests:
+        cpu: 100m
+        memory: 300Mi
+      limits:
+        cpu: 500m
+        memory: 600Mi
+
+  reports-service-report-exporter:
+    type: worker
+    command:
+    - bundle
+    - exec
+    - rake
+    - docyt:workers:run[ReportExportWorker]
+    autoscale:
+      max: 5
+      rabbitmq:
+        queues: docyt.v2.report_export_worker.report.export_report_requested
+        target: 5
+    resources:
+      requests:
+        cpu: 100m
+        memory: 500Mi
+      limits:
+        cpu: 300m
+        memory: 1000Mi
+
+  reports-service-budget-exporter:
+    type: worker
+    command:
+      - bundle
+      - exec
+      - rake
+      - docyt:workers:run[BudgetExportWorker]
+    autoscale:
+      max: 5
+      rabbitmq:
+        queues: docyt.v2.budget_export_worker.budget.export_budget_requested
+        target: 5
+    resources:
+      requests:
+        cpu: 100m
+        memory: 500Mi
+      limits:
+        cpu: 300m
+        memory: 1000Mi
+
+  chart-of-account-syncer:
+    type: worker
+    command:
+      - bundle
+      - exec
+      - rake
+      - docyt:workers:run_multiple[ChartOfAccountDestroyWorker;AccountingClassDestroyWorker]
+    resources:
+      requests:
+        cpu: 100m
+        memory: 500Mi
+      limits:
+        cpu: 300m
+        memory: 1000Mi
+
+  reports-service-budget-importer:
+    type: worker
+    command:
+      - bundle
+      - exec
+      - rake
+      - docyt:workers:run[BudgetImportWorker]
+    autoscale:
+      max: 5
+      rabbitmq:
+        queues: docyt.v2.budget_import_worker.budget.import_budget_requested
+        target: 5
+    resources:
+      requests:
+        cpu: 100m
+        memory: 500Mi
+      limits:
+        cpu: 300m
+        memory: 1000Mi
